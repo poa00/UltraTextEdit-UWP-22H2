@@ -25,7 +25,7 @@ namespace UltraTextEdit_UWP.ViewModels
 
         public string DefaultFont
         {
-            get => Get("Appearance", nameof(DefaultFont), "Calibri");
+            get => Get("Appearance", nameof(DefaultFont), "Segoe UI");
             set => Set("Appearance", nameof(DefaultFont), value);
         }
 
