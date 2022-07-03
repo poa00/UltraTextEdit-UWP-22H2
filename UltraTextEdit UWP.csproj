@@ -135,6 +135,9 @@
     <Compile Include="Converters\BooleanToVisibility.cs" />
     <Compile Include="Converters\SettingsConverters.cs" />
     <Compile Include="Helpers\RichEditHelpers.cs" />
+    <Compile Include="Strings\de-DE\Resources.xaml.cs">
+      <DependentUpon>Resources.resw</DependentUpon>
+    </Compile>
     <Compile Include="Strings\Resources.cs" />
     <Compile Include="UserControls\SettingsBlockControl.xaml.cs">
       <DependentUpon>SettingsBlockControl.xaml</DependentUpon>
@@ -227,6 +230,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <PRIResource Include="Strings\de-DE\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
     <Page Include="UserControls\SettingsBlockControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -272,6 +278,7 @@
   <ItemGroup>
     <PRIResource Include="Strings\Resources.resw" />
     <PRIResource Include="Strings\en-GB\Resources.resw" />
+    <PRIResource Include="Strings\pl-PL\Resources.resw" />
     <None Include="WordpadUWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup />
