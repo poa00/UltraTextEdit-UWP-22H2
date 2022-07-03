@@ -615,5 +615,15 @@ namespace UltraTextEdit_UWP
                 }
             }
         }
+
+        private async void uteverclick(object sender, RoutedEventArgs e)
+        {
+            utever dialog = new utever();
+
+            dialog.DefaultButton = ContentDialogButton.Primary;
+
+
+            var result = await dialog.ShowAsync();
+        }
     }
 }

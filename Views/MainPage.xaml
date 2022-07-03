@@ -104,6 +104,9 @@
                     Margin="5,0,0,0"
                     VerticalAlignment="Center">
                     <muxc:MenuBarItem Title="{x:Bind res:Resources.FileText}" d:Title="File">
+                        <muxc:MenuBarItem.Background>
+                            <SolidColorBrush Color="{ThemeResource SystemAccentColor}"/>
+                        </muxc:MenuBarItem.Background>
                         <MenuFlyoutItem Click="NewDoc_Click" Text="{x:Bind res:Resources.NewDocText}" />
                         <MenuFlyoutItem Click="OpenButton_Click" Text="{x:Bind res:Resources.OpenText}" />
                         <MenuFlyoutItem Click="SaveButton_Click" Text="{x:Bind res:Resources.SaveText}" />
@@ -113,20 +116,6 @@
                         <MenuFlyoutItem Click="Home_Click" Text="{x:Bind res:Resources.HomeTitle}" />
                         <MenuFlyoutSeparator />
                         <MenuFlyoutItem Click="Exit_Click" Text="{x:Bind res:Resources.ExitText}" />
-                    </muxc:MenuBarItem>
-
-                    <muxc:MenuBarItem Title="{x:Bind res:Resources.EditText}" d:Title="Edit">
-                        <MenuFlyoutItem Click="UndoButton_Click" Text="{x:Bind res:Resources.UndoTooltip}" />
-                        <MenuFlyoutItem Click="RedoButton_Click" Text="{x:Bind res:Resources.RedoTooltip}" />
-                        <MenuFlyoutSeparator />
-                        <MenuFlyoutItem Click="CutButton_Click" Text="{x:Bind res:Resources.CutText}" />
-                        <MenuFlyoutItem Click="CopyButton_Click" Text="{x:Bind res:Resources.CopyText}" />
-                        <MenuFlyoutItem Click="PasteButton_Click" Text="{x:Bind res:Resources.PasteText}" />
-                    </muxc:MenuBarItem>
-
-                    <muxc:MenuBarItem Title="{x:Bind res:Resources.HelpText}" d:Title="Help">
-                        <MenuFlyoutItem Click="AboutBtn_Click" Text="{x:Bind res:Resources.AboutText}" />
-                        <MenuFlyoutItem Click="SettingsButton_Click" Text="{x:Bind res:Resources.SettingsText}" />
                     </muxc:MenuBarItem>
 
                 </muxc:MenuBar>
@@ -466,6 +455,23 @@
                                     </StackPanel>
                                 </Flyout>
                             </Button.Flyout>
+                        </AppBarButton>
+                    </controls:TabbedCommandBarItem>
+                    <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.EditText}">
+                        <AppBarButton Click="UndoButton_Click" Label="{x:Bind res:Resources.UndoTooltip}" Icon="Undo" />
+                        <AppBarButton Click="RedoButton_Click" Label="{x:Bind res:Resources.RedoTooltip}" Icon="Redo"/>
+                        <AppBarSeparator />
+                        <AppBarButton Click="CutButton_Click" Label="{x:Bind res:Resources.CutText}" Icon="Cut"/>
+                        <AppBarButton Click="CopyButton_Click" Label="{x:Bind res:Resources.CopyText}" Icon="Copy"/>
+                        <AppBarButton Click="PasteButton_Click" Label="{x:Bind res:Resources.PasteText}" Icon="Paste"/>
+                    </controls:TabbedCommandBarItem>
+                    <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.HelpText}">
+                        <AppBarButton Label="About" Click="AboutBtn_Click">
+                            <AppBarButton.Icon>
+                                <SymbolIcon Symbol="Help"/>
+                            </AppBarButton.Icon>
+                        </AppBarButton>
+                        <AppBarButton Label="utever" Icon="Help" Click="uteverclick">
                         </AppBarButton>
                     </controls:TabbedCommandBarItem>
                 </controls:TabbedCommandBar.MenuItems>
