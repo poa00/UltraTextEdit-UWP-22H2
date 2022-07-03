@@ -196,7 +196,7 @@
     <value>Ostatnio otwierane pliki</value>
   </data>
   <data name="RedoTooltip" xml:space="preserve">
-    <value>...</value>
+    <value>Ponów</value>
   </data>
   <data name="SaveAsCopyText" xml:space="preserve">
     <value>Zapisz jako</value>

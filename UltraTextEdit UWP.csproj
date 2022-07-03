@@ -135,9 +135,6 @@
     <Compile Include="Converters\BooleanToVisibility.cs" />
     <Compile Include="Converters\SettingsConverters.cs" />
     <Compile Include="Helpers\RichEditHelpers.cs" />
-    <Compile Include="Strings\de-DE\Resources.xaml.cs">
-      <DependentUpon>Resources.resw</DependentUpon>
-    </Compile>
     <Compile Include="Strings\Resources.cs" />
     <Compile Include="UserControls\SettingsBlockControl.xaml.cs">
       <DependentUpon>SettingsBlockControl.xaml</DependentUpon>
