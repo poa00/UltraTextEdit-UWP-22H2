@@ -1,11 +1,6 @@
-# TowPad
+# UltraTextEdit UWP
 
-
-A UWP version of... WordPad!
-
-This app features a simple and easy to use interface other than ribbons.
-
-![TowPad](https://user-images.githubusercontent.com/81253203/134414755-894fcb4c-cac1-4edb-af92-4be47a342177.png)
+NOTE: The UltraTextEdit UWP 22H2 codebase is a fork of TowPad by itsWindows11. Link: https://github.com/itsWindows11/TowPad
 
 ### Windows 11
 ![image](https://user-images.githubusercontent.com/81253203/135627983-c9b242ba-ad76-4134-8ed6-a57e3b477390.png)
@@ -49,13 +44,13 @@ This app features a simple and easy to use interface other than ribbons.
 
 ### **Requirements to run the app**
 
-  - You must run at least Windows 10, version 1809
+  - You must have at least Windows 10, version 1809 installed to run this app.
   
 ### **Prerequisites to compile the app**
 
   - Have at least Windows SDK (UWP) version 1809
   
-  - Visual Studio 2019
+  - Visual Studio 2019/2022
   
 This file and project is still in development, things might change over time as Wordpad UWP takes shape ~~and ideas~~.
 
