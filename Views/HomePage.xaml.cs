@@ -105,6 +105,14 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
+                Title = "New codebase",
+                Icon = "\uE943",
+                Tag = "NewCodeVer",
+                Description = $"{Strings.Resources.AppName} build 22621 (22H2 feature update) introduces a new codebase based on TowPad. It contains all the new features described below and more!"
+            });
+
+            WhatsNew.Add(new()
+            {
                 Title = "Home page",
                 Icon = "\uEA8A",
                 Tag = "HomePage",
@@ -121,10 +129,18 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
+                Title = "Insider channels",
+                Icon = "\uF1AD",
+                Tag = "UTEInsider",
+                Description = $"With {Strings.Resources.AppName} version 22H2, there are 3 Insider channels, instead of one Insider releaseat the end of a month. The Insider channels are the same as found on Windows (Dev, Beta, and Release Preview). The Insider channel you are in is indicated to the right of the app's title on the title bar."
+            });
+
+            WhatsNew.Add(new()
+            {
                 Title = "New Settings UI",
                 Icon = "\uE713",
                 Tag = "SettingsUI",
-                Description = "Settings will be in a separate page, you can set app mode, and change more settings, with a refreshed, and redesigned settings UI."
+                Description = "On the redesigned Settings UI, you can set all UTE UWP settings as well as new settings from TowPad."
             });
 
             WhatsNew.Add(new()
