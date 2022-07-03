@@ -172,7 +172,8 @@
                 Padding="0,0,0,0"
                 RelativePanel.Below="MenuPanel"
                 RelativePanel.AlignLeftWithPanel="True"
-                RelativePanel.AlignRightWithPanel="True">
+                RelativePanel.AlignRightWithPanel="True"
+                Background="Transparent">
                 <controls:TabbedCommandBar.MenuItems>
                     <controls:TabbedCommandBarItem Header="Home">
                         <AppBarToggleButton
