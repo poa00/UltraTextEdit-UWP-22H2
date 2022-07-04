@@ -52,6 +52,7 @@ NOTE: The UltraTextEdit UWP 22H2 codebase is a fork of TowPad by itsWindows11. L
   
   - Visual Studio 2019/2022
   
-This file and project is still in development, things might change over time as Wordpad UWP takes shape ~~and ideas~~.
+This file and project is still in development, things might change over time as UltraTextEdit UWP takes shape ~~and ideas~~.
+New releases for Dev/Beta Insiders may come out at any time, standard stable releases come out every Patch Tuesday, Release Preview Insider releases come out on the 3rd or 4th week of the month.
 
 Licensed under the MIT license.
