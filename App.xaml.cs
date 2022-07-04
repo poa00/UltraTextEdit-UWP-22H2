@@ -68,6 +68,19 @@ namespace UltraTextEdit_UWP
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+
+                switch (SViewModel.Theme)
+                {
+                    case 0:
+                        rootFrame.RequestedTheme = ElementTheme.Light;
+                        break;
+                    case 1:
+                        rootFrame.RequestedTheme = ElementTheme.Dark;
+                        break;
+                    case 2:
+                        rootFrame.RequestedTheme = ElementTheme.Default;
+                        break;
+                }
             }
 
             if (e.PrelaunchActivated == false)

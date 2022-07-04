@@ -93,6 +93,17 @@
                         </ComboBox.ItemTemplate>
                     </ComboBox>
                 </uc:SettingsBlockControl>
+                <TextBlock Text="Appearance" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
+
+                <uc:SettingsBlockControl Title="Theme">
+                    <uc:SettingsBlockControl.SettingsActionableElement>
+                        <ComboBox SelectedIndex="{x:Bind local1:App.SViewModel.Theme, Mode=TwoWay}">
+                            <ComboBoxItem Content="Light" />
+                            <ComboBoxItem Content="Dark" />
+                            <ComboBoxItem Content="System default" />
+                        </ComboBox>
+                    </uc:SettingsBlockControl.SettingsActionableElement>
+                </uc:SettingsBlockControl>
             </StackPanel>
         </ScrollViewer>
     </Grid>
