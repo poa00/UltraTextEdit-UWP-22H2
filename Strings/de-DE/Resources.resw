@@ -135,6 +135,9 @@
   <data name="AlignRight" xml:space="preserve">
     <value>rechtsbündig ausrichten</value>
   </data>
+  <data name="AppearenceHeaderName" xml:space="preserve">
+    <value>Aussehen</value>
+  </data>
   <data name="AppName" xml:space="preserve">
     <value>UltraTextEdit UWP</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="CutText" xml:space="preserve">
     <value>Ausschneiden</value>
+  </data>
+  <data name="DarkTheme" xml:space="preserve">
+    <value>Dunkel</value>
   </data>
   <data name="DefaultFontSettingName" xml:space="preserve">
     <value>Standardschriftart</value>
@@ -180,6 +186,9 @@
   <data name="Italic" xml:space="preserve">
     <value>Kursiv</value>
   </data>
+  <data name="LightTheme" xml:space="preserve">
+    <value>Leicht</value>
+  </data>
   <data name="NewDocText" xml:space="preserve">
     <value>Neues Dokument</value>
   </data>
@@ -209,6 +218,12 @@
   </data>
   <data name="Strikethrough" xml:space="preserve">
     <value>Durschstreichen</value>
+  </data>
+  <data name="SystemDefaultTheme" xml:space="preserve">
+    <value>Systemfehler</value>
+  </data>
+  <data name="ThemeSettingName" xml:space="preserve">
+    <value>Thema</value>
   </data>
   <data name="Underline" xml:space="preserve">
     <value>Unterstreichen</value>

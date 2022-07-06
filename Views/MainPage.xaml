@@ -164,7 +164,7 @@
                 RelativePanel.AlignRightWithPanel="True"
                 Background="Transparent">
                 <controls:TabbedCommandBar.MenuItems>
-                    <controls:TabbedCommandBarItem Header="Home">
+                    <controls:TabbedCommandBarItem Header="Home" Background="Transparent">
                         <AppBarToggleButton
                     Click="BoldButton_Click"
                     Style="{StaticResource TransparentToggleButton}"
@@ -457,7 +457,7 @@
                             </Button.Flyout>
                         </AppBarButton>
                     </controls:TabbedCommandBarItem>
-                    <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.EditText}">
+                    <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.EditText}" Background="Transparent">
                         <AppBarButton Click="UndoButton_Click" Label="{x:Bind res:Resources.UndoTooltip}" Icon="Undo" />
                         <AppBarButton Click="RedoButton_Click" Label="{x:Bind res:Resources.RedoTooltip}" Icon="Redo"/>
                         <AppBarSeparator />
@@ -465,7 +465,7 @@
                         <AppBarButton Click="CopyButton_Click" Label="{x:Bind res:Resources.CopyText}" Icon="Copy"/>
                         <AppBarButton Click="PasteButton_Click" Label="{x:Bind res:Resources.PasteText}" Icon="Paste"/>
                     </controls:TabbedCommandBarItem>
-                    <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.HelpText}">
+                    <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.HelpText}" Background="Transparent">
                         <AppBarButton Label="About" Click="AboutBtn_Click">
                             <AppBarButton.Icon>
                                 <SymbolIcon Symbol="Help"/>

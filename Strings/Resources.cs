@@ -43,5 +43,10 @@ namespace UltraTextEdit_UWP.Strings
         public static string DocumentPaddingSettingName = App.Resources.GetString("DocumentPaddingSettingName");
         public static string DefaultFontSettingName = App.Resources.GetString("DefaultFontSettingName");
         public static string EditorHeaderName = App.Resources.GetString("EditorHeaderName");
+        public static string AppearenceHeaderName = App.Resources.GetString("AppearenceHeaderName");
+        public static string ThemeSettingName = App.Resources.GetString("ThemeSettingName");
+        public static string LightTheme = App.Resources.GetString("LightTheme");
+        public static string DarkTheme = App.Resources.GetString("DarkTheme");
+        public static string SystemDefaultTheme = App.Resources.GetString("SystemDefaultTheme");
     }
 }
