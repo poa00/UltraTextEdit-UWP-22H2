@@ -15,6 +15,11 @@
     d:DesignWidth="876">
 
     <Page.Resources>
+        <Style x:Key="TitleBarCaptionTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="Foreground" Value="{ThemeResource SystemAccentColor}"/>
+        </Style>
         <Flyout x:Key="myColorPickerFlyout">
             <RelativePanel>
                 <ColorPicker x:Name="myColorPicker"
@@ -67,8 +72,9 @@
                         x:Name="AppTitle"
                         Margin="12,2,4,0"
                         VerticalAlignment="Center"
-                        Style="{StaticResource CaptionTextBlockStyle}"
-                        Text="Untitled - UTE UWP" />
+                        Text="Untitled - UTE UWP"
+                        FontSize="12"
+                        FontWeight="Normal" Foreground="{ThemeResource SystemAccentColor}"/>
                     <Grid>
                         <Rectangle RadiusX="8" RadiusY="8" Width="50" Height="25" Fill="#FFFFC225">
                         </Rectangle>

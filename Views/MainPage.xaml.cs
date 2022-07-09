@@ -42,6 +42,7 @@ namespace UltraTextEdit_UWP
 
             appViewTitleBar.ButtonBackgroundColor = Colors.Transparent;
             appViewTitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+            appViewTitleBar.ButtonForegroundColor = (Color)Resources["SystemAccentColor"];
 
             var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
             coreTitleBar.ExtendViewIntoTitleBar = true;
@@ -73,7 +74,7 @@ namespace UltraTextEdit_UWP
         // Update the TitleBar based on the inactive/active state of the app
         private void Current_Activated(object sender, WindowActivatedEventArgs e)
         {
-            SolidColorBrush defaultForegroundBrush = (SolidColorBrush)Application.Current.Resources["TextFillColorPrimaryBrush"];
+            SolidColorBrush defaultForegroundBrush = new SolidColorBrush((Color)Application.Current.Resources["SystemAccentColor"]);
             SolidColorBrush inactiveForegroundBrush = (SolidColorBrush)Application.Current.Resources["TextFillColorDisabledBrush"];
 
             if (e.WindowActivationState == CoreWindowActivationState.Deactivated)
