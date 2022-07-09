@@ -1,4 +1,7 @@
-﻿using Windows.ApplicationModel.Core;
+﻿using Microsoft.Toolkit.Mvvm.Input;
+using System.Reflection;
+using Windows.ApplicationModel.Core;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
@@ -13,6 +16,10 @@ namespace UltraTextEdit_UWP.Views.Settings
         public SettingsPage()
         {
             InitializeComponent();
+
+            var ver = typeof(App).GetTypeInfo().Assembly.GetName().Version;
+
+
 
             var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
 
@@ -72,5 +79,23 @@ namespace UltraTextEdit_UWP.Views.Settings
                 rootFrame.GoBack();
             }
         }
+
+        #region CopyVersionCommand
+
+        internal IRelayCommand CopyVersionCommand { get; }
+
+        private void ExecuteCopyVersionCommand()
+        {
+
+                var data = new DataPackage
+                {
+                    RequestedOperation = DataPackageOperation.Copy
+                };
+                data.SetText(aboutblock.Title + " version " + aboutblock.Description);
+
+                Clipboard.SetContentWithOptions(data, new ClipboardContentOptions() { IsAllowedInHistory = true, IsRoamable = true });
+                Clipboard.Flush();
+        }
+        #endregion
     }
 }

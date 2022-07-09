@@ -104,6 +104,17 @@
                         </ComboBox>
                     </uc:SettingsBlockControl.SettingsActionableElement>
                 </uc:SettingsBlockControl>
+                <TextBlock Text="{x:Bind res:Resources.AboutText}" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
+
+                <uc:SettingsBlockControl x:Name="aboutblock"
+            Title="{x:Bind res:Resources.AppName}"
+            Description="10.0.22621.169">
+                    <Button
+                ToolTipService.ToolTip="{x:Bind res:Resources.CopyText}"
+                Command="{x:Bind CopyVersionCommand}">
+                        <FontIcon Glyph="&#xF32B;"/>
+                    </Button>
+                </uc:SettingsBlockControl>
             </StackPanel>
         </ScrollViewer>
     </Grid>
