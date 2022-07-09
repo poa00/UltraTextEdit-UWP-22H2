@@ -625,5 +625,15 @@ namespace UltraTextEdit_UWP
 
             var result = await dialog.ShowAsync();
         }
+
+        private void FindButton2_Click(object sender, RoutedEventArgs e)
+        {
+            textsplitview.IsPaneOpen = true;
+        }
+
+        private void closepane(object sender, RoutedEventArgs e)
+        {
+            textsplitview.IsPaneOpen = false;
+        }
     }
 }

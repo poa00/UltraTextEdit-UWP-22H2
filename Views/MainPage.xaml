@@ -387,43 +387,7 @@
                             </ComboBox>
                         </AppBarElementContainer>
                         <AppBarSeparator />
-                        <AppBarButton Style="{StaticResource TransparentButton}" ToolTipService.ToolTip="{x:Bind res:Resources.FindDocTooltip}">
-                            <Button.Flyout>
-                                <Flyout Placement="Bottom">
-                                    <StackPanel Orientation="Vertical">
-                                        <TextBlock
-                                    Margin="0,0,0,5"
-                                    FontSize="14"
-                                    FontWeight="SemiBold"
-                                    Style="{StaticResource CaptionTextBlockStyle}"
-                                    Text="Find" />
-
-                                        <TextBox
-                                    x:Name="findBox"
-                                    Width="330"
-                                    PlaceholderText="Text to look for" />
-                                        <StackPanel Orientation="Horizontal">
-                                            <Button Margin="0,10,0,0" Click="FindButton_Click">Find</Button>
-                                            <Button Margin="5,10,0,0" Click="RemoveHighlightButton_Click">Remove highlights</Button>
-                                        </StackPanel>
-
-                                        <TextBlock
-                                    Margin="0,10,0,5"
-                                    FontSize="14"
-                                    FontWeight="SemiBold"
-                                    Style="{StaticResource CaptionTextBlockStyle}"
-                                    Text="Replace" />
-                                        <TextBox
-                                    x:Name="replaceBox"
-                                    Width="330"
-                                    PlaceholderText="New text" />
-                                        <StackPanel Orientation="Horizontal">
-                                            <Button Margin="0,10,0,0" Click="ReplaceSelected_Click">Replace selected text</Button>
-                                            <Button Margin="5,10,0,0" Click="ReplaceAll_Click">Replace all occurrences</Button>
-                                        </StackPanel>
-                                    </StackPanel>
-                                </Flyout>
-                            </Button.Flyout>
+                        <AppBarButton Style="{StaticResource TransparentButton}" ToolTipService.ToolTip="{x:Bind res:Resources.FindDocTooltip}" Click="FindButton2_Click">
                             <Button.Content>
                                 <Viewbox MaxWidth="17" MaxHeight="17">
                                     <SymbolIcon Symbol="Find" />
@@ -478,17 +442,62 @@
             </controls:TabbedCommandBar>
         </RelativePanel>
 
-        <RichEditBox
-            x:Name="editor"
-            Padding="{x:Bind local:App.SViewModel.DocumentViewPadding, Mode=OneWay, Converter={StaticResource IntToThickness}}"
-            FontFamily="{x:Bind local:App.SViewModel.DefaultFont}"
-            IsSpellCheckEnabled="False"
+        <SplitView
             RelativePanel.AlignBottomWithPanel="True"
             RelativePanel.AlignLeftWithPanel="True"
             RelativePanel.AlignRightWithPanel="True"
             RelativePanel.Below="containerPanel"
+            IsPaneOpen="False" OpenPaneLength="256" CompactPaneLength="24" DisplayMode="Inline" PanePlacement="Right" x:Name="textsplitview">
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock
+                                    Margin="0,0,0,5"
+                                    FontSize="14"
+                                    FontWeight="SemiBold"
+                                    Style="{StaticResource CaptionTextBlockStyle}"
+                                    Text="Find" />
+
+                        <TextBox
+                                    x:Name="findBox"
+                                    Width="330"
+                                    PlaceholderText="Text to look for" />
+                        <StackPanel Orientation="Vertical">
+                            <Button Margin="0,10,0,0" Click="FindButton_Click">Find</Button>
+                            <Button Margin="0,10,0,0" Click="RemoveHighlightButton_Click">Remove highlights</Button>
+                        </StackPanel>
+
+                        <TextBlock
+                                    Margin="0,10,0,5"
+                                    FontSize="14"
+                                    FontWeight="SemiBold"
+                                    Style="{StaticResource CaptionTextBlockStyle}"
+                                    Text="Replace" />
+                        <TextBox
+                                    x:Name="replaceBox"
+                                    Width="330"
+                                    PlaceholderText="New text" />
+                        <StackPanel Orientation="Vertical">
+                            <Button Margin="0,10,0,0" Click="ReplaceSelected_Click">Replace selected text</Button>
+                            <Button Margin="0,10,0,0" Click="ReplaceAll_Click">Replace all occurrences</Button>
+                        </StackPanel>
+                        <AppBarButton HorizontalAlignment="Center" Icon="ClosePane" Label="Close" Click="closepane"/>
+                    </StackPanel>
+                </Grid>
+            </SplitView.Pane>
+            <RichEditBox
+            x:Name="editor"
+            Padding="{x:Bind local:App.SViewModel.DocumentViewPadding, Mode=OneWay, Converter={StaticResource IntToThickness}}"
+            FontFamily="{x:Bind local:App.SViewModel.DefaultFont}"
+            IsSpellCheckEnabled="False"
             SelectionFlyout="{x:Null}"
             TextChanged="editor_TextChanged"
             TextWrapping="{x:Bind local:App.SViewModel.TextWrapping, Mode=OneWay, Converter={StaticResource IntToTextWrapping}}" />
+        </SplitView>
     </RelativePanel>
 </Page>
