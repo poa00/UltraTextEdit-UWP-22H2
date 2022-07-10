@@ -48,5 +48,13 @@ namespace UltraTextEdit_UWP.Strings
         public static string LightTheme = App.Resources.GetString("LightTheme");
         public static string DarkTheme = App.Resources.GetString("DarkTheme");
         public static string SystemDefaultTheme = App.Resources.GetString("SystemDefaultTheme");
+        public static string Close = App.Resources.GetString("Close");
+        public static string ReplaceAll = App.Resources.GetString("ReplaceAll");
+        public static string ReplaceSelected = App.Resources.GetString("ReplaceSelected");
+        public static string NewText = App.Resources.GetString("NewText");
+        public static string Replace = App.Resources.GetString("Replace");
+        public static string RemoveHighlights = App.Resources.GetString("RemoveHighlights");
+        public static string Find = App.Resources.GetString("Find");
+        public static string FindTextHint = App.Resources.GetString("FindTextHint");
     }
 }

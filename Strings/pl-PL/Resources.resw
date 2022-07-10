@@ -144,6 +144,9 @@
   <data name="Bold" xml:space="preserve">
     <value>Pogrubienie</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
   <data name="CopyText" xml:space="preserve">
     <value>Kopiuj</value>
   </data>
@@ -171,8 +174,14 @@
   <data name="FileText" xml:space="preserve">
     <value>Plik</value>
   </data>
+  <data name="Find" xml:space="preserve">
+    <value>Wyszukaj</value>
+  </data>
   <data name="FindDocTooltip" xml:space="preserve">
     <value>Wyszukaj w dokumencie</value>
+  </data>
+  <data name="FindTextHint" xml:space="preserve">
+    <value>Tekst do wyszukania</value>
   </data>
   <data name="FontColorTooltip" xml:space="preserve">
     <value>Kolor czcionki</value>
@@ -192,6 +201,9 @@
   <data name="NewDocText" xml:space="preserve">
     <value>Nowy dokument</value>
   </data>
+  <data name="NewText" xml:space="preserve">
+    <value>Nowy tekst</value>
+  </data>
   <data name="OpenText" xml:space="preserve">
     <value>Otwórz</value>
   </data>
@@ -206,6 +218,18 @@
   </data>
   <data name="RedoTooltip" xml:space="preserve">
     <value>Ponów</value>
+  </data>
+  <data name="RemoveHighlights" xml:space="preserve">
+    <value>Usuń zaznaczenia</value>
+  </data>
+  <data name="Replace" xml:space="preserve">
+    <value>Zastąp</value>
+  </data>
+  <data name="ReplaceAll" xml:space="preserve">
+    <value>Zastąp wszystkie wystąpienia</value>
+  </data>
+  <data name="ReplaceSelected" xml:space="preserve">
+    <value>Zastąp zaznaczony tekst</value>
   </data>
   <data name="SaveAsCopyText" xml:space="preserve">
     <value>Zapisz jako</value>

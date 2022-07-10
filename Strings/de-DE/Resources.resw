@@ -144,6 +144,9 @@
   <data name="Bold" xml:space="preserve">
     <value>Fett</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
   <data name="CopyText" xml:space="preserve">
     <value>Kopieren</value>
   </data>
@@ -171,8 +174,14 @@
   <data name="FileText" xml:space="preserve">
     <value>Datei</value>
   </data>
+  <data name="Find" xml:space="preserve">
+    <value>Finden</value>
+  </data>
   <data name="FindDocTooltip" xml:space="preserve">
     <value>In Dokument finden</value>
+  </data>
+  <data name="FindTextHint" xml:space="preserve">
+    <value>Zu suchender Text</value>
   </data>
   <data name="FontColorTooltip" xml:space="preserve">
     <value>Schriftfarbe</value>
@@ -192,6 +201,9 @@
   <data name="NewDocText" xml:space="preserve">
     <value>Neues Dokument</value>
   </data>
+  <data name="NewText" xml:space="preserve">
+    <value>Neuer Text</value>
+  </data>
   <data name="OpenText" xml:space="preserve">
     <value>Öffnen</value>
   </data>
@@ -206,6 +218,18 @@
   </data>
   <data name="RedoTooltip" xml:space="preserve">
     <value>Wiederholen</value>
+  </data>
+  <data name="RemoveHighlights" xml:space="preserve">
+    <value>Hervorhebungen entfernen</value>
+  </data>
+  <data name="Replace" xml:space="preserve">
+    <value>Ersetzen</value>
+  </data>
+  <data name="ReplaceAll" xml:space="preserve">
+    <value>Ersetzen Sie alle Vorkommen</value>
+  </data>
+  <data name="ReplaceSelected" xml:space="preserve">
+    <value>Ausgewählten Text ersetzen</value>
   </data>
   <data name="SaveAsCopyText" xml:space="preserve">
     <value>Als Kopie speichern</value>
