@@ -170,7 +170,7 @@
                 RelativePanel.AlignRightWithPanel="True"
                 Background="Transparent">
                 <controls:TabbedCommandBar.MenuItems>
-                    <controls:TabbedCommandBarItem Header="Home" Background="Transparent">
+                    <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.HomeMenuTitle}" Background="Transparent">
                         <AppBarToggleButton
                     Click="BoldButton_Click"
                     Style="{StaticResource TransparentToggleButton}"
@@ -487,7 +487,7 @@
                         <TextBox
                                     x:Name="replaceBox"
                                     Width="330"
-                                    PlaceholderText="New text" />
+                                    PlaceholderText="{x:Bind res:Resources.NewText}" />
                         <StackPanel Orientation="Vertical">
                             <Button Margin="0,10,0,0" Click="ReplaceSelected_Click" Content="{x:Bind res:Resources.ReplaceSelected}"/>
                             <Button Margin="0,10,0,0" Click="ReplaceAll_Click" Content="{x:Bind res:Resources.ReplaceAll}"/>

@@ -192,6 +192,9 @@
   <data name="HelpText" xml:space="preserve">
     <value>Help</value>
   </data>
+  <data name="HomeMenuTitle" xml:space="preserve">
+    <value>Home</value>
+  </data>
   <data name="HomeTitle" xml:space="preserve">
     <value>Home</value>
   </data>

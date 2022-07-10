@@ -189,6 +189,9 @@
   <data name="HelpText" xml:space="preserve">
     <value>Pomoc</value>
   </data>
+  <data name="HomeMenuTitle" xml:space="preserve">
+    <value>Narzędzia główne</value>
+  </data>
   <data name="HomeTitle" xml:space="preserve">
     <value>Strona Główna</value>
   </data>
