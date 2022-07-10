@@ -108,7 +108,7 @@
 
                 <uc:SettingsBlockControl x:Name="aboutblock"
             Title="{x:Bind res:Resources.AppName}"
-            Description="10.0.22621.169">
+            Description="10.0.22621.290">
                     <Button
                 ToolTipService.ToolTip="{x:Bind res:Resources.CopyText}"
                 Command="{x:Bind CopyVersionCommand}">
