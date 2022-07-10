@@ -636,5 +636,23 @@ namespace UltraTextEdit_UWP
         {
             textsplitview.IsPaneOpen = false;
         }
+
+        private void RichEditBox_TextChanged(object sender, RoutedEventArgs e)
+        {
+            editor.Document.GetText(TextGetOptions.UseObjectText, out string textStart);
+
+            if (textStart == "" || string.IsNullOrWhiteSpace(textStart))
+            {
+                saved = true;
+            }
+            else
+            {
+                saved = false;
+            }
+
+            if (!saved) UnsavedTextBlock.Visibility = Visibility.Visible;
+            else UnsavedTextBlock.Visibility = Visibility.Collapsed;
+
+        }
     }
 }

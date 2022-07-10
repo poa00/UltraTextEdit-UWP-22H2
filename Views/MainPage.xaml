@@ -502,8 +502,8 @@
             FontFamily="{x:Bind local:App.SViewModel.DefaultFont}"
             IsSpellCheckEnabled="False"
             SelectionFlyout="{x:Null}"
-            TextChanged="editor_TextChanged"
-            TextWrapping="{x:Bind local:App.SViewModel.TextWrapping, Mode=OneWay, Converter={StaticResource IntToTextWrapping}}" />
+            TextWrapping="{x:Bind local:App.SViewModel.TextWrapping, Mode=OneWay, Converter={StaticResource IntToTextWrapping}}"
+            TextChanged="RichEditBox_TextChanged"/>
         </SplitView>
     </RelativePanel>
 </Page>
