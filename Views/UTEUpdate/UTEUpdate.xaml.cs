@@ -1,26 +1,34 @@
-﻿using Microsoft.Toolkit.Mvvm.Input;
-using System.Reflection;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.Core;
-using Windows.ApplicationModel.DataTransfer;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
 
-namespace UltraTextEdit_UWP.Views.Settings
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+
+namespace UltraTextEdit_UWP.Views.UTEUpdate
 {
-    public sealed partial class SettingsPage : Page
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class UTEUpdate : Page
     {
-        public SettingsPage()
+        public UTEUpdate()
         {
-            InitializeComponent();
-
-            var ver = typeof(App).GetTypeInfo().Assembly.GetName().Version;
-
-
-
+            this.InitializeComponent();
             var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
 
             appViewTitleBar.ButtonBackgroundColor = Colors.Transparent;
@@ -78,44 +86,6 @@ namespace UltraTextEdit_UWP.Views.Settings
             {
                 rootFrame.GoBack();
             }
-        }
-
-        #region CopyVersionCommand
-
-        internal IRelayCommand CopyVersionCommand { get; }
-
-        private void ExecuteCopyVersionCommand()
-        {
-
-                var data = new DataPackage
-                {
-                    RequestedOperation = DataPackageOperation.Copy
-                };
-                data.SetText(aboutblock.Title + " version " + aboutblock.Description);
-
-                Clipboard.SetContentWithOptions(data, new ClipboardContentOptions() { IsAllowedInHistory = true, IsRoamable = true });
-                Clipboard.Flush();
-        }
-        #endregion
-
-        private void UpdateButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (Window.Current.Content is Frame rootFrame)
-            {
-                rootFrame.Navigate(typeof(UTEUpdate.UTEUpdate));
-            }
-        }
-
-        private void CopyVerInfo(object sender, RoutedEventArgs e)
-        {
-            var data = new DataPackage
-            {
-                RequestedOperation = DataPackageOperation.Copy
-            };
-            data.SetText(aboutblock.Title + " version " + aboutblock.Description);
-
-            Clipboard.SetContentWithOptions(data, new ClipboardContentOptions() { IsAllowedInHistory = true, IsRoamable = true });
-            Clipboard.Flush();
         }
     }
 }

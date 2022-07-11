@@ -111,9 +111,15 @@
             Description="10.0.22621.290">
                     <Button
                 ToolTipService.ToolTip="{x:Bind res:Resources.CopyText}"
-                Command="{x:Bind CopyVersionCommand}">
-                        <FontIcon Glyph="&#xF32B;"/>
+                Click="CopyVerInfo">
+                        <FontIcon Glyph="&#xE8C8;"/>
                     </Button>
+                </uc:SettingsBlockControl>
+                <uc:SettingsBlockControl x:Name="updateblock"
+            Title="UTE Updater"
+            IsClickable="True"
+            Click="UpdateButton_Click">
+                    <FontIcon HorizontalAlignment="Right" Glyph="&#xE76C;" Height="24" Width="24" FontSize="12"/>
                 </uc:SettingsBlockControl>
             </StackPanel>
         </ScrollViewer>
