@@ -132,7 +132,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Insider channels",
                 Icon = "\uF1AD",
                 Tag = "UTEInsider",
-                Description = $"With {Strings.Resources.AppName} version 22H2, there are 3 Insider channels, instead of one Insider releaseat the end of a month. The Insider channels are the same as found on Windows (Dev, Beta, and Release Preview). The Insider channel you are in is indicated to the right of the app's title on the title bar."
+                Description = $"With {Strings.Resources.AppName} version 22H2, there are 3 Insider channels, instead of one Insider release at the end of a month. The Insider channels are the same as found on Windows (Dev, Beta, and Release Preview). The Insider channel you are in is indicated to the right of the app's title on the title bar."
             });
 
             WhatsNew.Add(new()

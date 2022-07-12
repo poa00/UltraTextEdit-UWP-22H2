@@ -75,7 +75,7 @@
                         <FontIcon Glyph="&#xE117;" FontSize="96" Foreground="{ThemeResource SystemAccentColor}" x:Name="updateicon"/>
                         <TextBlock FontWeight="SemiBold" Text="Updates available" FontSize="24" x:Name="updatetext" VerticalAlignment="Center"/>
                     </StackPanel>
-                    <Button Content="Check for updates" Style="{ThemeResource AccentButtonStyle}" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Center"/>
+                    <Button Content="Check for updates" Style="{ThemeResource AccentButtonStyle}" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Center" Click="CheckUpdate"/>
                 </RelativePanel>
             </StackPanel>
         </ScrollViewer>

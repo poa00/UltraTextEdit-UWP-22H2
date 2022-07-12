@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Management.Deployment;
 using Windows.UI;
 using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -85,6 +89,54 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
             if (Window.Current.Content is Frame rootFrame && rootFrame.CanGoBack)
             {
                 rootFrame.GoBack();
+            }
+        }
+
+
+
+        //check for an update on my server
+        private async void CheckUpdate(object sender, RoutedEventArgs e)
+        {
+            WebClient client = new WebClient();
+            Stream stream = client.OpenRead("https://trial3.azurewebsites.net/HRApp/Version.txt");
+            StreamReader reader = new StreamReader(stream);
+            var newVersion = new Version(await reader.ReadToEndAsync());
+            Package package = Package.Current;
+            PackageVersion packageVersion = package.Id.Version;
+            var currentVersion = new Version(string.Format("{0}.{1}.{2}.{3}", packageVersion.Major, packageVersion.Minor, packageVersion.Build, packageVersion.Revision));
+
+            //compare package versions
+            if (newVersion.CompareTo(currentVersion) > 0)
+            {
+                var messageDialog = new MessageDialog("Found an update.");
+                messageDialog.Commands.Add(new UICommand(
+                    "Update",
+                    new UICommandInvokedHandler(this.CommandInvokedHandler)));
+                messageDialog.Commands.Add(new UICommand(
+                    "Close",
+                    new UICommandInvokedHandler(this.CommandInvokedHandler)));
+                messageDialog.DefaultCommandIndex = 0;
+                messageDialog.CancelCommandIndex = 1;
+                await messageDialog.ShowAsync();
+            }
+            else
+            {
+                var messageDialog = new MessageDialog("Did not find an update.");
+                await messageDialog.ShowAsync();
+            }
+        }
+
+        // Queue up the update and close the current app instance.
+        private async void CommandInvokedHandler(IUICommand command)
+        {
+            if (command.Label == "Update")
+            {
+                PackageManager packagemanager = new PackageManager();
+                await packagemanager.AddPackageAsync(
+                    new Uri("https://trial3.azurewebsites.net/HRApp/HRApp.msix"),
+                    null,
+                    DeploymentOptions.ForceApplicationShutdown
+                );
             }
         }
     }
