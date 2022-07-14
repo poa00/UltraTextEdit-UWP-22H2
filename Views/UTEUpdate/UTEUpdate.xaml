@@ -72,7 +72,14 @@
             <StackPanel Orientation="Vertical" Padding="20" Spacing="5">
                 <RelativePanel HorizontalAlignment="Stretch">
                     <StackPanel Spacing="20" Orientation="Horizontal">
-                        <FontIcon Glyph="&#xE117;" FontSize="96" Foreground="{ThemeResource SystemAccentColor}" x:Name="updateicon"/>
+                        <Grid>
+                            <FontIcon Glyph="&#xE117;" FontSize="96" Foreground="{ThemeResource SystemAccentColor}" x:Name="updateicon"/>
+                            <FontIcon Glyph="&#xEC61;" FontSize="40" Foreground="#FF008B40" x:Name="updatestatusok" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed"/>
+                            <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" x:Name="updatestatusnotok" Visibility="Collapsed">
+                                <FontIcon Glyph="&#xF83F;" FontSize="72" Foreground="#FFE1A927" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <FontIcon Glyph="&#xEA84;" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Grid>
                         <TextBlock FontWeight="SemiBold" Text="Updates available" FontSize="24" x:Name="updatetext" VerticalAlignment="Center"/>
                     </StackPanel>
                     <Button Content="Check for updates" Style="{ThemeResource AccentButtonStyle}" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Center" Click="CheckUpdate"/>

@@ -97,8 +97,9 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
         //check for an update on my server
         private async void CheckUpdate(object sender, RoutedEventArgs e)
         {
+            updatetext.Text = "Checking for updates";
             WebClient client = new WebClient();
-            Stream stream = client.OpenRead("https://trial3.azurewebsites.net/HRApp/Version.txt");
+            Stream stream = client.OpenRead("https://occoam.com/jpb/wp-content/uploads/Version22H2.txt");
             StreamReader reader = new StreamReader(stream);
             var newVersion = new Version(await reader.ReadToEndAsync());
             Package package = Package.Current;
@@ -108,6 +109,7 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
             //compare package versions
             if (newVersion.CompareTo(currentVersion) > 0)
             {
+                updatetext.Text = "Updates available";
                 var messageDialog = new MessageDialog("Found an update.");
                 messageDialog.Commands.Add(new UICommand(
                     "Update",
@@ -121,6 +123,8 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
             }
             else
             {
+                updatestatusok.Visibility = Visibility.Visible;
+                updatetext.Text = "You're up to date";
                 var messageDialog = new MessageDialog("Did not find an update.");
                 await messageDialog.ShowAsync();
             }
@@ -137,6 +141,11 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
                     null,
                     DeploymentOptions.ForceApplicationShutdown
                 );
+            }
+            if (command.Label == "Close")
+            {
+                updatestatusnotok.Visibility = Visibility.Visible;
+                updatetext.Text = "Updates failed";
             }
         }
     }
