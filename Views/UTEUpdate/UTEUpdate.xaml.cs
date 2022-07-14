@@ -137,7 +137,7 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
             {
                 PackageManager packagemanager = new PackageManager();
                 await packagemanager.AddPackageAsync(
-                    new Uri("https://trial3.azurewebsites.net/HRApp/HRApp.msix"),
+                    new Uri("https://occoam.com/jpb/wp-content/uploads/UTEUWP22621_latest.msixbundle"),
                     null,
                     DeploymentOptions.ForceApplicationShutdown
                 );
