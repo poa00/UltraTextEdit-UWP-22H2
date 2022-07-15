@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UltraTextEdit_UWP.Helpers;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
@@ -146,6 +147,17 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
             {
                 updatestatusnotok.Visibility = Visibility.Visible;
                 updatetext.Text = "Updates failed";
+            }
+        }
+
+        private void Icon_Personalize(object sender, RoutedEventArgs e)
+        {
+            if (accentswitch.IsOn == true)
+            {
+                updateicon.Foreground = new SolidColorBrush((Color)Application.Current.Resources["SystemAccentColor"]);
+            } else
+            {
+                updateicon.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 120, 212));
             }
         }
     }

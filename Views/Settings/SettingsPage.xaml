@@ -116,7 +116,7 @@
                     </Button>
                 </uc:SettingsBlockControl>
                 <uc:SettingsBlockControl x:Name="updateblock"
-            Title="UTE Updater"
+            Title="UTE Update"
             IsClickable="True"
             Click="UpdateButton_Click">
                     <FontIcon HorizontalAlignment="Right" Glyph="&#xE76C;" Height="24" Width="24" FontSize="12"/>

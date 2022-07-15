@@ -10,6 +10,7 @@
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
     xmlns:uc="using:UltraTextEdit_UWP.UserControls"
+    NavigationCacheMode="Required"
     mc:Ignorable="d"
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
     d:Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -73,7 +74,7 @@
                 <RelativePanel HorizontalAlignment="Stretch">
                     <StackPanel Spacing="20" Orientation="Horizontal">
                         <Grid>
-                            <FontIcon Glyph="&#xE117;" FontSize="96" Foreground="{ThemeResource SystemAccentColor}" x:Name="updateicon"/>
+                            <FontIcon Glyph="&#xE117;" FontSize="96" Foreground="#FF0078D4" x:Name="updateicon"/>
                             <FontIcon Glyph="&#xEC61;" FontSize="40" Foreground="#FF008B40" x:Name="updatestatusok" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed"/>
                             <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" x:Name="updatestatusnotok" Visibility="Collapsed">
                                 <FontIcon Glyph="&#xF83F;" FontSize="72" Foreground="#FFE1A927" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -84,6 +85,9 @@
                     </StackPanel>
                     <Button Content="Check for updates" Style="{ThemeResource AccentButtonStyle}" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Center" Click="CheckUpdate"/>
                 </RelativePanel>
+                <uc:SettingsBlockControl Title="Color of the update icon">
+                    <ToggleSwitch OffContent="Blue (default)" OnContent="Custom accent color" IsOn="False" Toggled="Icon_Personalize" x:Name="accentswitch"/>
+                </uc:SettingsBlockControl>
             </StackPanel>
         </ScrollViewer>
     </RelativePanel>

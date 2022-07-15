@@ -134,6 +134,7 @@
     <Compile Include="Converters\IntToThickness.cs" />
     <Compile Include="Converters\BooleanToVisibility.cs" />
     <Compile Include="Converters\SettingsConverters.cs" />
+    <Compile Include="Helpers\BrushHelpers.cs" />
     <Compile Include="Helpers\RichEditHelpers.cs" />
     <Compile Include="Strings\Resources.cs" />
     <Compile Include="UserControls\SettingsBlockControl.xaml.cs">
