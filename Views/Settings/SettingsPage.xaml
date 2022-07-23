@@ -109,6 +109,9 @@
                 <uc:SettingsBlockControl x:Name="aboutblock"
             Title="{x:Bind res:Resources.AppName}"
             Description="10.0.22621.290">
+                    <uc:SettingsBlockControl.Icon>
+                        <BitmapIcon UriSource="ms-appx:///Assets/utevericon.png" ShowAsMonochrome="False" Height="24" Width="24"/>
+                    </uc:SettingsBlockControl.Icon>
                     <Button
                 ToolTipService.ToolTip="{x:Bind res:Resources.CopyText}"
                 Click="CopyVerInfo">
@@ -118,7 +121,8 @@
                 <uc:SettingsBlockControl x:Name="updateblock"
             Title="UTE Update"
             IsClickable="True"
-            Click="UpdateButton_Click">
+            Click="UpdateButton_Click"
+            Icon="Sync">
                     <FontIcon HorizontalAlignment="Right" Glyph="&#xE76C;" Height="24" Width="24" FontSize="12"/>
                 </uc:SettingsBlockControl>
             </StackPanel>

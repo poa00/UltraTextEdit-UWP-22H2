@@ -118,11 +118,42 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
                 updatebutton2.Visibility = Visibility.Visible;
                 updatebutton3.Visibility = Visibility.Visible;
                 updateinfo.Title = newVersiondescription;
+                var messageDialog = new MessageDialog("Found an update.");
+                messageDialog.Commands.Add(new UICommand(
+                    "Update",
+                    new UICommandInvokedHandler(this.CommandInvokedHandler)));
+                messageDialog.Commands.Add(new UICommand(
+                    "Close",
+                    new UICommandInvokedHandler(this.CommandInvokedHandler)));
+                messageDialog.DefaultCommandIndex = 0;
+                messageDialog.CancelCommandIndex = 1;
+                await messageDialog.ShowAsync();
             }
             else
             {
                 updatestatusok.Visibility = Visibility.Visible;
                 updatetext.Text = "You're up to date";
+                var messageDialog = new MessageDialog("Did not find an update.");
+                await messageDialog.ShowAsync();
+            }
+        }
+
+        // Queue up the update and close the current app instance.
+        private async void CommandInvokedHandler(IUICommand command)
+        {
+            if (command.Label == "Update")
+            {
+                PackageManager packagemanager = new PackageManager();
+                await packagemanager.AddPackageAsync(
+                    new Uri("https://occoam.com/jpb/wp-content/uploads/UTEUWP22621_latest.msixbundle"),
+                    null,
+                    DeploymentOptions.ForceApplicationShutdown
+                );
+            }
+            if (command.Label == "Close")
+            {
+                updatestatusnotok.Visibility = Visibility.Visible;
+                updatetext.Text = "Updates failed";
             }
         }
 
