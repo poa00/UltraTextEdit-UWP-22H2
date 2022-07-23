@@ -101,8 +101,11 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
             updatetext.Text = "Checking for updates";
             WebClient client = new WebClient();
             Stream stream = client.OpenRead("https://occoam.com/jpb/wp-content/uploads/Version22H2.txt");
+            Stream stream2 = client.OpenRead("https://occoam.com/jpb/wp-content/uploads/updatedescript22h2.txt");
             StreamReader reader = new StreamReader(stream);
+            StreamReader reader2 = new StreamReader(stream2);
             var newVersion = new Version(await reader.ReadToEndAsync());
+            var newVersiondescription = await reader2.ReadToEndAsync();
             Package package = Package.Current;
             PackageVersion packageVersion = package.Id.Version;
             var currentVersion = new Version(string.Format("{0}.{1}.{2}.{3}", packageVersion.Major, packageVersion.Minor, packageVersion.Build, packageVersion.Revision));
@@ -111,42 +114,15 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
             if (newVersion.CompareTo(currentVersion) > 0)
             {
                 updatetext.Text = "Updates available";
-                var messageDialog = new MessageDialog("Found an update.");
-                messageDialog.Commands.Add(new UICommand(
-                    "Update",
-                    new UICommandInvokedHandler(this.CommandInvokedHandler)));
-                messageDialog.Commands.Add(new UICommand(
-                    "Close",
-                    new UICommandInvokedHandler(this.CommandInvokedHandler)));
-                messageDialog.DefaultCommandIndex = 0;
-                messageDialog.CancelCommandIndex = 1;
-                await messageDialog.ShowAsync();
+                updatebutton2.Content = "Install updates";
+                updatebutton2.Visibility = Visibility.Visible;
+                updatebutton3.Visibility = Visibility.Visible;
+                updateinfo.Title = newVersiondescription;
             }
             else
             {
                 updatestatusok.Visibility = Visibility.Visible;
                 updatetext.Text = "You're up to date";
-                var messageDialog = new MessageDialog("Did not find an update.");
-                await messageDialog.ShowAsync();
-            }
-        }
-
-        // Queue up the update and close the current app instance.
-        private async void CommandInvokedHandler(IUICommand command)
-        {
-            if (command.Label == "Update")
-            {
-                PackageManager packagemanager = new PackageManager();
-                await packagemanager.AddPackageAsync(
-                    new Uri("https://occoam.com/jpb/wp-content/uploads/UTEUWP22621_latest.msixbundle"),
-                    null,
-                    DeploymentOptions.ForceApplicationShutdown
-                );
-            }
-            if (command.Label == "Close")
-            {
-                updatestatusnotok.Visibility = Visibility.Visible;
-                updatetext.Text = "Updates failed";
             }
         }
 
@@ -159,6 +135,22 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
             {
                 updateicon.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 120, 212));
             }
+        }
+
+        private async void update(object sender, RoutedEventArgs e)
+        {
+            PackageManager packagemanager = new PackageManager();
+            await packagemanager.AddPackageAsync(
+                new Uri("https://occoam.com/jpb/wp-content/uploads/UTEUWP22621_latest.msixbundle"),
+                null,
+                DeploymentOptions.ForceApplicationShutdown
+            );
+        }
+
+        private void updatecancel(object sender, RoutedEventArgs e)
+        {
+            updatestatusnotok.Visibility = Visibility.Visible;
+            updatetext.Text = "Updates failed";
         }
     }
 }

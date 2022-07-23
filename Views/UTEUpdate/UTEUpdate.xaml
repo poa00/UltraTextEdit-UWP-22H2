@@ -83,8 +83,11 @@
                         </Grid>
                         <TextBlock FontWeight="SemiBold" Text="Updates available" FontSize="24" x:Name="updatetext" VerticalAlignment="Center"/>
                     </StackPanel>
-                    <Button Content="Check for updates" Style="{ThemeResource AccentButtonStyle}" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Center" Click="CheckUpdate"/>
+                    <Button Content="Check for updates" Style="{ThemeResource AccentButtonStyle}" x:Name="updatebutton" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Center" Click="CheckUpdate"/>
+                    <Button Content="Install updates" Style="{ThemeResource AccentButtonStyle}" x:Name="updatebutton2" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Center" Click="update" Visibility="Collapsed"/>
+                    <Button Content="Cancel updates" Style="{ThemeResource AccentButtonStyle}" x:Name="updatebutton3" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Center" Click="updatecancel" Visibility="Collapsed"/>
                 </RelativePanel>
+                <uc:SettingsBlockControl x:Name="updateinfo"/>
                 <uc:SettingsBlockControl Title="Color of the update icon">
                     <ToggleSwitch OffContent="Blue (default)" OnContent="Custom accent color" IsOn="False" Toggled="Icon_Personalize" x:Name="accentswitch"/>
                 </uc:SettingsBlockControl>
