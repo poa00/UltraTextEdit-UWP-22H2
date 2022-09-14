@@ -448,8 +448,9 @@ namespace UltraTextEdit_UWP
             ContentDialog aboutDialog = new()
             {
                 Title = appTitleStr,
-                Content = $"Version {typeof(App).GetTypeInfo().Assembly.GetName().Version}\n\n© 2022 jpb",
-                CloseButtonText = "OK"
+                Content = $"Version {typeof(App).GetTypeInfo().Assembly.GetName().Version}\n\n© 2021-2022 jpb",
+                CloseButtonText = "OK",
+                DefaultButton = ContentDialogButton.Close
             };
 
             await aboutDialog.ShowAsync();
@@ -464,7 +465,8 @@ namespace UltraTextEdit_UWP
                 Content = "There are unsaved changes, want to save them?",
                 CloseButtonText = "Cancel",
                 PrimaryButtonText = "Save changes",
-                SecondaryButtonText = "No (close app)",
+                SecondaryButtonText = "No",
+                DefaultButton = ContentDialogButton.Primary
             };
 
             ContentDialogResult result = await aboutDialog.ShowAsync();
