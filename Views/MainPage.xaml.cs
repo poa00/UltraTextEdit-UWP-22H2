@@ -379,8 +379,22 @@ namespace UltraTextEdit_UWP
                 int width = (int)properties.Width;
                 int height = (int)properties.Height;
 
-                // Load the file into the Document property of the RichEditBox.
-                editor.Document.Selection.InsertImage(width, height, 0, VerticalCharacterAlignment.Baseline, "img", randAccStream);
+                ImageOptionsDialog dialog = new()
+                {
+                    DefaultWidth = width,
+                    DefaultHeight = height
+                };
+
+                ContentDialogResult result = await dialog.ShowAsync();
+
+                if (result == ContentDialogResult.Primary)
+                {
+                    editor.Document.Selection.InsertImage((int)dialog.DefaultWidth, (int)dialog.DefaultHeight, 0, VerticalCharacterAlignment.Baseline, string.IsNullOrWhiteSpace(dialog.Tag) ? "Image" : dialog.Tag, randAccStream);
+                    return;
+                }
+
+                // Insert an image
+                editor.Document.Selection.InsertImage(width, height, 0, VerticalCharacterAlignment.Baseline, "Image", randAccStream);
             }
         }
 
