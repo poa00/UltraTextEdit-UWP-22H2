@@ -117,5 +117,15 @@ namespace UltraTextEdit_UWP.Views.Settings
             Clipboard.SetContentWithOptions(data, new ClipboardContentOptions() { IsAllowedInHistory = true, IsRoamable = true });
             Clipboard.Flush();
         }
+
+        private void HighVisibility_Checked(object sender, RoutedEventArgs e)
+        {
+            Application.Current.FocusVisualKind = FocusVisualKind.HighVisibility;
+        }
+
+        private void RevealFocus_Checked(object sender, RoutedEventArgs e)
+        {
+            Application.Current.FocusVisualKind = FocusVisualKind.Reveal;
+        }
     }
 }
