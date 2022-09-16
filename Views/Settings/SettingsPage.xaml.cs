@@ -127,5 +127,37 @@ namespace UltraTextEdit_UWP.Views.Settings
         {
             Application.Current.FocusVisualKind = FocusVisualKind.Reveal;
         }
+
+        private void soundToggle_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (soundToggle.IsOn == true)
+            {
+                spatialAudioBox.IsEnabled = true;
+                ElementSoundPlayer.State = ElementSoundPlayerState.On;
+            }
+            else
+            {
+                spatialAudioBox.IsEnabled = false;
+                spatialAudioBox.IsChecked = false;
+
+                ElementSoundPlayer.State = ElementSoundPlayerState.Off;
+                ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off;
+            }
+        }
+        private void spatialAudioBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (soundToggle.IsOn == true)
+            {
+                ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.On;
+            }
+        }
+
+        private void spatialAudioBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (soundToggle.IsOn == true)
+            {
+                ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off;
+            }
+        }
     }
 }

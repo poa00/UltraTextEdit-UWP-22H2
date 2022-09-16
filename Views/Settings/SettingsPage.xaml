@@ -104,6 +104,16 @@
                         </ComboBox>
                     </uc:SettingsBlockControl.SettingsActionableElement>
                 </uc:SettingsBlockControl>
+                <uc:SettingsBlockControl Title="Sound">
+                    <uc:SettingsBlockControl.SettingsActionableElement>
+                        <ToggleSwitch x:Name="soundToggle" OffContent="Sound Off" OnContent="Sound On" Toggled="soundToggle_Toggled"/>
+                    </uc:SettingsBlockControl.SettingsActionableElement>
+                </uc:SettingsBlockControl>
+                <uc:SettingsBlockControl Title="Spatial Audio">
+                    <uc:SettingsBlockControl.SettingsActionableElement>
+                        <CheckBox x:Name="spatialAudioBox" IsEnabled="False" Checked="spatialAudioBox_Checked" Unchecked="spatialAudioBox_Unchecked"/>
+                    </uc:SettingsBlockControl.SettingsActionableElement>
+                </uc:SettingsBlockControl>
                 <muxc:Expander Header="Focus Visuals settings">
                     <StackPanel>
                         <RadioButton x:Name="HighVisibility" Content="High Visibility" Checked="HighVisibility_Checked"/>
