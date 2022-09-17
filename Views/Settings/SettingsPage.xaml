@@ -96,6 +96,9 @@
                 <TextBlock Text="{x:Bind res:Resources.AppearenceHeaderName}" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
 
                 <uc:SettingsBlockControl Title="{x:Bind res:Resources.ThemeSettingName}">
+                    <uc:SettingsBlockControl.Icon>
+                        <FontIcon Glyph="&#xE2B1;" />
+                    </uc:SettingsBlockControl.Icon>
                     <uc:SettingsBlockControl.SettingsActionableElement>
                         <ComboBox SelectedIndex="{x:Bind local1:App.SViewModel.Theme, Mode=TwoWay}">
                             <ComboBoxItem Content="{x:Bind res:Resources.LightTheme}" />
@@ -104,12 +107,15 @@
                         </ComboBox>
                     </uc:SettingsBlockControl.SettingsActionableElement>
                 </uc:SettingsBlockControl>
-                <uc:SettingsBlockControl Title="Sound">
+                <uc:SettingsBlockControl Title="Sound" Icon="Volume">
                     <uc:SettingsBlockControl.SettingsActionableElement>
                         <ToggleSwitch x:Name="soundToggle" OffContent="Sound Off" OnContent="Sound On" Toggled="soundToggle_Toggled"/>
                     </uc:SettingsBlockControl.SettingsActionableElement>
                 </uc:SettingsBlockControl>
                 <uc:SettingsBlockControl Title="Spatial Audio">
+                    <uc:SettingsBlockControl.Icon>
+                        <FontIcon Glyph="&#xE7F5;" />
+                    </uc:SettingsBlockControl.Icon>
                     <uc:SettingsBlockControl.SettingsActionableElement>
                         <CheckBox x:Name="spatialAudioBox" IsEnabled="False" Checked="spatialAudioBox_Checked" Unchecked="spatialAudioBox_Unchecked"/>
                     </uc:SettingsBlockControl.SettingsActionableElement>
