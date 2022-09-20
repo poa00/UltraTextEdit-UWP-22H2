@@ -75,7 +75,7 @@
                         Text="Untitled - UTE UWP"
                         FontSize="12"
                         FontWeight="Normal" Foreground="{ThemeResource SystemAccentColor}"/>
-                    <Grid>
+                    <Grid x:Name="InsiderGrid">
                         <Rectangle RadiusX="8" RadiusY="8" Width="50" Height="25" Fill="#FFFFC225">
                         </Rectangle>
                         <TextBlock Text="DEV" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
