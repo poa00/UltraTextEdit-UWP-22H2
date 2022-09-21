@@ -76,9 +76,9 @@
                         FontSize="12"
                         FontWeight="Normal" Foreground="{ThemeResource SystemAccentColor}"/>
                     <Grid>
-                        <Rectangle RadiusX="8" RadiusY="8" Width="50" Height="25" Fill="#FFFFC225">
+                        <Rectangle RadiusX="8" RadiusY="8" Width="50" Height="25" Fill="#50e6ff">
                         </Rectangle>
-                        <TextBlock Text="DEV" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Text="BETA" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
                     </Grid>
                     <TextBlock
                         x:Name="UnsavedTextBlock"
