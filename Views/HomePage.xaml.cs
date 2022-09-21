@@ -105,19 +105,19 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "New Hungarian localization",
+                Title = "New Simplified Chinese localization",
                 Icon = "\uE774",
                 Tag = "LocAndAcc",
-                Description = $"UltraTextEdit UWP has now been translated into the Hungarian language!"
+                Description = $"UltraTextEdit UWP has now been translated into the Simplified Chinese language!"
             });
 
-            WhatsNew.Add(new()
-            {
-                Title = "Windows support changes",
-                Icon = "\uEC24",
-                Tag = "UTEInsider",
-                Description = $"With new Dev Channel builds of {Strings.Resources.AppName} starting with this one, there is no support for Windows 10 1809, 1903, and 1909 (but these Windows 10 versions will still be supported on the 22H2 Stable, Beta, and Release Preview branches). Only Windows 10 version 20H1 (2004) and later, and Windows 11 original release (21H2) and later are supported.\nThis build of {Strings.Resources.AppName} also increments the target Windows version to Windows 11, version 22H2 (build 22621)."
-            });
+            //WhatsNew.Add(new()
+            //{
+                //Title = "Windows support changes",
+                //Icon = "\uEC24",
+                //Tag = "UTEInsider",
+                //Description = $"With new Dev Channel builds of {Strings.Resources.AppName} starting with this one, there is no support for Windows 10 1809, 1903, and 1909 (but these Windows 10 versions will still be supported on the 22H2 Stable, Beta, and Release Preview branches). Only Windows 10 version 20H1 (2004) and later, and Windows 11 original release (21H2) and later are supported.\nThis build of {Strings.Resources.AppName} also increments the target Windows version to Windows 11, version 22H2 (build 22621)."
+            //});
 
 
             IsListEmpty = list.Count <= 0;
