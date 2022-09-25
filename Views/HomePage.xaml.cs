@@ -124,7 +124,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Localization & Accessbility",
                 Icon = "\uE774",
                 Tag = "LocAndAcc",
-                Description = $"You can contribute translations to {Strings.Resources.AppName}, and help make this app reach more countries! And elements in the app will be more accessible."
+                Description = $"You can contribute translations to {Strings.Resources.AppName}, and help make this app reach more countries! And elements in the app will be more accessible.\n\nNEW IN OCTOBER UPDATE:\nUltraTextEdit UWP has been translated into Czech, Slovak, Ukrainian, Hungarian, and Simplified Chinese"
             });
 
             WhatsNew.Add(new()
@@ -140,7 +140,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "New Settings UI",
                 Icon = "\uE713",
                 Tag = "SettingsUI",
-                Description = "On the redesigned Settings UI, you can set all UTE UWP settings as well as new settings from TowPad."
+                Description = "On the redesigned Settings UI, you can set all UTE UWP settings as well as new settings from TowPad.\n\nNEW IN OCTOBER UPDATE:\nIcons for the Appearance section of the Settings menu added"
             });
 
             WhatsNew.Add(new()
