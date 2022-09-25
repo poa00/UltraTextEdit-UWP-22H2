@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    xmlns:muxc="using:Microsoft.UI.Xaml.Controls" xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals" xmlns:res="using:UltraTextEdit_UWP.Strings" xmlns:uc="using:UltraTextEdit_UWP.UserControls" xmlns:local1="using:UltraTextEdit_UWP"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls" xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals" xmlns:Lang="using:UltraTextEdit_UWP.Helpers"  xmlns:res="using:UltraTextEdit_UWP.Strings" xmlns:uc="using:UltraTextEdit_UWP.UserControls" xmlns:local1="using:UltraTextEdit_UWP" xmlns:viewmodels="using:UltraTextEdit_UWP.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:SettingsViewModel}"
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
 
     <Grid>
@@ -107,6 +107,15 @@
                         </ComboBox>
                     </uc:SettingsBlockControl.SettingsActionableElement>
                 </uc:SettingsBlockControl>
+                <!--
+                <uc:SettingsBlockControl Title="Language">
+                    <ComboBox x:Name="CmbLanguage" 
+          ItemsSource="{Binding Languages}" 
+          DisplayMemberPath="DisplayName" 
+          SelectedValuePath="LanguageCode" 
+          SelectedItem="{Binding SelectedLanguage, Mode=TwoWay}" />
+                </uc:SettingsBlockControl>
+                -->
                 <uc:SettingsBlockControl Title="Sound" Icon="Volume">
                     <uc:SettingsBlockControl.SettingsActionableElement>
                         <ToggleSwitch x:Name="soundToggle" OffContent="Sound Off" OnContent="Sound On" Toggled="soundToggle_Toggled"/>
