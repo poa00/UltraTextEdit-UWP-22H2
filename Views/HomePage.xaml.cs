@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "New Simplified Chinese localization",
-                Icon = "\uE774",
+                Title = "Mica UI on Find/Replace panel",
+                Icon = "\uE794",
                 Tag = "LocAndAcc",
-                Description = $"UltraTextEdit UWP has now been translated into the Simplified Chinese language!"
+                Description = $"The find/replace panel to the right of the editor now has Mica material!"
             });
 
             //WhatsNew.Add(new()
