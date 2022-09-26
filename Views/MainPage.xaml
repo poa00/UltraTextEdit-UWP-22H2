@@ -9,6 +9,7 @@
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:res="using:UltraTextEdit_UWP.Strings"
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
+    d:Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d"
     d:DesignHeight="564"
     d:DesignWidth="876">
