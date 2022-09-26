@@ -413,6 +413,8 @@ namespace UltraTextEdit_UWP
 
         private void AddLinkButton_Click(object sender, RoutedEventArgs e)
         {
+            if (Windows.Foundation.Metadata.ApiInformation.IsPropertyPresent("Windows.UI.Xaml.FrameworkElement", "AllowFocusOnInteraction"))
+                hyperlinkText.AllowFocusOnInteraction = true;
             editor.Document.Selection.Link = $"\"{hyperlinkText.Text}\"";
             editor.Document.Selection.CharacterFormat.ForegroundColor = (Color)XamlBindingHelper.ConvertValue(typeof(Color), "#6194c7");
             AddLinkButton.Flyout.Hide();
