@@ -105,18 +105,26 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Mica UI on Find/Replace panel",
+                Title = "Updates WinUI to WinUI 2.8.1!",
                 Icon = "\uE794",
                 Tag = "LocAndAcc",
-                Description = $"The find/replace panel to the right of the editor now has Mica material!"
+                Description = $"The WInUI version of UTE UWP has been updated to 2.8.1!"
+            });
+
+            WhatsNew.Add(new()
+            {
+                Title = "More sophisticated Insider info added",
+                Icon = "\uF1AD",
+                Tag = "LocAndAcc",
+                Description = $"Adds info about current Insider Channel to the insider pill on the titlebar"
             });
 
             //WhatsNew.Add(new()
             //{
-                //Title = "Windows support changes",
-                //Icon = "\uEC24",
-                //Tag = "UTEInsider",
-                //Description = $"With new Dev Channel builds of {Strings.Resources.AppName} starting with this one, there is no support for Windows 10 1809, 1903, and 1909 (but these Windows 10 versions will still be supported on the 22H2 Stable, Beta, and Release Preview branches). Only Windows 10 version 20H1 (2004) and later, and Windows 11 original release (21H2) and later are supported.\nThis build of {Strings.Resources.AppName} also increments the target Windows version to Windows 11, version 22H2 (build 22621)."
+            //Title = "Windows support changes",
+            //Icon = "\uEC24",
+            //Tag = "UTEInsider",
+            //Description = $"With new Dev Channel builds of {Strings.Resources.AppName} starting with this one, there is no support for Windows 10 1809, 1903, and 1909 (but these Windows 10 versions will still be supported on the 22H2 Stable, Beta, and Release Preview branches). Only Windows 10 version 20H1 (2004) and later, and Windows 11 original release (21H2) and later are supported.\nThis build of {Strings.Resources.AppName} also increments the target Windows version to Windows 11, version 22H2 (build 22621)."
             //});
 
 
