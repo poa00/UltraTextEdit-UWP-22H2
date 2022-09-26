@@ -49,7 +49,8 @@
             x:Name="containerPanel"
             RelativePanel.AlignLeftWithPanel="True"
             RelativePanel.AlignRightWithPanel="True">
-            <Border
+            <StackPanel x:Name="TitleBar" Orientation="Horizontal">
+                <Border
                 x:Name="AppTitleBar"
                 Height="40"
                 Margin="12,2,0,0"
@@ -59,8 +60,8 @@
                 IsHitTestVisible="True"
                 RelativePanel.AlignLeftWithPanel="True"
                 RelativePanel.AlignRightWithPanel="True">
-                <StackPanel Orientation="Horizontal">
-                    <Image
+                    <StackPanel Orientation="Horizontal">
+                        <Image
                         x:Name="AppFontIcon"
                         Width="24"
                         Height="24"
@@ -68,36 +69,37 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         Source="ms-appx:///Assets/Square44x44Logo.png" />
-                    <TextBlock
+                        <TextBlock
                         x:Name="AppTitle"
                         Margin="12,2,4,0"
                         VerticalAlignment="Center"
                         Text="Untitled - UTE UWP"
                         FontSize="12"
                         FontWeight="Normal" Foreground="{ThemeResource SystemAccentColor}"/>
-                    <Grid x:Name="InsiderGrid">
-                        <Button Background="#FFFFC225" Width="50" Height="25" Padding="0" CornerRadius="8" Click="showinsiderinfo" IsHitTestVisible="False">
-                            <Grid>
-                                <TextBlock Text="DEV" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
-                            </Grid>
-                        </Button>
-                        <muxc:TeachingTip x:Name="ToggleThemeTeachingTip1"
+                    </StackPanel>
+                </Border>
+                <Grid x:Name="InsiderGrid">
+                    <Button Background="#FFFFC225" Width="50" Height="25" Padding="0" CornerRadius="8" Click="showinsiderinfo">
+                        <Grid>
+                            <TextBlock Text="DEV" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+                        </Grid>
+                    </Button>
+                    <muxc:TeachingTip x:Name="ToggleThemeTeachingTip1"
     Target="{x:Bind InsiderGrid}"
     Title="Dev Channel"
-    Subtitle="placeholder">
-                            <muxc:TeachingTip.IconSource>
-                                <muxc:SymbolIconSource Symbol="Refresh" />
-                            </muxc:TeachingTip.IconSource>
-                        </muxc:TeachingTip>
-                    </Grid>
-                    <TextBlock
+    Subtitle="The Dev Channel is the Insider Channel that receives builds with the latest features and may contain features that may not get released to the public. Beware, as these builds may be buggy or crash!">
+                        <muxc:TeachingTip.IconSource>
+                            <muxc:FontIconSource  Glyph="&#xF1AD;"/>
+                        </muxc:TeachingTip.IconSource>
+                    </muxc:TeachingTip>
+                </Grid>
+                <TextBlock
                         x:Name="UnsavedTextBlock"
                         Padding="5,0"
                         VerticalAlignment="Center"
                         Text="* Not Saved"
                         ToolTipService.ToolTip="There are unsaved changes." />
-                </StackPanel>
-            </Border>
+            </StackPanel>
 
             <Button
                 x:Name="CompactOverlayBtn"
@@ -114,7 +116,7 @@
                 x:Name="MenuPanel"
                 VerticalAlignment="Center"
                 Orientation="Horizontal"
-                RelativePanel.Below="AppTitleBar">
+                RelativePanel.Below="TitleBar">
                 <muxc:MenuBar
                     x:Name="menu"
                     Margin="5,0,0,0"
