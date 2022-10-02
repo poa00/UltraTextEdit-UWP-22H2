@@ -105,18 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Updates WinUI to WinUI 2.8.1!",
-                Icon = "\uE794",
+                Title = "Hotkey support",
+                Icon = "\uE144",
                 Tag = "LocAndAcc",
-                Description = $"The WInUI version of UTE UWP has been updated to 2.8.1!"
-            });
-
-            WhatsNew.Add(new()
-            {
-                Title = "More sophisticated Insider info added",
-                Icon = "\uF1AD",
-                Tag = "LocAndAcc",
-                Description = $"Adds info about current Insider Channel to the insider pill on the titlebar"
+                Description = $"Hotkey support has been added for the Bold, Italic and Underline buttons and for saving a file.\nMore actions will be available to be executed via hotkeys in the next release!"
             });
 
             //WhatsNew.Add(new()
