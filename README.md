@@ -44,15 +44,17 @@ NOTE: The UltraTextEdit UWP 22H2 codebase is a fork of TowPad by itsWindows11. L
 
 ### **Requirements to run the app**
 
-  - You must have at least Windows 10, version 1809 installed to run this app.
+  - You must have at least Windows 10, version 2004 installed to run this app. (Dev)
+  - You must have at least Windows 10, version 1809 installed to run this app. (Beta, RP, and Stable)
   
 ### **Prerequisites to compile the app**
 
-  - Have at least Windows SDK (UWP) version 1809
+  - Have at least Windows SDK (UWP) version 1809 (Beta/RP/Stable)
+  - Have at least Windows SDK (UWP) version 2004 (Dev)
   
   - Visual Studio 2019/2022
   
-This file and project is still in development, things might change over time as UltraTextEdit UWP takes shape ~~and ideas~~.
+This file and project is still in development, things might change over time as UltraTextEdit UWP takes shape and ideas.
 New releases for Dev/Beta Insiders may come out at any time, standard stable releases come out every Patch Tuesday, Release Preview Insider releases come out on the 3rd or 4th week of the month.
 
 Licensed under the MIT license.
