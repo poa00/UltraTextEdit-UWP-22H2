@@ -671,5 +671,10 @@ namespace UltraTextEdit_UWP
             else UnsavedTextBlock.Visibility = Visibility.Collapsed;
 
         }
+
+        private void showinsiderinfo(object sender, RoutedEventArgs e)
+        {
+            ToggleThemeTeachingTip1.IsOpen = true;
+        }
     }
 }
