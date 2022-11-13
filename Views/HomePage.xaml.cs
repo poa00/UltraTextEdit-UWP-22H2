@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Hotkey support",
-                Icon = "\uE144",
+                Title = "Dependency updates",
+                Icon = "\uE117",
                 Tag = "LocAndAcc",
-                Description = $"Hotkey support has been added for the Bold, Italic and Underline buttons and for saving a file.\nMore actions will be available to be executed via hotkeys in the next release!"
+                Description = $"This release updates the following libraries:\nColorCode.Core to version 2.0.14\nColorCode.UWP to version 2.0.14\nMicrosoft.Bcl.AsyncInterfaces to version 7.0.0\nMicrosoft.NETCore.Platforms to version 7.0.0\nMicrosoft.Toolkit.Uwp.UI to version 7.1.3\nMicrosoft.Toolkit.Uwp.UI.Controls to version 7.1.3\nMicrosoft.Web.WebView2 to version 1.0.1418.22\nSystem.Text.Encodings.Web to version 7.0.0\nSystem.Text.Json to version 7.0.0"
             });
 
             //WhatsNew.Add(new()
