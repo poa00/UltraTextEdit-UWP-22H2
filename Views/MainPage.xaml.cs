@@ -22,6 +22,8 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Markup;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.Foundation;
 
 namespace UltraTextEdit_UWP
 {
@@ -59,6 +61,8 @@ namespace UltraTextEdit_UWP
             NavigationCacheMode = NavigationCacheMode.Required;
 
             (CompactOverlayBtn.Content as FontIcon).Glyph = ApplicationView.GetForCurrentView().ViewMode == ApplicationViewMode.CompactOverlay ? "\uEE49" : "\uEE47";
+
+            ShareSourceLoad();
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -708,5 +712,28 @@ namespace UltraTextEdit_UWP
             ItalicButton.IsChecked = editor.Document.Selection.CharacterFormat.Italic == FormatEffect.On;
             UnderlineButton.IsChecked = editor.Document.Selection.CharacterFormat.Underline == UnderlineType.Single;
         }
+
+        //To see this code in action, add a call to ShareSourceLoad to your constructor or other
+        //initializing function.
+        private void ShareSourceLoad()
+        {
+            DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
+            dataTransferManager.DataRequested += new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(this.DataRequested);
+        }
+
+        private void DataRequested(DataTransferManager sender, DataRequestedEventArgs e)
+        {
+            DataRequest request = e.Request;
+            request.Data.Properties.Title = "UltraTextEdit Share Service";
+            request.Data.Properties.Description = "Text sharing for the UTE UWP app";
+            request.Data.SetText(editor.TextDocument.ToString());
+        }
+
+        private void ShareButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShareSourceLoad();
+            DataTransferManager.ShowShareUI();
+        }
+
     }
 }
