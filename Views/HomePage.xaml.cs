@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Share",
-                Icon = "\uE72D",
+                Title = "Icons on Superscript and Subscript buttons",
+                Icon = "\uE001",
                 Tag = "LocAndAcc",
-                Description = $"Sharing text from UltraTextEdit UWP to compatible apps is now available!"
+                Description = $"The superscript and subscript toggle buttons now have icons!"
             });
 
             //WhatsNew.Add(new()
