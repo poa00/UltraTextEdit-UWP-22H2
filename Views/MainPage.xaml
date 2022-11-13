@@ -177,6 +177,16 @@
                 <Button
                     Background="Transparent"
                     BorderBrush="Transparent"
+                    Click="ShareButton_Click"
+                    ToolTipService.ToolTip="{x:Bind res:Resources.ShareText}">
+                    <Viewbox MaxWidth="17" MaxHeight="17">
+                        <SymbolIcon Symbol="Share" />
+                    </Viewbox>
+                </Button>
+
+                <Button
+                    Background="Transparent"
+                    BorderBrush="Transparent"
                     Click="SettingsButton_Click"
                     ToolTipService.ToolTip="{x:Bind res:Resources.SettingsText}">
                     <Viewbox MaxWidth="17" MaxHeight="17">

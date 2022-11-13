@@ -710,5 +710,10 @@ namespace UltraTextEdit_UWP
             ItalicButton.IsChecked = editor.Document.Selection.CharacterFormat.Italic == FormatEffect.On;
             UnderlineButton.IsChecked = editor.Document.Selection.CharacterFormat.Underline == UnderlineType.Single;
         }
+
+        private void ShareButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
