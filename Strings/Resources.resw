@@ -243,6 +243,9 @@
   <data name="SettingsText" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="ShareText" xml:space="preserve">
+    <value>Share</value>
+  </data>
   <data name="Strikethrough" xml:space="preserve">
     <value>Strikethrough</value>
   </data>

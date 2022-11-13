@@ -57,5 +57,6 @@ namespace UltraTextEdit_UWP.Strings
         public static string Find = App.Resources.GetString("Find");
         public static string FindTextHint = App.Resources.GetString("FindTextHint");
         public static string HomeMenuTitle = App.Resources.GetString("HomeMenuTitle");
+        public static string ShareText = App.Resources.GetString("ShareText");
     }
 }
