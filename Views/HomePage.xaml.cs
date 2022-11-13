@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Dependency updates",
-                Icon = "\uE117",
+                Title = "Share",
+                Icon = "\uE72D",
                 Tag = "LocAndAcc",
-                Description = $"This release updates the following libraries:\nColorCode.Core to version 2.0.14\nColorCode.UWP to version 2.0.14\nMicrosoft.Bcl.AsyncInterfaces to version 7.0.0\nMicrosoft.NETCore.Platforms to version 7.0.0\nMicrosoft.Toolkit.Uwp.UI to version 7.1.3\nMicrosoft.Toolkit.Uwp.UI.Controls to version 7.1.3\nMicrosoft.Web.WebView2 to version 1.0.1418.22\nSystem.Text.Encodings.Web to version 7.0.0\nSystem.Text.Json to version 7.0.0"
+                Description = $"Sharing text from UltraTextEdit UWP to compatible apps is now available!"
             });
 
             //WhatsNew.Add(new()
