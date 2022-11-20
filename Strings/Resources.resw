@@ -147,6 +147,9 @@
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="CommentsText" xml:space="preserve">
+    <value>Comments</value>
+  </data>
   <data name="CopyText" xml:space="preserve">
     <value>Copy</value>
   </data>

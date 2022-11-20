@@ -187,6 +187,16 @@
                 <Button
                     Background="Transparent"
                     BorderBrush="Transparent"
+                    Click="CommentsButton_Click"
+                    ToolTipService.ToolTip="{x:Bind res:Resources.CommentText}">
+                    <Viewbox MaxWidth="17" MaxHeight="17">
+                        <SymbolIcon Symbol="Message" />
+                    </Viewbox>
+                </Button>
+
+                <Button
+                    Background="Transparent"
+                    BorderBrush="Transparent"
                     Click="SettingsButton_Click"
                     ToolTipService.ToolTip="{x:Bind res:Resources.SettingsText}">
                     <Viewbox MaxWidth="17" MaxHeight="17">
@@ -477,6 +487,13 @@
                         <AppBarButton Click="CopyButton_Click" Label="{x:Bind res:Resources.CopyText}" Icon="Copy"/>
                         <AppBarButton Click="PasteButton_Click" Label="{x:Bind res:Resources.PasteText}" Icon="Paste"/>
                     </controls:TabbedCommandBarItem>
+                    <controls:TabbedCommandBarItem x:Name="commentstabitem"
+                                               Header="Comments"
+                                               IsContextual="True"
+                                               Visibility="Collapsed"
+                                                        Background="Transparent">
+                        <AppBarButton Label="Hide Comments UI" Icon="LeaveChat" Click="closecomments"/>
+                    </controls:TabbedCommandBarItem>
                     <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.HelpText}" Background="Transparent">
                         <AppBarButton Label="About" Click="AboutBtn_Click">
                             <AppBarButton.Icon>
@@ -541,7 +558,20 @@
                     </StackPanel>
                 </Grid>
             </SplitView.Pane>
-            <RichEditBox
+            <SplitView RelativePanel.AlignBottomWithPanel="True"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True"
+            RelativePanel.Below="containerPanel"
+            muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
+            Background="Transparent"
+            PaneBackground="Transparent"
+            IsPaneOpen="False" OpenPaneLength="256" CompactPaneLength="24" DisplayMode="Inline" PanePlacement="Left" x:Name="commentsplitview">
+                <SplitView.Pane>
+                    <RichEditBox x:Name="coments">
+                        
+                    </RichEditBox>
+                </SplitView.Pane>
+                <RichEditBox
             x:Name="editor"
             Padding="{x:Bind local:App.SViewModel.DocumentViewPadding, Mode=OneWay, Converter={StaticResource IntToThickness}}"
             FontFamily="{x:Bind local:App.SViewModel.DefaultFont}"
@@ -549,13 +579,14 @@
             SelectionFlyout="{x:Null}"
             TextWrapping="{x:Bind local:App.SViewModel.TextWrapping, Mode=OneWay, Converter={StaticResource IntToTextWrapping}}"
             TextChanged="RichEditBox_TextChanged">
-                <RichEditBox.KeyboardAccelerators>
-                    <KeyboardAccelerator Modifiers="Control" Key="B" Invoked="OnKeyboardAcceleratorInvoked" />
-                    <KeyboardAccelerator Modifiers="Control" Key="I" Invoked="OnKeyboardAcceleratorInvoked" />
-                    <KeyboardAccelerator Modifiers="Control" Key="U" Invoked="OnKeyboardAcceleratorInvoked" />
-                    <KeyboardAccelerator Modifiers="Control" Key="S" Invoked="OnKeyboardAcceleratorInvoked" />
-                </RichEditBox.KeyboardAccelerators>
-            </RichEditBox>
+                    <RichEditBox.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="B" Invoked="OnKeyboardAcceleratorInvoked" />
+                        <KeyboardAccelerator Modifiers="Control" Key="I" Invoked="OnKeyboardAcceleratorInvoked" />
+                        <KeyboardAccelerator Modifiers="Control" Key="U" Invoked="OnKeyboardAcceleratorInvoked" />
+                        <KeyboardAccelerator Modifiers="Control" Key="S" Invoked="OnKeyboardAcceleratorInvoked" />
+                    </RichEditBox.KeyboardAccelerators>
+                </RichEditBox>
+            </SplitView>
         </SplitView>
     </RelativePanel>
 </Page>
