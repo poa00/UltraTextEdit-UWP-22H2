@@ -567,7 +567,7 @@
             PaneBackground="Transparent"
             IsPaneOpen="False" OpenPaneLength="256" CompactPaneLength="24" DisplayMode="Inline" PanePlacement="Left" x:Name="commentsplitview">
                 <SplitView.Pane>
-                    <RichEditBox x:Name="coments">
+                    <RichEditBox x:Name="comments">
                         
                     </RichEditBox>
                 </SplitView.Pane>
