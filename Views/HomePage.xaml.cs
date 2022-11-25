@@ -108,7 +108,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Comments",
                 Icon = "\uE15F",
                 Tag = "LocAndAcc",
-                Description = $"Comments functionality is now available! \nJust tap or click the Comments buton to open the pane, then when you're finished, just go into the new Comments ribbon tab and click or tsp the button there to close the pane."
+                Description = $"Add ability to set Bold, Italic, and Underline styles to Comments box!"
             });
 
             //WhatsNew.Add(new()
