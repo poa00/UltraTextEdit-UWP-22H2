@@ -134,7 +134,6 @@ namespace UltraTextEdit_UWP
                 savePicker.SuggestedFileName = "New Document";
 
                 StorageFile file = await savePicker.PickSaveFileAsync();
-                StorageFile file2 = await savePicker.PickSaveFileAsync();
                 if (file != null)
                 {
                     // Prevent updates to the remote version of the file until we
@@ -142,25 +141,20 @@ namespace UltraTextEdit_UWP
                     CachedFileManager.DeferUpdates(file);
                     // write to file
                     using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.ReadWrite))
-                    using (IRandomAccessStream randAccStream2 = await file2.OpenAsync(FileAccessMode.ReadWrite))
                     
                     if (file.Name.EndsWith(".txt"))
                         {
                             editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.None, randAccStream);
-                            comments.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream2);
                         }
                         else
                         {
                             editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
-                            comments.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream2);
                         }
 
                     // Let Windows know that we're finished changing the file so the
                     // other app can update the remote version of the file.
                     FileUpdateStatus status = await CachedFileManager.CompleteUpdatesAsync(file);
-                    file2.Name = file.Name + "_comments.rtf";
-                    FileUpdateStatus status2 = await CachedFileManager.CompleteUpdatesAsync(file2);
-                    if (status != FileUpdateStatus.Complete && status2 != FileUpdateStatus.Complete)
+                    if (status != FileUpdateStatus.Complete)
                     {
                         Windows.UI.Popups.MessageDialog errorBox = new("File " + file.Name + " couldn't be saved.");
                         await errorBox.ShowAsync();
@@ -251,6 +245,7 @@ namespace UltraTextEdit_UWP
         private void BoldButton_Click(object sender, RoutedEventArgs e)
         {
             editor.FormatSelected(RichEditHelpers.FormattingMode.Bold);
+            comments.FormatSelected(RichEditHelpers.FormattingMode.Bold);
         }
 
         private async void NewDoc_Click(object sender, RoutedEventArgs e)
@@ -336,11 +331,13 @@ namespace UltraTextEdit_UWP
         private void ItalicButton_Click(object sender, RoutedEventArgs e)
         {
             editor.FormatSelected(RichEditHelpers.FormattingMode.Italic);
+            comments.FormatSelected(RichEditHelpers.FormattingMode.Italic);
         }
 
         private void UnderlineButton_Click(object sender, RoutedEventArgs e)
         {
             editor.FormatSelected(RichEditHelpers.FormattingMode.Underline);
+            comments.FormatSelected(RichEditHelpers.FormattingMode.Underline);
         }
 
         private async void OpenButton_Click(object sender, RoutedEventArgs e)
