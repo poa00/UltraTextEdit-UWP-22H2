@@ -792,8 +792,15 @@ namespace UltraTextEdit_UWP
 
             strTable.Append(@"}");
 
+            var strTableString = strTable.ToString();
 
-            editor.Document.Selection.SetText(TextSetOptions.None,strTable.ToString());
+
+            editor.Document.Selection.SetText(TextSetOptions.FormatRtf,strTableString);
+        }
+
+        private void AddTableButton_Click(object sender, RoutedEventArgs e)
+        {
+            InsertTableInRichtextbox();
         }
     }
 }
