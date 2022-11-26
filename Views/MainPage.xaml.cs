@@ -25,6 +25,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using System.Reflection.Metadata;
+using System.Text;
 
 namespace UltraTextEdit_UWP
 {
@@ -34,6 +35,7 @@ namespace UltraTextEdit_UWP
         private bool _wasOpen = false;
         private string appTitleStr = "UTE UWP";
         private string fileNameWithPath = "";
+        private int i;
 
         public MainPage()
         {
@@ -356,7 +358,7 @@ namespace UltraTextEdit_UWP
                 {
                     IBuffer buffer = await FileIO.ReadBufferAsync(file);
                     var reader = DataReader.FromBuffer(buffer);
-                    reader.UnicodeEncoding = UnicodeEncoding.Utf8;
+                    reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
                     string text = reader.ReadString(buffer.Length);
                     // Load the file into the Document property of the RichEditBox.
                     editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
@@ -565,7 +567,7 @@ namespace UltraTextEdit_UWP
                     {
                         IBuffer buffer = await FileIO.ReadBufferAsync(file);
                         var reader = DataReader.FromBuffer(buffer);
-                        reader.UnicodeEncoding =UnicodeEncoding.Utf8;
+                        reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
                         string text = reader.ReadString(buffer.Length);
                         // Load the file into the Document property of the RichEditBox.
                         editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
@@ -752,6 +754,46 @@ namespace UltraTextEdit_UWP
         {
             commentsplitview.IsPaneOpen = false;
             commentstabitem.Visibility = Visibility.Collapsed;
+        }
+
+        // Method to create a table format string which can directly be set to 
+        // RichTextBox Control
+        private void InsertTableInRichtextbox()
+        {
+            //CreateStringBuilder object
+            StringBuilder strTable = new StringBuilder();
+
+            //Beginning of rich text format,don’t alter this line
+            strTable.Append(@"{\rtf1 ");
+
+            //Create 5 rows with 4 columns
+            for (int inti = 0; i < 5; i++)
+            {
+                //Start the row
+                strTable.Append(@"\trowd");
+
+                //First cell with width 1000.
+                strTable.Append(@"\cellx1000");
+
+                //Second cell with width 1000.Ending point is 2000, which is 1000+1000.
+                strTable.Append(@"\cellx2000");
+
+                //Third cell with width 1000.Endingat3000,which is 2000+1000.
+                strTable.Append(@"\cellx3000");
+
+                //Last cell with width 1000.Ending at 4000 (which is 3000+1000)
+                strTable.Append(@"\cellx4000");
+
+                //Append the row in StringBuilder
+                strTable.Append(@"\intbl \cell \row"); //create the row
+            }
+
+            strTable.Append(@"\pard");
+
+            strTable.Append(@"}");
+
+
+            editor.Document.Selection.SetText(TextSetOptions.None,strTable.ToString());
         }
     }
 }
