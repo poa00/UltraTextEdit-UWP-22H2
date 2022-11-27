@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Comments",
+                Title = "Table",
                 Icon = "\uE15F",
                 Tag = "LocAndAcc",
-                Description = $"Add ability to set Bold, Italic, and Underline styles to Comments box!"
+                Description = $"Now you can add tables to documents made in UTE UWP!\n(Only one per app run allowed for now though)"
             });
 
             //WhatsNew.Add(new()
