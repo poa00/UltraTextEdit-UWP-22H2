@@ -207,6 +207,7 @@
                     <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.HomeMenuTitle}" Background="Transparent">
                         <AppBarToggleButton
                     Click="BoldButton_Click"
+                            x:Name="BoldButton"
                     Style="{StaticResource TransparentToggleButton}"
                     ToolTipService.ToolTip="{x:Bind res:Resources.Bold}">
                             <Viewbox MaxWidth="17" MaxHeight="17">
@@ -216,6 +217,7 @@
 
                         <AppBarToggleButton
                     Click="ItalicButton_Click"
+                            x:Name="ItalicButton"
                     Style="{StaticResource TransparentToggleButton}"
                     ToolTipService.ToolTip="{x:Bind res:Resources.Italic}">
                             <Viewbox MaxWidth="17" MaxHeight="17">
@@ -224,6 +226,7 @@
                         </AppBarToggleButton>
                         <AppBarToggleButton
                     Click="UnderlineButton_Click"
+                            x:Name="UnderlineButton"
                     Style="{StaticResource TransparentToggleButton}"
                     ToolTipService.ToolTip="{x:Bind res:Resources.Underline}">
                             <Viewbox MaxWidth="17" MaxHeight="17">
