@@ -523,6 +523,18 @@
                                         ToolTipService.ToolTip="Division symbol"
                                                 Content="÷">
                                             </Button>
+                                            <Button
+                                        AutomationProperties.Name="LeftArrow"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Left Arrow symbol"
+                                                Content="←">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="RightArrow"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Right Arrow symbol"
+                                                Content="→">
+                                            </Button>
 
                                         </VariableSizedWrapGrid>
                                     </RelativePanel>
