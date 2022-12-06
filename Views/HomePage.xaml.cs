@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Table",
-                Icon = "\uE15F",
+                Title = "Symbols",
+                Icon = "\uED58",
                 Tag = "LocAndAcc",
-                Description = $"Now you can add tables to documents made in UTE UWP!\n(Only one per app run allowed for now though)"
+                Description = $"Now you can add the multiplication and division symbols straight into your document from the app's new symbols menu!"
             });
 
             //WhatsNew.Add(new()
