@@ -126,6 +126,9 @@
   <data name="AddImageTooltip" xml:space="preserve">
     <value>Add image</value>
   </data>
+  <data name="AddSymbolTooltip" xml:space="preserve">
+    <value>Add symbol</value>
+  </data>
   <data name="AddTableTooltip" xml:space="preserve">
     <value>Add table</value>
   </data>

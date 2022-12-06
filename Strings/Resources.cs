@@ -60,5 +60,6 @@ namespace UltraTextEdit_UWP.Strings
         public static string ShareText = App.Resources.GetString("ShareText");
         public static string CommentText = App.Resources.GetString("CommentsText");
         public static string AddTableTooltip = App.Resources.GetString("AddTableTooltip");
+        public static string AddSymbolTooltip = App.Resources.GetString("AddSymbolTooltip");
     }
 }

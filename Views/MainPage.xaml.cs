@@ -802,5 +802,27 @@ namespace UltraTextEdit_UWP
         {
             InsertTableInRichtextbox();
         }
+
+        private void AddSymbolButton_Click(object sender, RoutedEventArgs e)
+        {
+            //symbolsflyout.AllowFocusOnInteraction = true;
+            //symbolsflyout.IsOpen = true;
+        }
+
+        private void SymbolButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Extract the color of the button that was clicked.
+            Button clickedSymbol = (Button)sender;
+            string rectangle = clickedSymbol.Content.ToString();
+            string text = rectangle;
+
+            var myDocument = editor.Document;
+            string oldText;
+            myDocument.GetText(TextGetOptions.None, out oldText);
+            myDocument.SetText(TextSetOptions.None, oldText + text);
+
+            symbolbut.Flyout.Hide();
+            editor.Focus(FocusState.Keyboard);
+        }
     }
 }
