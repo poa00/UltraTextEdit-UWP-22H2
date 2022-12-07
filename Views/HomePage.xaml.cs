@@ -108,7 +108,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Symbols",
                 Icon = "\uED58",
                 Tag = "LocAndAcc",
-                Description = $"Now you can add the multiplication and division symbols straight into your document from the app's new symbols menu!"
+                Description = $"Adds Left Arrow and Right Arrow symbols to the Symbols menu!"
             });
 
             //WhatsNew.Add(new()
