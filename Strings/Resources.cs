@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UltraTextEdit_UWP.Strings
 {
-    public static class Resources
+    public class Resources
     {
         public static string AppName = App.Resources.GetString("AppName");
         public static string HomeTitle = App.Resources.GetString("HomeTitle");
@@ -58,5 +58,8 @@ namespace UltraTextEdit_UWP.Strings
         public static string FindTextHint = App.Resources.GetString("FindTextHint");
         public static string HomeMenuTitle = App.Resources.GetString("HomeMenuTitle");
         public static string ShareText = App.Resources.GetString("ShareText");
+        public static string CommentText = App.Resources.GetString("CommentsText");
+        public static string AddTableTooltip = App.Resources.GetString("AddTableTooltip");
+        public static string AddSymbolTooltip = App.Resources.GetString("AddSymbolTooltip");
     }
 }

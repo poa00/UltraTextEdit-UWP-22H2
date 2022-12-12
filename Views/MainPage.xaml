@@ -9,8 +9,8 @@
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:res="using:UltraTextEdit_UWP.Strings"
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
-    d:Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d"
+    xmlns:appmodel="using:Windows.ApplicationModel"
     d:DesignHeight="564"
     d:DesignWidth="876">
 
@@ -117,7 +117,7 @@
                 VerticalAlignment="Center"
                 Orientation="Horizontal"
                 RelativePanel.Below="TitleBar">
-                    <muxc:MenuBar
+                <muxc:MenuBar
                     x:Name="menu"
                     Margin="5,0,0,0"
                     VerticalAlignment="Center">
@@ -187,13 +187,24 @@
                 <Button
                     Background="Transparent"
                     BorderBrush="Transparent"
+                    Click="CommentsButton_Click"
+                    ToolTipService.ToolTip="{x:Bind res:Resources.CommentText}">
+                    <Viewbox MaxWidth="17" MaxHeight="17">
+                        <SymbolIcon Symbol="Message" />
+                    </Viewbox>
+                </Button>
+
+                <Button
+                    Background="Transparent"
+                    BorderBrush="Transparent"
                     Click="SettingsButton_Click"
                     ToolTipService.ToolTip="{x:Bind res:Resources.SettingsText}">
-                        <Viewbox MaxWidth="17" MaxHeight="17">
-                            <SymbolIcon Symbol="Setting" />
-                        </Viewbox>
-                    </Button>
-                </StackPanel>
+                    <Viewbox MaxWidth="17" MaxHeight="17">
+                        <SymbolIcon Symbol="Setting" />
+                    </Viewbox>
+                </Button>
+            </StackPanel>
+                    
 
             <controls:TabbedCommandBar
                 x:Name="ButtonPanel"
@@ -206,8 +217,7 @@
                 <controls:TabbedCommandBar.MenuItems>
                     <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.HomeMenuTitle}" Background="Transparent">
                         <AppBarToggleButton
-                    Click="BoldButton_Click"
-                            x:Name="BoldButton"
+                    Click="BoldButton_Click" x:Name="BoldButton"
                     Style="{StaticResource TransparentToggleButton}"
                     ToolTipService.ToolTip="{x:Bind res:Resources.Bold}">
                             <Viewbox MaxWidth="17" MaxHeight="17">
@@ -216,8 +226,7 @@
                         </AppBarToggleButton>
 
                         <AppBarToggleButton
-                    Click="ItalicButton_Click"
-                            x:Name="ItalicButton"
+                    Click="ItalicButton_Click" x:Name="ItalicButton"
                     Style="{StaticResource TransparentToggleButton}"
                     ToolTipService.ToolTip="{x:Bind res:Resources.Italic}">
                             <Viewbox MaxWidth="17" MaxHeight="17">
@@ -225,8 +234,7 @@
                             </Viewbox>
                         </AppBarToggleButton>
                         <AppBarToggleButton
-                    Click="UnderlineButton_Click"
-                            x:Name="UnderlineButton"
+                    Click="UnderlineButton_Click" x:Name="UnderlineButton"
                     Style="{StaticResource TransparentToggleButton}"
                     ToolTipService.ToolTip="{x:Bind res:Resources.Underline}">
                             <Viewbox MaxWidth="17" MaxHeight="17">
@@ -234,7 +242,7 @@
                             </Viewbox>
                         </AppBarToggleButton>
                         <AppBarToggleButton
-                    Click="StrikethoughButton_Click"
+                    Click="StrikethoughButton_Click" x:Name="StrikethroughButton"
                     Style="{StaticResource TransparentToggleButton}"
                     ToolTipService.ToolTip="{x:Bind res:Resources.Strikethrough}">
                             <FontIcon FontSize="17" Glyph="&#xEDE0;" />
@@ -465,11 +473,74 @@
                             <Button.Flyout>
                                 <Flyout Placement="Bottom">
                                     <StackPanel Orientation="Vertical">
-                                        <TextBox x:Name="hyperlinkText" PlaceholderText="Link" />
+                                        <TextBox x:Name="hyperlinkText" PlaceholderText="Link" AllowFocusOnInteraction="True"/>
                                         <Button Margin="0,10,0,0" Click="AddLinkButton_Click">Add hyperlink to selected text</Button>
                                     </StackPanel>
                                 </Flyout>
                             </Button.Flyout>
+                        </AppBarButton>
+                        <AppBarButton
+                    Click="AddTableButton_Click"
+                    Style="{StaticResource TransparentButton}"
+                    ToolTipService.ToolTip="{x:Bind res:Resources.AddTableTooltip}">
+                            <FontIcon FontSize="17" Glyph="&#xF261;" />
+                        </AppBarButton>
+                        <AppBarButton
+                    Click="AddSymbolButton_Click"
+                            x:Name="symbolbut"
+                    Style="{StaticResource TransparentButton}"
+                    ToolTipService.ToolTip="{x:Bind res:Resources.AddSymbolTooltip}">
+                            <FontIcon FontSize="17" Glyph="&#xED58;" />
+                            <AppBarButton.Flyout>
+                                <Flyout Placement="Bottom" x:Name="symbolsflyout">
+                                    <RelativePanel>
+                                        <VariableSizedWrapGrid
+                                    x:Name="symbolGrid"
+                                    MaximumRowsOrColumns="4"
+                                    Orientation="Horizontal">
+                                            <VariableSizedWrapGrid.Resources>
+                                                <Style TargetType="Rectangle">
+                                                    <Setter Property="Width" Value="32" />
+                                                    <Setter Property="Height" Value="32" />
+                                                </Style>
+
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Padding" Value="0" />
+                                                    <Setter Property="MinWidth" Value="0" />
+                                                    <Setter Property="MinHeight" Value="0" />
+                                                    <Setter Property="Margin" Value="5" />
+                                                    <Setter Property="CornerRadius" Value="8" />
+                                                </Style>
+                                            </VariableSizedWrapGrid.Resources>
+                                            <Button
+                                        AutomationProperties.Name="Mutiply"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Multiplication symbol"
+                                         Content="×">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="Divide"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Division symbol"
+                                                Content="÷">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="LeftArrow"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Left Arrow symbol"
+                                                Content="←">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="RightArrow"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Right Arrow symbol"
+                                                Content="→">
+                                            </Button>
+
+                                        </VariableSizedWrapGrid>
+                                    </RelativePanel>
+                                </Flyout>
+                            </AppBarButton.Flyout>
                         </AppBarButton>
                     </controls:TabbedCommandBarItem>
                     <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.EditText}" Background="Transparent">
@@ -479,6 +550,13 @@
                         <AppBarButton Click="CutButton_Click" Label="{x:Bind res:Resources.CutText}" Icon="Cut"/>
                         <AppBarButton Click="CopyButton_Click" Label="{x:Bind res:Resources.CopyText}" Icon="Copy"/>
                         <AppBarButton Click="PasteButton_Click" Label="{x:Bind res:Resources.PasteText}" Icon="Paste"/>
+                    </controls:TabbedCommandBarItem>
+                    <controls:TabbedCommandBarItem x:Name="commentstabitem"
+                                               Header="Comments"
+                                               IsContextual="True"
+                                               Visibility="Collapsed"
+                                                        Background="Transparent">
+                        <AppBarButton Label="Hide Comments UI" Icon="LeaveChat" Click="closecomments"/>
                     </controls:TabbedCommandBarItem>
                     <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.HelpText}" Background="Transparent">
                         <AppBarButton Label="About" Click="AboutBtn_Click">
@@ -544,14 +622,35 @@
                     </StackPanel>
                 </Grid>
             </SplitView.Pane>
-            <RichEditBox
+            <SplitView RelativePanel.AlignBottomWithPanel="True"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True"
+            RelativePanel.Below="containerPanel"
+            muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
+            Background="Transparent"
+            PaneBackground="Transparent"
+            IsPaneOpen="False" OpenPaneLength="256" CompactPaneLength="24" DisplayMode="Inline" PanePlacement="Left" x:Name="commentsplitview">
+                <SplitView.Pane>
+                    <RichEditBox x:Name="comments">
+                        
+                    </RichEditBox>
+                </SplitView.Pane>
+                <RichEditBox
             x:Name="editor"
             Padding="{x:Bind local:App.SViewModel.DocumentViewPadding, Mode=OneWay, Converter={StaticResource IntToThickness}}"
             FontFamily="{x:Bind local:App.SViewModel.DefaultFont}"
             IsSpellCheckEnabled="False"
             SelectionFlyout="{x:Null}"
             TextWrapping="{x:Bind local:App.SViewModel.TextWrapping, Mode=OneWay, Converter={StaticResource IntToTextWrapping}}"
-            TextChanged="RichEditBox_TextChanged"/>
+            TextChanged="RichEditBox_TextChanged">
+                    <RichEditBox.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="B" Invoked="OnKeyboardAcceleratorInvoked" />
+                        <KeyboardAccelerator Modifiers="Control" Key="I" Invoked="OnKeyboardAcceleratorInvoked" />
+                        <KeyboardAccelerator Modifiers="Control" Key="U" Invoked="OnKeyboardAcceleratorInvoked" />
+                        <KeyboardAccelerator Modifiers="Control" Key="S" Invoked="OnKeyboardAcceleratorInvoked" />
+                    </RichEditBox.KeyboardAccelerators>
+                </RichEditBox>
+            </SplitView>
         </SplitView>
     </RelativePanel>
 </Page>

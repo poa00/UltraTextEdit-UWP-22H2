@@ -24,6 +24,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
+using System.Reflection.Metadata;
+using System.Text;
 
 namespace UltraTextEdit_UWP
 {
@@ -33,6 +35,7 @@ namespace UltraTextEdit_UWP
         private bool _wasOpen = false;
         private string appTitleStr = "UTE UWP";
         private string fileNameWithPath = "";
+        private int i;
 
         public MainPage()
         {
@@ -140,7 +143,8 @@ namespace UltraTextEdit_UWP
                     CachedFileManager.DeferUpdates(file);
                     // write to file
                     using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.ReadWrite))
-                        if (file.Name.EndsWith(".txt"))
+                    
+                    if (file.Name.EndsWith(".txt"))
                         {
                             editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.None, randAccStream);
                         }
@@ -243,6 +247,7 @@ namespace UltraTextEdit_UWP
         private void BoldButton_Click(object sender, RoutedEventArgs e)
         {
             editor.FormatSelected(RichEditHelpers.FormattingMode.Bold);
+            comments.FormatSelected(RichEditHelpers.FormattingMode.Bold);
         }
 
         private async void NewDoc_Click(object sender, RoutedEventArgs e)
@@ -328,11 +333,13 @@ namespace UltraTextEdit_UWP
         private void ItalicButton_Click(object sender, RoutedEventArgs e)
         {
             editor.FormatSelected(RichEditHelpers.FormattingMode.Italic);
+            comments.FormatSelected(RichEditHelpers.FormattingMode.Italic);
         }
 
         private void UnderlineButton_Click(object sender, RoutedEventArgs e)
         {
             editor.FormatSelected(RichEditHelpers.FormattingMode.Underline);
+            comments.FormatSelected(RichEditHelpers.FormattingMode.Underline);
         }
 
         private async void OpenButton_Click(object sender, RoutedEventArgs e)
@@ -351,7 +358,7 @@ namespace UltraTextEdit_UWP
                 {
                     IBuffer buffer = await FileIO.ReadBufferAsync(file);
                     var reader = DataReader.FromBuffer(buffer);
-                    reader.UnicodeEncoding = UnicodeEncoding.Utf8;
+                    reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
                     string text = reader.ReadString(buffer.Length);
                     // Load the file into the Document property of the RichEditBox.
                     editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
@@ -418,6 +425,8 @@ namespace UltraTextEdit_UWP
 
         private void AddLinkButton_Click(object sender, RoutedEventArgs e)
         {
+            if (Windows.Foundation.Metadata.ApiInformation.IsPropertyPresent("Windows.UI.Xaml.FrameworkElement", "AllowFocusOnInteraction"))
+                hyperlinkText.AllowFocusOnInteraction = true;
             editor.Document.Selection.Link = $"\"{hyperlinkText.Text}\"";
             editor.Document.Selection.CharacterFormat.ForegroundColor = (Color)XamlBindingHelper.ConvertValue(typeof(Color), "#6194c7");
             AddLinkButton.Flyout.Hide();
@@ -558,7 +567,7 @@ namespace UltraTextEdit_UWP
                     {
                         IBuffer buffer = await FileIO.ReadBufferAsync(file);
                         var reader = DataReader.FromBuffer(buffer);
-                        reader.UnicodeEncoding =UnicodeEncoding.Utf8;
+                        reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
                         string text = reader.ReadString(buffer.Length);
                         // Load the file into the Document property of the RichEditBox.
                         editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
@@ -674,6 +683,146 @@ namespace UltraTextEdit_UWP
             if (!saved) UnsavedTextBlock.Visibility = Visibility.Visible;
             else UnsavedTextBlock.Visibility = Visibility.Collapsed;
 
+        }
+
+        private void showinsiderinfo(object sender, RoutedEventArgs e)
+        {
+            ToggleThemeTeachingTip1.IsOpen = true;
+        }
+
+        private void OnKeyboardAcceleratorInvoked(Windows.UI.Xaml.Input.KeyboardAccelerator sender, Windows.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs args)
+        {
+            switch (sender.Key)
+            {
+                case Windows.System.VirtualKey.B:
+                    editor.FormatSelected(RichEditHelpers.FormattingMode.Bold);
+                    BoldButton.IsChecked = editor.Document.Selection.CharacterFormat.Bold == FormatEffect.On;
+                    args.Handled = true;
+                    break;
+                case Windows.System.VirtualKey.I:
+                    editor.FormatSelected(RichEditHelpers.FormattingMode.Italic);
+                    ItalicButton.IsChecked = editor.Document.Selection.CharacterFormat.Italic == FormatEffect.On;
+                    args.Handled = true;
+                    break;
+                case Windows.System.VirtualKey.U:
+                    editor.FormatSelected(RichEditHelpers.FormattingMode.Underline);
+                    UnderlineButton.IsChecked = editor.Document.Selection.CharacterFormat.Underline == UnderlineType.Single;
+                    args.Handled = true;
+                    break;
+                case Windows.System.VirtualKey.S:
+                    SaveFile(false);
+                    break;
+            }
+        }
+
+        private void editor_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            BoldButton.IsChecked = editor.Document.Selection.CharacterFormat.Bold == FormatEffect.On;
+            ItalicButton.IsChecked = editor.Document.Selection.CharacterFormat.Italic == FormatEffect.On;
+            UnderlineButton.IsChecked = editor.Document.Selection.CharacterFormat.Underline == UnderlineType.Single;
+        }
+
+        //To see this code in action, add a call to ShareSourceLoad to your constructor or other
+        //initializing function.
+        private void ShareSourceLoad()
+        {
+            DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
+            dataTransferManager.DataRequested += new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(this.DataRequested);
+        }
+
+        private void DataRequested(DataTransferManager sender, DataRequestedEventArgs e)
+        {
+            DataRequest request = e.Request;
+            request.Data.Properties.Title = "UltraTextEdit Share Service";
+            request.Data.Properties.Description = "Text sharing for the UTE UWP app";
+            request.Data.SetText(editor.TextDocument.ToString());
+        }
+
+        private void ShareButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShareSourceLoad();
+            DataTransferManager.ShowShareUI();
+        }
+
+        private void CommentsButton_Click(object sender, RoutedEventArgs e)
+        {
+            commentsplitview.IsPaneOpen = true;
+            commentstabitem.Visibility = Visibility.Visible;
+        }
+
+        private void closecomments(object sender, RoutedEventArgs e)
+        {
+            commentsplitview.IsPaneOpen = false;
+            commentstabitem.Visibility = Visibility.Collapsed;
+        }
+
+        // Method to create a table format string which can directly be set to 
+        // RichTextBox Control
+        private void InsertTableInRichtextbox()
+        {
+            //CreateStringBuilder object
+            StringBuilder strTable = new StringBuilder();
+
+            //Beginning of rich text format,don’t alter this line
+            strTable.Append(@"{\rtf1 ");
+
+            //Create 5 rows with 4 columns
+            for (int inti = 0; i < 5; i++)
+            {
+                //Start the row
+                strTable.Append(@"\trowd");
+
+                //First cell with width 1000.
+                strTable.Append(@"\cellx1000");
+
+                //Second cell with width 1000.Ending point is 2000, which is 1000+1000.
+                strTable.Append(@"\cellx2000");
+
+                //Third cell with width 1000.Endingat3000,which is 2000+1000.
+                strTable.Append(@"\cellx3000");
+
+                //Last cell with width 1000.Ending at 4000 (which is 3000+1000)
+                strTable.Append(@"\cellx4000");
+
+                //Append the row in StringBuilder
+                strTable.Append(@"\intbl \cell \row"); //create the row
+            }
+
+            strTable.Append(@"\pard");
+
+            strTable.Append(@"}");
+
+            var strTableString = strTable.ToString();
+
+
+            editor.Document.Selection.SetText(TextSetOptions.FormatRtf,strTableString);
+        }
+
+        private void AddTableButton_Click(object sender, RoutedEventArgs e)
+        {
+            InsertTableInRichtextbox();
+        }
+
+        private void AddSymbolButton_Click(object sender, RoutedEventArgs e)
+        {
+            //symbolsflyout.AllowFocusOnInteraction = true;
+            //symbolsflyout.IsOpen = true;
+        }
+
+        private void SymbolButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Extract the color of the button that was clicked.
+            Button clickedSymbol = (Button)sender;
+            string rectangle = clickedSymbol.Content.ToString();
+            string text = rectangle;
+
+            var myDocument = editor.Document;
+            string oldText;
+            myDocument.GetText(TextGetOptions.None, out oldText);
+            myDocument.SetText(TextSetOptions.None, oldText + text);
+
+            symbolbut.Flyout.Hide();
+            editor.Focus(FocusState.Keyboard);
         }
 
         private void showinsiderinfo(object sender, RoutedEventArgs e)

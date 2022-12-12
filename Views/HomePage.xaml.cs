@@ -105,51 +105,20 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "New codebase",
-                Icon = "\uE943",
-                Tag = "NewCodeVer",
-                Description = $"{Strings.Resources.AppName} build 22621 (22H2 feature update) introduces a new codebase based on TowPad. It contains all the new features described below and more!"
-            });
-
-            WhatsNew.Add(new()
-            {
-                Title = "Home page",
-                Icon = "\uEA8A",
-                Tag = "HomePage",
-                Description = $"Now you can see your recent files, and what's new in {Strings.Resources.AppName}!"
-            });
-
-            WhatsNew.Add(new()
-            {
-                Title = "Localization & Accessbility",
-                Icon = "\uE774",
+                Title = "Symbols",
+                Icon = "\uED58",
                 Tag = "LocAndAcc",
-                Description = $"You can contribute translations to {Strings.Resources.AppName}, and help make this app reach more countries! And elements in the app will be more accessible."
+                Description = $"Adds Left Arrow and Right Arrow symbols to the Symbols menu!"
             });
 
-            WhatsNew.Add(new()
-            {
-                Title = "Insider channels",
-                Icon = "\uF1AD",
-                Tag = "UTEInsider",
-                Description = $"With {Strings.Resources.AppName} version 22H2, there are 3 Insider channels, instead of one Insider release at the end of a month. The Insider channels are the same as found on Windows (Dev, Beta, and Release Preview). The Insider channel you are in is indicated to the right of the app's title on the title bar."
-            });
+            //WhatsNew.Add(new()
+            //{
+            //Title = "Windows support changes",
+            //Icon = "\uEC24",
+            //Tag = "UTEInsider",
+            //Description = $"With new Dev Channel builds of {Strings.Resources.AppName} starting with this one, there is no support for Windows 10 1809, 1903, and 1909 (but these Windows 10 versions will still be supported on the 22H2 Stable, Beta, and Release Preview branches). Only Windows 10 version 20H1 (2004) and later, and Windows 11 original release (21H2) and later are supported.\nThis build of {Strings.Resources.AppName} also increments the target Windows version to Windows 11, version 22H2 (build 22621)."
+            //});
 
-            WhatsNew.Add(new()
-            {
-                Title = "New Settings UI",
-                Icon = "\uE713",
-                Tag = "SettingsUI",
-                Description = "On the redesigned Settings UI, you can set all UTE UWP settings as well as new settings from TowPad."
-            });
-
-            WhatsNew.Add(new()
-            {
-                Title = "Compact mode",
-                Icon = "\uE737",
-                Tag = "CompactMode",
-                Description = $"Now you can make {Strings.Resources.AppName} overlay over windows! (experimental)"
-            });
 
             IsListEmpty = list.Count <= 0;
         }
