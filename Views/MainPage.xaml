@@ -48,7 +48,8 @@
         <RelativePanel
             x:Name="containerPanel"
             RelativePanel.AlignLeftWithPanel="True"
-            RelativePanel.AlignRightWithPanel="True">
+            RelativePanel.AlignRightWithPanel="True"
+            Background="Transparent">
             <Border
                 x:Name="AppTitleBar"
                 Height="40"
@@ -195,6 +196,7 @@
                     <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.HomeMenuTitle}" Background="Transparent">
                         <AppBarToggleButton
                     Click="BoldButton_Click"
+                            x:Name="BoldButton"
                     Style="{StaticResource TransparentToggleButton}"
                     ToolTipService.ToolTip="{x:Bind res:Resources.Bold}">
                             <Viewbox MaxWidth="17" MaxHeight="17">
@@ -204,6 +206,7 @@
 
                         <AppBarToggleButton
                     Click="ItalicButton_Click"
+                            x:Name="ItalicButton"
                     Style="{StaticResource TransparentToggleButton}"
                     ToolTipService.ToolTip="{x:Bind res:Resources.Italic}">
                             <Viewbox MaxWidth="17" MaxHeight="17">
@@ -212,6 +215,7 @@
                         </AppBarToggleButton>
                         <AppBarToggleButton
                     Click="UnderlineButton_Click"
+                            x:Name="UnderlineButton"
                     Style="{StaticResource TransparentToggleButton}"
                     ToolTipService.ToolTip="{x:Bind res:Resources.Underline}">
                             <Viewbox MaxWidth="17" MaxHeight="17">
@@ -483,15 +487,15 @@
             RelativePanel.AlignLeftWithPanel="True"
             RelativePanel.AlignRightWithPanel="True"
             RelativePanel.Below="containerPanel"
-            IsPaneOpen="False" OpenPaneLength="256" CompactPaneLength="24" DisplayMode="Inline" PanePlacement="Right" x:Name="textsplitview">
+            IsPaneOpen="False" OpenPaneLength="256" CompactPaneLength="24" DisplayMode="Inline" PanePlacement="Right" x:Name="textsplitview" Background="Transparent" PaneBackground="Transparent">
             <SplitView.Pane>
-                <Grid>
+                <Grid Background="Transparent">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical" Background="Transparent">
                         <TextBlock
                                     Margin="0,0,0,5"
                                     FontSize="14"
