@@ -124,7 +124,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Localization & Accessbility",
                 Icon = "\uE774",
                 Tag = "LocAndAcc",
-                Description = $"You can contribute translations to {Strings.Resources.AppName}, and help make this app reach more countries! And elements in the app will be more accessible.\n\nNEW IN OCTOBER UPDATE:\nUltraTextEdit UWP has been translated into Czech, Slovak, Ukrainian, Hungarian, and Simplified Chinese"
+                Description = $"You can contribute translations to {Strings.Resources.AppName}, and help make this app reach more countries! And elements in the app will be more accessible.\n\nNEW IN OCTOBER UPDATE:\nUltraTextEdit UWP has been translated into Czech, Slovak, Ukrainian, Hungarian, and Simplified Chinese\n\nNEW IN DECEMBER UPDATE:\nUsing UltraTextEdit UWP without a mouse just became easier! Use the new keyboard shortcuts/hotkeys to complete common actions in the app!"
             });
 
             WhatsNew.Add(new()
@@ -149,6 +149,22 @@ namespace UltraTextEdit_UWP.Views
                 Icon = "\uE737",
                 Tag = "CompactMode",
                 Description = $"Now you can make {Strings.Resources.AppName} overlay over windows! (experimental)"
+            });
+
+            WhatsNew.Add(new()
+            {
+                Title = "Share",
+                Icon = "\uE72D",
+                Tag = "Share",
+                Description = $"NEW IN DECEMBER UPDATE:\nSharing text from {Strings.Resources.AppName} to compatible apps is now available!"
+            });
+
+            WhatsNew.Add(new()
+            {
+                Title = "UI Updates",
+                Icon = "\uE2B1",
+                Tag = "UIU/UIR",
+                Description = $"NEW IN DECEMBER UPDATE:\nThe Find/Replace Panel of the app got a Mica background!"
             });
 
             IsListEmpty = list.Count <= 0;
