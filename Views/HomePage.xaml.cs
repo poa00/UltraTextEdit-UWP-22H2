@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Symbols",
-                Icon = "\uED58",
+                Title = "Dependency updates",
+                Icon = "\uE117",
                 Tag = "LocAndAcc",
-                Description = $"Adds Left Arrow and Right Arrow symbols to the Symbols menu!"
+                Description = $"Update System.Text.Json to version 7.0.1\nUpdate Microsoft.Web.WebView2 to version 1.0.1549-prerelease"
             });
 
             //WhatsNew.Add(new()
