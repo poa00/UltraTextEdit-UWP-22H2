@@ -46,7 +46,7 @@ namespace UltraTextEdit_UWP.Views.Settings
 
             if (ElementSoundPlayer.SpatialAudioMode == ElementSpatialAudioMode.On)
             {
-                //spatialSoundBox.IsChecked = true;
+                spatialAudioBox.IsChecked = true;
             }
 
             if (Application.Current.FocusVisualKind == FocusVisualKind.HighVisibility)
