@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Dependency updates",
-                Icon = "\uE117",
+                Title = "Settings",
+                Icon = "\uE713",
                 Tag = "LocAndAcc",
-                Description = $"Update System.Text.Json to version 7.0.1\nUpdate Microsoft.Web.WebView2 to version 1.0.1549-prerelease"
+                Description = $"This release fixes some functionality of the Settings toggles. The values of the Settings toggles will now persist between openings of the Settings page."
             });
 
             //WhatsNew.Add(new()
