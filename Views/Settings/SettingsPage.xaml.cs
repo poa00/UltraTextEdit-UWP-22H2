@@ -34,6 +34,29 @@ namespace UltraTextEdit_UWP.Views.Settings
 
             coreTitleBar.LayoutMetricsChanged += CoreTitleBar_LayoutMetricsChanged;
             coreTitleBar.IsVisibleChanged += CoreTitleBar_IsVisibleChanged;
+
+            if (ElementSoundPlayer.State == ElementSoundPlayerState.On)
+            {
+                soundToggle.IsOn = true;
+            }
+            else
+            {
+                soundToggle.IsOn = false;
+            }
+
+            if (ElementSoundPlayer.SpatialAudioMode == ElementSpatialAudioMode.On)
+            {
+                //spatialSoundBox.IsChecked = true;
+            }
+
+            if (Application.Current.FocusVisualKind == FocusVisualKind.HighVisibility)
+            {
+                HighVisibility.IsChecked = true;
+            }
+            else
+            {
+                RevealFocus.IsChecked = true;
+            }
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
