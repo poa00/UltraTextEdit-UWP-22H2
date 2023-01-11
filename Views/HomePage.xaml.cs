@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Settings",
-                Icon = "\uE713",
+                Title = "Find/Replace Panel",
+                Icon = "\uE11A",
                 Tag = "LocAndAcc",
-                Description = $"This release fixes some functionality of the Settings toggles. The values of the Settings toggles will now persist between openings of the Settings page."
+                Description = $"This release redesigns the Find/Replace Panel with accented buttons, the buttons covering the whole width of the panel, and more!"
             });
 
             //WhatsNew.Add(new()
