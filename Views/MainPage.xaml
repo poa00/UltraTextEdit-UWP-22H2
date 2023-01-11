@@ -599,8 +599,8 @@
                                     Width="330"
                                     PlaceholderText="{x:Bind res:Resources.FindTextHint}" />
                         <StackPanel Orientation="Vertical" Background="Transparent">
-                            <Button Margin="0,10,0,0" Click="FindButton_Click" Content="{x:Bind res:Resources.Find}"/>
-                            <Button Margin="0,10,0,0" Click="RemoveHighlightButton_Click" Content="{x:Bind res:Resources.RemoveHighlights}"/>
+                            <Button Margin="0,10,0,0" Click="FindButton_Click" Content="{x:Bind res:Resources.Find}" HorizontalAlignment="Stretch" Style="{ThemeResource AccentButtonStyle}" />
+                            <Button Margin="0,10,0,0" Click="RemoveHighlightButton_Click" Content="{x:Bind res:Resources.RemoveHighlights}" HorizontalAlignment="Stretch"/>
                         </StackPanel>
 
                         <TextBlock
@@ -614,8 +614,8 @@
                                     Width="330"
                                     PlaceholderText="{x:Bind res:Resources.NewText}" />
                         <StackPanel Orientation="Vertical">
-                            <Button Margin="0,10,0,0" Click="ReplaceSelected_Click" Content="{x:Bind res:Resources.ReplaceSelected}"/>
-                            <Button Margin="0,10,0,0" Click="ReplaceAll_Click" Content="{x:Bind res:Resources.ReplaceAll}"/>
+                            <Button Margin="0,10,0,0" Click="ReplaceSelected_Click" Content="{x:Bind res:Resources.ReplaceSelected}" HorizontalAlignment="Stretch" Style="{ThemeResource AccentButtonStyle}" />
+                            <Button Margin="0,10,0,0" Click="ReplaceAll_Click" Content="{x:Bind res:Resources.ReplaceAll}" Width="Auto" HorizontalAlignment="Stretch"/>
                         </StackPanel>
                         <AppBarButton HorizontalAlignment="Center" Icon="ClosePane" Label="{x:Bind res:Resources.Close}" Click="closepane"/>
                     </StackPanel>
