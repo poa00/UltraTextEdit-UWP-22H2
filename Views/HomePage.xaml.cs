@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Find/Replace Panel",
-                Icon = "\uE11A",
+                Title = "Gaming theme",
+                Icon = "\uE7FC",
                 Tag = "LocAndAcc",
-                Description = $"This release redesigns the Find/Replace Panel with accented buttons, the buttons covering the whole width of the panel, and more!"
+                Description = $"This release adds an experimental Gaming Theme!"
             });
 
             //WhatsNew.Add(new()
