@@ -108,7 +108,7 @@
                     </uc:SettingsBlockControl.SettingsActionableElement>
                 </uc:SettingsBlockControl>
 
-                <uc:SettingsBlockControl Title="Gaming theme 🎮">
+                <uc:SettingsBlockControl Title="Gaming theme 🎮 (Experimental)">
                     <uc:SettingsBlockControl.Icon>
                         <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE7FC;" />
                     </uc:SettingsBlockControl.Icon>
