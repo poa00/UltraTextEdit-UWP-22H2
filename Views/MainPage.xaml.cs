@@ -26,6 +26,7 @@ using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using System.Reflection.Metadata;
 using System.Text;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace UltraTextEdit_UWP
 {
@@ -66,6 +67,17 @@ namespace UltraTextEdit_UWP
             (CompactOverlayBtn.Content as FontIcon).Glyph = ApplicationView.GetForCurrentView().ViewMode == ApplicationViewMode.CompactOverlay ? "\uEE49" : "\uEE47";
 
             ShareSourceLoad();
+
+            var settings = new SettingsPage();
+
+            if (settings.gameenabled == true)
+            {
+                textsplitview.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "ms-appx:///Assets/gamerbackground.png")), Stretch = Stretch.Fill };
+            } else
+            {
+                textsplitview.Background = new SolidColorBrush(Colors.Transparent);
+            }
+
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)

@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using System;
 using System.Reflection;
+using UltraTextEdit_UWP.ViewModels;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.UI;
@@ -8,14 +10,23 @@ using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace UltraTextEdit_UWP.Views.Settings
 {
     public sealed partial class SettingsPage : Page
     {
+        public bool gameenabled;
+
         public SettingsPage()
         {
+
             InitializeComponent();
+
+            if (gameenabled == true)
+            {
+                view.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "ms-appx:///Assets/gamerbackground.png")), Stretch = Stretch.Fill };
+            }
 
             var ver = typeof(App).GetTypeInfo().Assembly.GetName().Version;
 
@@ -110,14 +121,14 @@ namespace UltraTextEdit_UWP.Views.Settings
         private void ExecuteCopyVersionCommand()
         {
 
-                var data = new DataPackage
-                {
-                    RequestedOperation = DataPackageOperation.Copy
-                };
-                data.SetText(aboutblock.Title + " version " + aboutblock.Description);
+            var data = new DataPackage
+            {
+                RequestedOperation = DataPackageOperation.Copy
+            };
+            data.SetText(aboutblock.Title + " version " + aboutblock.Description);
 
-                Clipboard.SetContentWithOptions(data, new ClipboardContentOptions() { IsAllowedInHistory = true, IsRoamable = true });
-                Clipboard.Flush();
+            Clipboard.SetContentWithOptions(data, new ClipboardContentOptions() { IsAllowedInHistory = true, IsRoamable = true });
+            Clipboard.Flush();
         }
         #endregion
 
@@ -180,6 +191,26 @@ namespace UltraTextEdit_UWP.Views.Settings
             if (soundToggle.IsOn == true)
             {
                 ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off;
+            }
+        }
+
+        private void gamingToggle_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (gameToggle.IsOn == true)
+            {
+                gameenabled = true;
+                if (gameenabled == true)
+                {
+                    view.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "ms-appx:///Assets/gamerbackground.png")), Stretch = Stretch.Fill };
+                }
+            }
+            else
+            {
+                gameenabled = false;
+                if (gameenabled == false)
+                {
+                    view.Background = new SolidColorBrush(Colors.Transparent);
+                }
             }
         }
     }

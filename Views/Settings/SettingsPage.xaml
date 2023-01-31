@@ -62,7 +62,7 @@
             </muxc:AnimatedIcon>
         </Button>
 
-        <ScrollViewer Grid.Row="1">
+        <ScrollViewer Grid.Row="1" x:Name="view">
             <StackPanel Orientation="Vertical" Padding="20" Spacing="5">
                 <TextBlock Text="{x:Bind res:Resources.SettingsText}" Margin="0,0,0,10" FontSize="32" FontWeight="SemiBold" />
 
@@ -105,6 +105,15 @@
                             <ComboBoxItem Content="{x:Bind res:Resources.DarkTheme}" />
                             <ComboBoxItem Content="{x:Bind res:Resources.SystemDefaultTheme}" />
                         </ComboBox>
+                    </uc:SettingsBlockControl.SettingsActionableElement>
+                </uc:SettingsBlockControl>
+
+                <uc:SettingsBlockControl Title="Gaming theme 🎮">
+                    <uc:SettingsBlockControl.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE7FC;" />
+                    </uc:SettingsBlockControl.Icon>
+                    <uc:SettingsBlockControl.SettingsActionableElement>
+                        <ToggleSwitch x:Name="gameToggle" OffContent="Off" OnContent="On" Toggled="gamingToggle_Toggled"/>
                     </uc:SettingsBlockControl.SettingsActionableElement>
                 </uc:SettingsBlockControl>
                 <!--
