@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Symbols",
-                Icon = "\uED58",
+                Title = "Table",
+                Icon = "\uF261",
                 Tag = "LocAndAcc",
-                Description = $"This release adds the Degree and Paragraph symbols to the Symbols Menu, as well as making the buttons more touch-friendly!"
+                Description = $"This release adds a dialog which allows you to create tables of different sizes in your documents!"
             });
 
             //WhatsNew.Add(new()
