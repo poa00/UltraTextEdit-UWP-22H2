@@ -497,6 +497,8 @@ namespace UltraTextEdit_UWP
                 DefaultButton = ContentDialogButton.Primary
             };
 
+            aboutDialog.CloseButtonClick += (s, e) => BasePage.Current._openDialog = false;
+
             ContentDialogResult result = await aboutDialog.ShowAsync();
             if (result == ContentDialogResult.Primary)
             {
