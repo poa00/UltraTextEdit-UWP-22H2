@@ -34,11 +34,11 @@ namespace UltraTextEdit_UWP
 {
     public sealed partial class MainPage : Page
     {
-        private bool saved = true;
-        private bool _wasOpen = false;
-        private string appTitleStr = "UTE UWP";
-        private string fileNameWithPath = "";
-        private int i;
+        public bool saved = true;
+        public bool _wasOpen = false;
+        string appTitleStr = Strings.Resources.AppName;
+        string fileNameWithPath = "";
+        string originalDocText = "";
 
         public MainPage()
         {
@@ -134,7 +134,7 @@ namespace UltraTextEdit_UWP
             SaveFile(false);
         }
 
-        private async void SaveFile(bool isCopy)
+        public async void SaveFile(bool isCopy)
         {
             string fileName = AppTitle.Text.Replace(" - " + appTitleStr, "");
             if (isCopy || fileName == "Untitled")
@@ -484,7 +484,7 @@ namespace UltraTextEdit_UWP
             await aboutDialog.ShowAsync();
         }
 
-        private async Task ShowUnsavedDialog()
+        public async Task ShowUnsavedDialog()
         {
             string fileName = AppTitle.Text.Replace(" - " + appTitleStr, "");
             ContentDialog aboutDialog = new()

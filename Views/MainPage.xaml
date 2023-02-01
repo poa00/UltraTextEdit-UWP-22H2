@@ -44,7 +44,7 @@
         </Flyout>
     </Page.Resources>
 
-    <RelativePanel>
+    <RelativePanel Background="{StaticResource TabViewItemHeaderBackground}">
         <RelativePanel
             x:Name="containerPanel"
             RelativePanel.AlignLeftWithPanel="True"
