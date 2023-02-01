@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Gaming theme",
-                Icon = "\uE7FC",
+                Title = "Symbols",
+                Icon = "\uED58",
                 Tag = "LocAndAcc",
-                Description = $"This release adds an experimental Gaming Theme!"
+                Description = $"This release adds the Degree and Paragraph symbols to the Symbols Menu, as well as making the buttons more touch-friendly!"
             });
 
             //WhatsNew.Add(new()
