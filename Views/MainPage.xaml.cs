@@ -27,6 +27,8 @@ using Windows.Foundation;
 using System.Reflection.Metadata;
 using System.Text;
 using Windows.UI.Xaml.Media.Imaging;
+using UltraTextEdit_UWP.Dialogs;
+using System.Runtime.CompilerServices;
 
 namespace UltraTextEdit_UWP
 {
@@ -768,51 +770,55 @@ namespace UltraTextEdit_UWP
             commentstabitem.Visibility = Visibility.Collapsed;
         }
 
-        // Method to create a table format string which can directly be set to 
-        // RichTextBox Control
-        private void InsertTableInRichtextbox()
+        /* Method to create a table format string which can directly be set to 
+   RichTextBoxControl. Rows, columns and cell width are passed as parameters 
+   rather than hard coding as in previous example.*/
+        private String InsertTableInRichTextBox(int rows, int cols, int width)
         {
-            //CreateStringBuilder object
-            StringBuilder strTable = new StringBuilder();
+            //Create StringBuilder Instance
+            StringBuilder strTableRtf = new StringBuilder();
 
-            //Beginning of rich text format,don’t alter this line
-            strTable.Append(@"{\rtf1 ");
+            //beginning of rich text format
+            strTableRtf.Append(@"{\rtf1 ");
 
-            //Create 5 rows with 4 columns
-            for (int inti = 0; i < 5; i++)
+            //Variable for cell width
+            int cellWidth;
+
+            //Start row
+            strTableRtf.Append(@"\trowd");
+
+            //Loop to create table string
+            for (int i = 0; i < rows; i++)
             {
-                //Start the row
-                strTable.Append(@"\trowd");
+                strTableRtf.Append(@"\trowd");
 
-                //First cell with width 1000.
-                strTable.Append(@"\cellx1000");
+                for (int j = 0; j < cols; j++)
+                {
+                    //Calculate cell end point for each cell
+                    cellWidth = (j + 1) * width;
 
-                //Second cell with width 1000.Ending point is 2000, which is 1000+1000.
-                strTable.Append(@"\cellx2000");
-
-                //Third cell with width 1000.Endingat3000,which is 2000+1000.
-                strTable.Append(@"\cellx3000");
-
-                //Last cell with width 1000.Ending at 4000 (which is 3000+1000)
-                strTable.Append(@"\cellx4000");
+                    //A cell with width 1000 in each iteration.
+                    strTableRtf.Append(@"\cellx" + cellWidth.ToString());
+                }
 
                 //Append the row in StringBuilder
-                strTable.Append(@"\intbl \cell \row"); //create the row
+                strTableRtf.Append(@"\intbl \cell \row");
             }
+            strTableRtf.Append(@"\pard");
+            strTableRtf.Append(@"}");
+            var strTableString = strTableRtf.ToString();
+            editor.Document.Selection.SetText(TextSetOptions.FormatRtf, strTableString);
+            return strTableString;
 
-            strTable.Append(@"\pard");
-
-            strTable.Append(@"}");
-
-            var strTableString = strTable.ToString();
-
-
-            editor.Document.Selection.SetText(TextSetOptions.FormatRtf,strTableString);
         }
 
-        private void AddTableButton_Click(object sender, RoutedEventArgs e)
+
+
+        private async void AddTableButton_Click(object sender, RoutedEventArgs e)
         {
-            InsertTableInRichtextbox();
+            var dialogtable = new TableDialog();
+            await dialogtable.ShowAsync();
+            InsertTableInRichTextBox(dialogtable.rows, dialogtable.columns, 1000);
         }
 
         private void AddSymbolButton_Click(object sender, RoutedEventArgs e)
