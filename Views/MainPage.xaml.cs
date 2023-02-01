@@ -842,5 +842,25 @@ namespace UltraTextEdit_UWP
             symbolbut.Flyout.Hide();
             editor.Focus(FocusState.Keyboard);
         }
+
+        private async void NewInstance_Click(object sender, RoutedEventArgs e)
+        {
+            ApplicationView currentAV = ApplicationView.GetForCurrentView();
+            CoreApplicationView newAV = CoreApplication.CreateNewView();
+            await newAV.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                var newWindow = Window.Current;
+                var newAppView = ApplicationView.GetForCurrentView();
+                newAppView.Title = $"Untitled - {Strings.Resources.AppName}";
+
+                var frame = new Frame();
+                frame.Navigate(typeof(BasePage));
+                newWindow.Content = frame;
+                newWindow.Activate();
+
+                await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newAppView.Id,
+                    ViewSizePreference.UseMinimum, currentAV.Id, ViewSizePreference.UseMinimum);
+            });
+        }
     }
 }
