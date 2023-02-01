@@ -505,8 +505,8 @@
 
                                                 <Style TargetType="Button">
                                                     <Setter Property="Padding" Value="0" />
-                                                    <Setter Property="MinWidth" Value="0" />
-                                                    <Setter Property="MinHeight" Value="0" />
+                                                    <Setter Property="MinWidth" Value="32" />
+                                                    <Setter Property="MinHeight" Value="32" />
                                                     <Setter Property="Margin" Value="5" />
                                                     <Setter Property="CornerRadius" Value="8" />
                                                 </Style>
