@@ -823,7 +823,7 @@ namespace UltraTextEdit_UWP
 
         private void SymbolButton_Click(object sender, RoutedEventArgs e)
         {
-            // Extract the color of the button that was clicked.
+            // Extract the symbol of the button that was clicked.
             Button clickedSymbol = (Button)sender;
             string rectangle = clickedSymbol.Content.ToString();
             string text = rectangle;

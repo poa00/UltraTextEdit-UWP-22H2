@@ -535,6 +535,18 @@
                                         ToolTipService.ToolTip="Right Arrow symbol"
                                                 Content="→">
                                             </Button>
+                                            <Button
+                                        AutomationProperties.Name="Degree"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Degree symbol"
+                                                Content="°">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="Paragraph"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Paragraph symbol"
+                                                Content="§">
+                                            </Button>
 
                                         </VariableSizedWrapGrid>
                                     </RelativePanel>
