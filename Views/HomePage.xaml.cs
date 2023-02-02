@@ -105,10 +105,18 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Table",
-                Icon = "\uF261",
+                Title = "Tabs",
+                Icon = "\uF7ED",
                 Tag = "LocAndAcc",
-                Description = $"This release adds a dialog which allows you to create tables of different sizes in your documents!"
+                Description = $"This release finally adds Tabs, after several user feature requests and a lot of consideration about when they will be released!\nThey allow you to open multiple documents at once, like in the File Explorer.\nYou can also open the traditional untabbed UTE window by clicking on 'New Untabbed Window' in the app's File Menu. You can also launch a new Tabbed Window by clicking on 'New Tabbed Window' in the same menu."
+            });
+
+            WhatsNew.Add(new()
+            {
+                Title = "Symbols",
+                Icon = "\uED58",
+                Tag = "LocAndAcc",
+                Description = $"This release adds the Lowercase Mu (used for micro in the metric units), and square root symbols to the Symbols menu, which allows you to quickly input them into your document."
             });
 
             //WhatsNew.Add(new()

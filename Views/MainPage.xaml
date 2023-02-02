@@ -552,6 +552,18 @@
                                         ToolTipService.ToolTip="Paragraph symbol"
                                                 Content="§">
                                             </Button>
+                                            <Button
+                                        AutomationProperties.Name="Mu"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Lowercase mu (micro) symbol"
+                                                Content="µ">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="SquareRoot"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Square root symbol"
+                                                Content="√">
+                                            </Button>
 
                                         </VariableSizedWrapGrid>
                                     </RelativePanel>
