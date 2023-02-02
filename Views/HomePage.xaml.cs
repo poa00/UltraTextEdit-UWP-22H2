@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Table",
-                Icon = "\uF261",
+                Title = "Symbols",
+                Icon = "\uED58",
                 Tag = "LocAndAcc",
-                Description = $"This release adds a dialog which allows you to create tables of different sizes in your documents!"
+                Description = $"This release adds the Lowercase Mu (used for micro in the metric units), and square root symbols to the Symbols menu, which allows you to quickly input them into your document."
             });
 
             //WhatsNew.Add(new()
