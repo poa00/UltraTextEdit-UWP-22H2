@@ -126,6 +126,12 @@
   <data name="AddImageTooltip" xml:space="preserve">
     <value>Add image</value>
   </data>
+  <data name="AddSymbolTooltip" xml:space="preserve">
+    <value>Add symbol</value>
+  </data>
+  <data name="AddTableTooltip" xml:space="preserve">
+    <value>Add table</value>
+  </data>
   <data name="AlignCenter" xml:space="preserve">
     <value>Align to Center</value>
   </data>
@@ -146,6 +152,9 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
+  </data>
+  <data name="CommentsText" xml:space="preserve">
+    <value>Comments</value>
   </data>
   <data name="CopyText" xml:space="preserve">
     <value>Copy</value>
