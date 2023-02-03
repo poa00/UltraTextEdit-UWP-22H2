@@ -167,6 +167,30 @@ namespace UltraTextEdit_UWP.Views
                 Description = $"NEW IN DECEMBER UPDATE:\nThe Find/Replace Panel of the app got a Mica background!"
             });
 
+            WhatsNew.Add(new()
+            {
+                Title = "Table",
+                Icon = "\uF261",
+                Tag = "Table",
+                Description = $"NEW IN FEBRUARY UPDATE: Now you can add tables to documents made in UTE UWP!\n(Only one per app run allowed for now though)"
+            });
+
+            WhatsNew.Add(new()
+            {
+                Title = "Comments",
+                Icon = "\uE15F",
+                Tag = "Comments",
+                Description = $"NEW IN FEBRUARY UPDATE: Comments functionality is now available! \nJust tap or click the Comments buton to open the pane, then when you're finished, just go into the new Comments ribbon tab and click or tsp the button there to close the pane."
+            });
+
+            WhatsNew.Add(new()
+            {
+                Title = "Symbols",
+                Icon = "\uED58",
+                Tag = "LocAndAcc",
+                Description = $"NEW IN FEBRUARY UPDATE: Now you can add the multiplication and division symbols straight into your document from the app's new symbols menu!"
+            });
+
             IsListEmpty = list.Count <= 0;
         }
 
