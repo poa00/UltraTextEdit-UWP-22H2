@@ -365,6 +365,7 @@
     <PRIResource Include="Strings\hu-HU\Resources.resw" />
     <PRIResource Include="Strings\zh-CN\Resources.resw" />
     <PRIResource Include="Strings\it-IT\Resources.resw" />
+    <PRIResource Include="Strings\ro-RO\Resources.resw" />
     <None Include="WordpadUWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup />
