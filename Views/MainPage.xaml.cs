@@ -26,12 +26,9 @@ using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using System.Reflection.Metadata;
 using System.Text;
-<<<<<<< HEAD
-=======
 using Windows.UI.Xaml.Media.Imaging;
 using UltraTextEdit_UWP.Dialogs;
 using System.Runtime.CompilerServices;
->>>>>>> 6b5c3a4 (Add table dialog and allow for custom table sizes)
 
 namespace UltraTextEdit_UWP
 {
