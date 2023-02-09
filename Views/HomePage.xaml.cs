@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Symbols",
-                Icon = "\uED58",
+                Title = "Table",
+                Icon = "\uF261",
                 Tag = "LocAndAcc",
-                Description = $"Adds Left Arrow and Right Arrow symbols to the Symbols menu!"
+                Description = $"This release adds a dialog which allows you to create tables of different sizes in your documents!"
             });
 
             //WhatsNew.Add(new()
