@@ -462,7 +462,7 @@ namespace UltraTextEdit_UWP
             ContentDialog aboutDialog = new()
             {
                 Title = appTitleStr,
-                Content = $"Version {typeof(App).GetTypeInfo().Assembly.GetName().Version}\n\n© 2021-2022 jpb",
+                Content = $"Version {typeof(App).GetTypeInfo().Assembly.GetName().Version}\n\n© 2021-2023 jpb",
                 CloseButtonText = "OK",
                 DefaultButton = ContentDialogButton.Close
             };
