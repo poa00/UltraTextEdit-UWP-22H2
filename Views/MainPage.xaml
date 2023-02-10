@@ -506,8 +506,8 @@
 
                                                 <Style TargetType="Button">
                                                     <Setter Property="Padding" Value="0" />
-                                                    <Setter Property="MinWidth" Value="0" />
-                                                    <Setter Property="MinHeight" Value="0" />
+                                                    <Setter Property="MinWidth" Value="32" />
+                                                    <Setter Property="MinHeight" Value="32" />
                                                     <Setter Property="Margin" Value="5" />
                                                     <Setter Property="CornerRadius" Value="8" />
                                                 </Style>
@@ -535,6 +535,30 @@
                                         Click="SymbolButton_Click"
                                         ToolTipService.ToolTip="Right Arrow symbol"
                                                 Content="→">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="Degree"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Degree symbol"
+                                                Content="°">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="Paragraph"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Paragraph symbol"
+                                                Content="§">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="Mu"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Lowercase mu (micro) symbol"
+                                                Content="µ">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="SquareRoot"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Square root symbol"
+                                                Content="√">
                                             </Button>
 
                                         </VariableSizedWrapGrid>
