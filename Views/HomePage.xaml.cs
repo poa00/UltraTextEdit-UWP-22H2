@@ -105,10 +105,18 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Table",
-                Icon = "\uF261",
+                Title = "Symbols",
+                Icon = "\uED58",
                 Tag = "LocAndAcc",
-                Description = $"This release adds a dialog which allows you to create tables of different sizes in your documents!"
+                Description = $"This release adds the Degree, Paragraph, Lowercase Mu/Micro, and Square Root symbols to the Symbols Menu, as well as making the buttons more touch-friendly!"
+            });
+
+            WhatsNew.Add(new()
+            {
+                Title = "Find/Replace Panel",
+                Icon = "\uE11A",
+                Tag = "LocAndAcc",
+                Description = $"This release redesigns the Find/Replace Panel with accented buttons, the buttons covering the whole width of the panel, and more!"
             });
 
             //WhatsNew.Add(new()
