@@ -108,7 +108,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Symbols",
                 Icon = "\uED58",
                 Tag = "LocAndAcc",
-                Description = $"This release adds the Degree, Paragraph, Lowercase Mu/Micro, and Square Root symbols to the Symbols Menu, as well as making the buttons more touch-friendly!"
+                Description = $"This release adds the Degree, Paragraph, Lowercase Mu/Micro, and Square Root symbols to the Symbols Menu, as well as making the buttons more touch-friendly!\nAbility to symbols straight into your document from the app's new symbols menu!"
             });
 
             WhatsNew.Add(new()
@@ -126,47 +126,6 @@ namespace UltraTextEdit_UWP.Views
             //Tag = "UTEInsider",
             //Description = $"With new Dev Channel builds of {Strings.Resources.AppName} starting with this one, there is no support for Windows 10 1809, 1903, and 1909 (but these Windows 10 versions will still be supported on the 22H2 Stable, Beta, and Release Preview branches). Only Windows 10 version 20H1 (2004) and later, and Windows 11 original release (21H2) and later are supported.\nThis build of {Strings.Resources.AppName} also increments the target Windows version to Windows 11, version 22H2 (build 22621)."
             //});
-
-
-            WhatsNew.Add(new()
-            {
-                Title = "Share",
-                Icon = "\uE72D",
-                Tag = "Share",
-                Description = $"NEW IN DECEMBER UPDATE:\nSharing text from {Strings.Resources.AppName} to compatible apps is now available!"
-            });
-
-            WhatsNew.Add(new()
-            {
-                Title = "UI Updates",
-                Icon = "\uE2B1",
-                Tag = "UIU/UIR",
-                Description = $"NEW IN DECEMBER UPDATE:\nThe Find/Replace Panel of the app got a Mica background!"
-            });
-
-            WhatsNew.Add(new()
-            {
-                Title = "Table",
-                Icon = "\uF261",
-                Tag = "Table",
-                Description = $"NEW IN FEBRUARY UPDATE: Now you can add tables to documents made in UTE UWP!\n(Only one per app run allowed for now though)"
-            });
-
-            WhatsNew.Add(new()
-            {
-                Title = "Comments",
-                Icon = "\uE15F",
-                Tag = "Comments",
-                Description = $"NEW IN FEBRUARY UPDATE: Comments functionality is now available! \nJust tap or click the Comments buton to open the pane, then when you're finished, just go into the new Comments ribbon tab and click or tsp the button there to close the pane."
-            });
-
-            WhatsNew.Add(new()
-            {
-                Title = "Symbols",
-                Icon = "\uED58",
-                Tag = "LocAndAcc",
-                Description = $"NEW IN FEBRUARY UPDATE: Now you can add the multiplication and division symbols straight into your document from the app's new symbols menu!"
-            });
 
             IsListEmpty = list.Count <= 0;
         }
