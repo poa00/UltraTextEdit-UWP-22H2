@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UltraTextEdit_UWP.Strings
 {
-    public static class Resources
+    public class Resources
     {
         public static string AppName = App.Resources.GetString("AppName");
         public static string HomeTitle = App.Resources.GetString("HomeTitle");

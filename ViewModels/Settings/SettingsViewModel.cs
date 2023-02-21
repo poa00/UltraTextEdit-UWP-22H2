@@ -6,12 +6,50 @@ using System.Linq;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using System.Collections.ObjectModel;
+using UltraTextEdit_UWP.Helpers;
 
 namespace UltraTextEdit_UWP.ViewModels
 {
     public class SettingsViewModel : SettingsManager
     {
-        public SettingsViewModel() { }
+        public SettingsViewModel()
+        {
+            Languages = new ObservableCollection<Language>
+{
+    new Language { DisplayName = "English", LanguageCode = "en-US" },
+    new Language { DisplayName = "简体中文", LanguageCode = "zh-CN" }
+};
+        }
+
+
+        private ObservableCollection<Language> _languages;
+        private Language _selectedLanguage;
+
+        public ObservableCollection<Language> Languages
+        {
+            get => _languages;
+            set => _languages = value;
+        }
+
+        public Language SelectedLanguage
+        {
+            get => _selectedLanguage;
+            set
+            {
+                _selectedLanguage = value;
+                this.PrimaryLanguageOverride = value.LanguageCode;
+            }
+        }
+
+        public string PrimaryLanguageOverride
+        {
+            get => Get("Appearance", nameof(PrimaryLanguageOverride), "en-US");
+            set
+            {
+                Set("Appearance", nameof(PrimaryLanguageOverride), value);
+            }
+        }
 
         public List<string> Fonts
         {
