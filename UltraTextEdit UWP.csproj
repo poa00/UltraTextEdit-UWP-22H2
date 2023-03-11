@@ -294,7 +294,7 @@
       <Version>2.0.14</Version>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm">
-      <Version>8.0.0</Version>
+      <Version>8.1.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces">
       <Version>7.0.0</Version>
@@ -317,10 +317,10 @@
       <Version>7.1.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
-      <Version>2.8.2-prerelease.220830001</Version>
+      <Version>2.8.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Web.WebView2">
-      <Version>1.0.1466-prerelease</Version>
+      <Version>1.0.1671-prerelease</Version>
     </PackageReference>
     <PackageReference Include="NETStandard.Library">
       <Version>2.0.3</Version>
