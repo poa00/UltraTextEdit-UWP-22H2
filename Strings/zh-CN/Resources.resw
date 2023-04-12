@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,209 +59,212 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="AboutText" xml:space="preserve">
-    <value>关于应用</value>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="AboutText" xml:space="preserve">
+    <value>关于</value>
   </data>
-  <data name="AddHyperlinkTooltip" xml:space="preserve">
+	<data name="AddHyperlinkTooltip" xml:space="preserve">
     <value>添加超链接</value>
   </data>
-  <data name="AddImageTooltip" xml:space="preserve">
-    <value>添加图片</value>
+	<data name="AddImageTooltip" xml:space="preserve">
+    <value>添加图像</value>
   </data>
-  <data name="AlignCenter" xml:space="preserve">
+	<data name="AlignCenter" xml:space="preserve">
     <value>居中对齐</value>
   </data>
-  <data name="AlignLeft" xml:space="preserve">
+	<data name="AlignLeft" xml:space="preserve">
     <value>左对齐</value>
   </data>
-  <data name="AlignRight" xml:space="preserve">
+	<data name="AlignRight" xml:space="preserve">
     <value>右对齐</value>
   </data>
-  <data name="AppearenceHeaderName" xml:space="preserve">
-    <value>外貌</value>
+	<data name="AppearenceHeaderName" xml:space="preserve">
+    <value>外观</value>
   </data>
-  <data name="AppName" xml:space="preserve">
+	<data name="AppName" xml:space="preserve">
     <value>UltraTextEdit UWP</value>
   </data>
-  <data name="Bold" xml:space="preserve">
+	<data name="Bold" xml:space="preserve">
     <value>粗体</value>
   </data>
-  <data name="Close" xml:space="preserve">
+	<data name="Close" xml:space="preserve">
     <value>关闭</value>
   </data>
-  <data name="CopyText" xml:space="preserve">
+  <data name="CommentsText" xml:space="preserve">
+    <value>注释</value>
+  </data>
+	<data name="CopyText" xml:space="preserve">
     <value>复制</value>
   </data>
-  <data name="CutText" xml:space="preserve">
-    <value>切</value>
+	<data name="CutText" xml:space="preserve">
+    <value>剪切</value>
   </data>
-  <data name="DarkTheme" xml:space="preserve">
-    <value>深色主题</value>
+	<data name="DarkTheme" xml:space="preserve">
+    <value>深色</value>
   </data>
-  <data name="DefaultFontSettingName" xml:space="preserve">
+	<data name="DefaultFontSettingName" xml:space="preserve">
     <value>默认字体系列</value>
   </data>
-  <data name="DocumentPaddingSettingName" xml:space="preserve">
+	<data name="DocumentPaddingSettingName" xml:space="preserve">
     <value>文档视图填充</value>
   </data>
-  <data name="EditorHeaderName" xml:space="preserve">
+	<data name="EditorHeaderName" xml:space="preserve">
+    <value>编辑器</value>
+  </data>
+	<data name="EditText" xml:space="preserve">
     <value>编辑</value>
   </data>
-  <data name="EditText" xml:space="preserve">
-    <value>编辑</value>
+	<data name="ExitText" xml:space="preserve">
+    <value>退出</value>
   </data>
-  <data name="ExitText" xml:space="preserve">
-    <value>出口</value>
-  </data>
-  <data name="FileText" xml:space="preserve">
+	<data name="FileText" xml:space="preserve">
     <value>文件</value>
   </data>
-  <data name="Find" xml:space="preserve">
-    <value>寻找</value>
+	<data name="Find" xml:space="preserve">
+    <value>查找</value>
   </data>
-  <data name="FindDocTooltip" xml:space="preserve">
+	<data name="FindDocTooltip" xml:space="preserve">
     <value>在文档中查找</value>
   </data>
-  <data name="FindTextHint" xml:space="preserve">
+	<data name="FindTextHint" xml:space="preserve">
     <value>要查找的文本</value>
   </data>
-  <data name="FontColorTooltip" xml:space="preserve">
+	<data name="FontColorTooltip" xml:space="preserve">
     <value>字体颜色</value>
   </data>
-  <data name="HelpText" xml:space="preserve">
+	<data name="HelpText" xml:space="preserve">
     <value>帮助</value>
   </data>
-  <data name="HomeMenuTitle" xml:space="preserve">
+	<data name="HomeMenuTitle" xml:space="preserve">
     <value>主页</value>
   </data>
-  <data name="HomeTitle" xml:space="preserve">
+	<data name="HomeTitle" xml:space="preserve">
     <value>主页</value>
   </data>
-  <data name="Italic" xml:space="preserve">
+	<data name="Italic" xml:space="preserve">
     <value>斜体</value>
   </data>
-  <data name="LightTheme" xml:space="preserve">
-    <value>轻主题</value>
+	<data name="LightTheme" xml:space="preserve">
+    <value>浅色</value>
   </data>
-  <data name="NewDocText" xml:space="preserve">
-    <value>新文件</value>
+	<data name="NewDocText" xml:space="preserve">
+    <value>新建文档</value>
   </data>
-  <data name="NewText" xml:space="preserve">
-    <value>新文本</value>
+	<data name="NewText" xml:space="preserve">
+    <value>新建文本</value>
   </data>
-  <data name="OpenText" xml:space="preserve">
+	<data name="OpenText" xml:space="preserve">
     <value>打开</value>
   </data>
-  <data name="PasteText" xml:space="preserve">
-    <value>贴</value>
+	<data name="PasteText" xml:space="preserve">
+    <value>粘贴</value>
   </data>
-  <data name="PrintText" xml:space="preserve">
+	<data name="PrintText" xml:space="preserve">
     <value>打印</value>
   </data>
-  <data name="RecentlyAccessedTitle" xml:space="preserve">
+	<data name="RecentlyAccessedTitle" xml:space="preserve">
     <value>最近访问的文件</value>
   </data>
-  <data name="RedoTooltip" xml:space="preserve">
+	<data name="RedoTooltip" xml:space="preserve">
     <value>重做</value>
   </data>
-  <data name="RemoveHighlights" xml:space="preserve">
-    <value>移除亮点</value>
+	<data name="RemoveHighlights" xml:space="preserve">
+    <value>删除高亮显示</value>
   </data>
-  <data name="Replace" xml:space="preserve">
-    <value>代替</value>
+	<data name="Replace" xml:space="preserve">
+    <value>替换</value>
   </data>
-  <data name="ReplaceAll" xml:space="preserve">
+	<data name="ReplaceAll" xml:space="preserve">
     <value>替换所有出现</value>
   </data>
-  <data name="ReplaceSelected" xml:space="preserve">
-    <value>替换选定的文本</value>
+	<data name="ReplaceSelected" xml:space="preserve">
+    <value>替换所选文本</value>
   </data>
-  <data name="SaveAsCopyText" xml:space="preserve">
+	<data name="SaveAsCopyText" xml:space="preserve">
     <value>另存为副本</value>
   </data>
-  <data name="SaveText" xml:space="preserve">
+	<data name="SaveText" xml:space="preserve">
     <value>保存</value>
   </data>
-  <data name="SettingsText" xml:space="preserve">
+	<data name="SettingsText" xml:space="preserve">
     <value>设置</value>
   </data>
-  <data name="Strikethrough" xml:space="preserve">
+	<data name="Strikethrough" xml:space="preserve">
     <value>删除线</value>
   </data>
-  <data name="SystemDefaultTheme" xml:space="preserve">
+	<data name="SystemDefaultTheme" xml:space="preserve">
     <value>系统默认</value>
   </data>
-  <data name="ThemeSettingName" xml:space="preserve">
+	<data name="ThemeSettingName" xml:space="preserve">
     <value>主题</value>
   </data>
-  <data name="Underline" xml:space="preserve">
-    <value>强调</value>
+	<data name="Underline" xml:space="preserve">
+    <value>下划线</value>
   </data>
-  <data name="UndoTooltip" xml:space="preserve">
+	<data name="UndoTooltip" xml:space="preserve">
     <value>撤消</value>
   </data>
-  <data name="WhatsNewTitle" xml:space="preserve">
-    <value>什么是新的</value>
+	<data name="WhatsNewTitle" xml:space="preserve">
+    <value>新功能</value>
   </data>
-  <data name="WrapTextSettingName" xml:space="preserve">
-    <value>文字换行</value>
+	<data name="WrapTextSettingName" xml:space="preserve">
+    <value>Text wrapping</value>
   </data>
 </root>
