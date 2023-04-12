@@ -265,6 +265,6 @@
     <value>新功能</value>
   </data>
 	<data name="WrapTextSettingName" xml:space="preserve">
-    <value>Text wrapping</value>
+    <value>文本换行</value>
   </data>
 </root>
