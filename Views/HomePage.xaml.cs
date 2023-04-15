@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Localization",
+                Title = "Time/Date",
                 Icon = "\uE775",
                 Tag = "LocAndAcc",
-                Description = $"This release adds Italian translation (by LuisYeah1234-hub) and Romanian translation (by GrooveMusic10)"
+                Description = $"This release adds date and time insertion!"
             });
 
             //WhatsNew.Add(new()
