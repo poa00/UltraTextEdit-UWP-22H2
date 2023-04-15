@@ -864,5 +864,47 @@ namespace UltraTextEdit_UWP
                     ViewSizePreference.UseMinimum, currentAV.Id, ViewSizePreference.UseMinimum);
             });
         }
+
+        private async void DateInsertionAsync(object sender, RoutedEventArgs e)
+        { // Create a ContentDialog
+            ContentDialog dialog = new ContentDialog();
+            dialog.Title = "Time and date";
+
+            // Create a ListView for the user to select the date format
+            ListView listView = new ListView();
+            listView.SelectionMode = ListViewSelectionMode.Single;
+
+            // Create a list of date formats to display in the ListView
+            List<string> dateFormats = new List<string>();
+            dateFormats.Add(DateTime.Now.ToString("dd.M.yyyy"));
+            dateFormats.Add(DateTime.Now.ToString("dd MMM yyyy"));
+            dateFormats.Add(DateTime.Now.ToString("dddd , dd MMMM yyyy"));
+            dateFormats.Add(DateTime.Now.ToString("dd MMMM yyyy"));
+            dateFormats.Add(DateTime.Now.ToString("hh:mm:ss"));
+
+            // Set the ItemsSource of the ListView to the list of date formats
+            listView.ItemsSource = dateFormats;
+
+            // Set the content of the ContentDialog to the ListView
+            dialog.Content = listView;
+
+            // Make the insert button colored
+            dialog.DefaultButton = ContentDialogButton.Primary;
+
+            // Add an "Insert" button to the ContentDialog
+            dialog.PrimaryButtonText = "OK";
+            dialog.PrimaryButtonClick += (s, args) =>
+            {
+                string selectedFormat = listView.SelectedItem as string;
+                string formattedDate = DateTime.Now.ToString(selectedFormat);
+                editor.Document.Selection.Text = formattedDate;
+            };
+
+            // Add a "Cancel" button to the ContentDialog
+            dialog.SecondaryButtonText = "Cancel";
+
+            // Show the ContentDialog
+            await dialog.ShowAsync();
+        }
     }
 }
