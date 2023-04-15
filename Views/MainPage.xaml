@@ -480,6 +480,12 @@
                             </Button.Flyout>
                         </AppBarButton>
                         <AppBarButton
+                    Click="DateInsertionAsync"
+                    Style="{StaticResource TransparentButton}"
+                    ToolTipService.ToolTip="Insert current Date/Time">
+                            <FontIcon FontSize="17" Glyph="&#xE163;" />
+                        </AppBarButton>
+                        <AppBarButton
                     Click="AddTableButton_Click"
                     Style="{StaticResource TransparentButton}"
                     ToolTipService.ToolTip="{x:Bind res:Resources.AddTableTooltip}">
