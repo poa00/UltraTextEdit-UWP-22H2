@@ -868,7 +868,7 @@ namespace UltraTextEdit_UWP
         private async void DateInsertionAsync(object sender, RoutedEventArgs e)
         { // Create a ContentDialog
             ContentDialog dialog = new ContentDialog();
-            dialog.Title = "Time and date";
+            dialog.Title = "Insert current date and time";
 
             // Create a ListView for the user to select the date format
             ListView listView = new ListView();
@@ -877,10 +877,15 @@ namespace UltraTextEdit_UWP
             // Create a list of date formats to display in the ListView
             List<string> dateFormats = new List<string>();
             dateFormats.Add(DateTime.Now.ToString("dd.M.yyyy"));
+            dateFormats.Add(DateTime.Now.ToString("M.dd.yyyy"));
             dateFormats.Add(DateTime.Now.ToString("dd MMM yyyy"));
-            dateFormats.Add(DateTime.Now.ToString("dddd , dd MMMM yyyy"));
+            dateFormats.Add(DateTime.Now.ToString("dddd, dd MMMM yyyy"));
             dateFormats.Add(DateTime.Now.ToString("dd MMMM yyyy"));
-            dateFormats.Add(DateTime.Now.ToString("hh:mm:ss"));
+            dateFormats.Add(DateTime.Now.ToString("hh:mm:ss tt"));
+            dateFormats.Add(DateTime.Now.ToString("HH:mm:ss"));
+            dateFormats.Add(DateTime.Now.ToString("dddd, dd MMMM yyyy, HH:mm:ss"));
+            dateFormats.Add(DateTime.Now.ToString("dd MMMM yyyy, HH:mm:ss"));
+            dateFormats.Add(DateTime.Now.ToString("MMM dd, yyyy"));
 
             // Set the ItemsSource of the ListView to the list of date formats
             listView.ItemsSource = dateFormats;
@@ -896,7 +901,7 @@ namespace UltraTextEdit_UWP
             dialog.PrimaryButtonClick += (s, args) =>
             {
                 string selectedFormat = listView.SelectedItem as string;
-                string formattedDate = DateTime.Now.ToString(selectedFormat);
+                string formattedDate = dateFormats[listView.SelectedIndex];
                 editor.Document.Selection.Text = formattedDate;
             };
 
