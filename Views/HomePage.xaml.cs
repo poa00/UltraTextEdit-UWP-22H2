@@ -108,7 +108,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Time/Date",
                 Icon = "\uE775",
                 Tag = "LocAndAcc",
-                Description = $"This release adds date and time insertion!"
+                Description = $"This release adds optimization to the Time/Date insertion functionality. It adds new time/date styles and fixes bugs with some that include days of the week (for example: Mon or Monday were buggy in 25300 but are now fixed)"
             });
 
             //WhatsNew.Add(new()
