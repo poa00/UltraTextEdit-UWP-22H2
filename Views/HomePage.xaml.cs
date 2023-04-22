@@ -105,18 +105,17 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Symbols",
-                Icon = "\uED58",
+                Title = "New dialogs!",
+                Icon = "\uE775",
                 Tag = "LocAndAcc",
-                Description = $"This release adds the Degree, Paragraph, Lowercase Mu/Micro, and Square Root symbols to the Symbols Menu, as well as making the buttons more touch-friendly!"
+                Description = $"This release adds two brand new dialogs, both of which can also be launched via Help menu! One is the First Run dialog, which runs the first time this app is run. The second is the What's New dialog, a dialog that shows what has changed between builds."
             });
-
             WhatsNew.Add(new()
             {
-                Title = "Find/Replace Panel",
-                Icon = "\uE11A",
+                Title = "Redesigned app icon",
+                Icon = "\uE914",
                 Tag = "LocAndAcc",
-                Description = $"This release redesigns the Find/Replace Panel with accented buttons, the buttons covering the whole width of the panel, and more!"
+                Description = $"This release also redesigns the app icon of UltraTextEdit UWP to make it look more professional, indicating the vision for the future of the app (to have more Word-like features and maybe become a Word competitor)"
             });
 
             //WhatsNew.Add(new()

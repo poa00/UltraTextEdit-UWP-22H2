@@ -62,7 +62,7 @@
             </muxc:AnimatedIcon>
         </Button>
 
-        <ScrollViewer Grid.Row="1">
+        <ScrollViewer Grid.Row="1" x:Name="view">
             <StackPanel Orientation="Vertical" Padding="20" Spacing="5">
                 <TextBlock Text="{x:Bind res:Resources.SettingsText}" Margin="0,0,0,10" FontSize="32" FontWeight="SemiBold" />
 
@@ -107,6 +107,8 @@
                         </ComboBox>
                     </uc:SettingsBlockControl.SettingsActionableElement>
                 </uc:SettingsBlockControl>
+
+                
                 <!--
                 <uc:SettingsBlockControl Title="Language">
                     <ComboBox x:Name="CmbLanguage" 
@@ -139,7 +141,7 @@
 
                 <uc:SettingsBlockControl x:Name="aboutblock"
             Title="{x:Bind res:Resources.AppName}"
-            Description="10.0.25201.48">
+            Description="10.0.25314.1">
                     <uc:SettingsBlockControl.Icon>
                         <BitmapIcon UriSource="ms-appx:///Assets/utevericon.png" ShowAsMonochrome="False" Height="24" Width="24"/>
                     </uc:SettingsBlockControl.Icon>

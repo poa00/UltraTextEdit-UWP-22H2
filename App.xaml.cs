@@ -18,6 +18,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using UltraTextEdit_UWP.Services;
+using UltraTextEdit_UWP.Activation;
 
 namespace UltraTextEdit_UWP
 {
@@ -34,6 +36,11 @@ namespace UltraTextEdit_UWP
         public static ResourceLoader Resources { get; private set; }
         public static SettingsViewModel SViewModel { get; private set; }
         public static List<string> Tips { get; private set; }
+        private Lazy<ActivationService> _activationService;
+        private ActivationService ActivationService
+        {
+            get { return _activationService.Value; }
+        }
 
         public App()
         {
@@ -43,6 +50,7 @@ namespace UltraTextEdit_UWP
             Resources = ResourceLoader.GetForViewIndependentUse();
             SViewModel = new();
             Tips = new();
+            _activationService = new Lazy<ActivationService>(CreateActivationService);
         }
 
         /// <summary>
@@ -50,7 +58,7 @@ namespace UltraTextEdit_UWP
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -58,6 +66,8 @@ namespace UltraTextEdit_UWP
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
+                await FirstRunDisplayService.ShowIfAppropriateAsync();
+                await WhatsNewDisplayService.ShowIfAppropriateAsync();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
@@ -90,7 +100,7 @@ namespace UltraTextEdit_UWP
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    rootFrame.Navigate(typeof(BasePage), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
@@ -121,7 +131,9 @@ namespace UltraTextEdit_UWP
             deferral?.Complete();
         }
 
-        protected override void OnFileActivated(FileActivatedEventArgs args)
+
+
+        protected override async void OnFileActivated(FileActivatedEventArgs args)
         {
             // TODO: Handle file activation
             // The number of files received is args.Files.Size
@@ -130,6 +142,11 @@ namespace UltraTextEdit_UWP
             rootFrame.Navigate(typeof(MainPage), args);
             Window.Current.Content = rootFrame;
             Window.Current.Activate();
+        }
+
+        private ActivationService CreateActivationService()
+        {
+            return new ActivationService(this, typeof(BasePage));
         }
     }
 }

@@ -34,11 +34,11 @@ namespace UltraTextEdit_UWP
 {
     public sealed partial class MainPage : Page
     {
-        private bool saved = true;
-        private bool _wasOpen = false;
-        private string appTitleStr = "UTE UWP";
-        private string fileNameWithPath = "";
-        private int i;
+        public bool saved = true;
+        public bool _wasOpen = false;
+        string appTitleStr = Strings.Resources.AppName;
+        string fileNameWithPath = "";
+        string originalDocText = "";
 
         public MainPage()
         {
@@ -69,6 +69,17 @@ namespace UltraTextEdit_UWP
             (CompactOverlayBtn.Content as FontIcon).Glyph = ApplicationView.GetForCurrentView().ViewMode == ApplicationViewMode.CompactOverlay ? "\uEE49" : "\uEE47";
 
             ShareSourceLoad();
+
+            var settings = new SettingsPage();
+
+            if (settings.gameenabled == true)
+            {
+                textsplitview.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "ms-appx:///Assets/gamerbackground.png")), Stretch = Stretch.Fill };
+            } else
+            {
+                textsplitview.Background = new SolidColorBrush(Colors.Transparent);
+            }
+
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -123,7 +134,7 @@ namespace UltraTextEdit_UWP
             SaveFile(false);
         }
 
-        private async void SaveFile(bool isCopy)
+        public async void SaveFile(bool isCopy)
         {
             string fileName = AppTitle.Text.Replace(" - " + appTitleStr, "");
             if (isCopy || fileName == "Untitled")
@@ -473,7 +484,7 @@ namespace UltraTextEdit_UWP
             await aboutDialog.ShowAsync();
         }
 
-        private async Task ShowUnsavedDialog()
+        public async Task ShowUnsavedDialog()
         {
             string fileName = AppTitle.Text.Replace(" - " + appTitleStr, "");
             ContentDialog aboutDialog = new()
@@ -485,6 +496,8 @@ namespace UltraTextEdit_UWP
                 SecondaryButtonText = "No",
                 DefaultButton = ContentDialogButton.Primary
             };
+
+            aboutDialog.CloseButtonClick += (s, e) => BasePage.Current._openDialog = false;
 
             ContentDialogResult result = await aboutDialog.ShowAsync();
             if (result == ContentDialogResult.Primary)
@@ -818,7 +831,7 @@ namespace UltraTextEdit_UWP
 
         private void SymbolButton_Click(object sender, RoutedEventArgs e)
         {
-            // Extract the color of the button that was clicked.
+            // Extract the symbol of the button that was clicked.
             Button clickedSymbol = (Button)sender;
             string rectangle = clickedSymbol.Content.ToString();
             string text = rectangle;
@@ -832,5 +845,83 @@ namespace UltraTextEdit_UWP
             editor.Focus(FocusState.Keyboard);
         }
 
+        private async void NewInstance_Click(object sender, RoutedEventArgs e)
+        {
+            ApplicationView currentAV = ApplicationView.GetForCurrentView();
+            CoreApplicationView newAV = CoreApplication.CreateNewView();
+            await newAV.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                var newWindow = Window.Current;
+                var newAppView = ApplicationView.GetForCurrentView();
+                newAppView.Title = $"Untitled - {Strings.Resources.AppName}";
+
+                var frame = new Frame();
+                frame.Navigate(typeof(BasePage));
+                newWindow.Content = frame;
+                newWindow.Activate();
+
+                await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newAppView.Id,
+                    ViewSizePreference.UseMinimum, currentAV.Id, ViewSizePreference.UseMinimum);
+            });
+        }
+
+        private async void DateInsertionAsync(object sender, RoutedEventArgs e)
+        { // Create a ContentDialog
+            ContentDialog dialog = new ContentDialog();
+            dialog.Title = "Insert current date and time";
+
+            // Create a ListView for the user to select the date format
+            ListView listView = new ListView();
+            listView.SelectionMode = ListViewSelectionMode.Single;
+
+            // Create a list of date formats to display in the ListView
+            List<string> dateFormats = new List<string>();
+            dateFormats.Add(DateTime.Now.ToString("dd.M.yyyy"));
+            dateFormats.Add(DateTime.Now.ToString("M.dd.yyyy"));
+            dateFormats.Add(DateTime.Now.ToString("dd MMM yyyy"));
+            dateFormats.Add(DateTime.Now.ToString("dddd, dd MMMM yyyy"));
+            dateFormats.Add(DateTime.Now.ToString("dd MMMM yyyy"));
+            dateFormats.Add(DateTime.Now.ToString("hh:mm:ss tt"));
+            dateFormats.Add(DateTime.Now.ToString("HH:mm:ss"));
+            dateFormats.Add(DateTime.Now.ToString("dddd, dd MMMM yyyy, HH:mm:ss"));
+            dateFormats.Add(DateTime.Now.ToString("dd MMMM yyyy, HH:mm:ss"));
+            dateFormats.Add(DateTime.Now.ToString("MMM dd, yyyy"));
+
+            // Set the ItemsSource of the ListView to the list of date formats
+            listView.ItemsSource = dateFormats;
+
+            // Set the content of the ContentDialog to the ListView
+            dialog.Content = listView;
+
+            // Make the insert button colored
+            dialog.DefaultButton = ContentDialogButton.Primary;
+
+            // Add an "Insert" button to the ContentDialog
+            dialog.PrimaryButtonText = "OK";
+            dialog.PrimaryButtonClick += (s, args) =>
+            {
+                string selectedFormat = listView.SelectedItem as string;
+                string formattedDate = dateFormats[listView.SelectedIndex];
+                editor.Document.Selection.Text = formattedDate;
+            };
+
+            // Add a "Cancel" button to the ContentDialog
+            dialog.SecondaryButtonText = "Cancel";
+
+            // Show the ContentDialog
+            await dialog.ShowAsync();
+        }
+
+        private async void fr_invoke(object sender, RoutedEventArgs e)
+        {
+            var dialog = new FirstRunDialog();
+            dialog.ShowAsync();
+        }
+
+        private async void WN_invoke(object sender, RoutedEventArgs e)
+        {
+            var dialog = new WhatsNewDialog();
+            dialog.ShowAsync();
+        }
     }
 }

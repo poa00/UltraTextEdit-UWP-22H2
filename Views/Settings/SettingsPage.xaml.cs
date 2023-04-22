@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using System;
 using System.Reflection;
+using UltraTextEdit_UWP.ViewModels;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.UI;
@@ -8,13 +10,17 @@ using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace UltraTextEdit_UWP.Views.Settings
 {
     public sealed partial class SettingsPage : Page
     {
+        public bool gameenabled;
+
         public SettingsPage()
         {
+
             InitializeComponent();
 
             var ver = typeof(App).GetTypeInfo().Assembly.GetName().Version;
@@ -34,6 +40,29 @@ namespace UltraTextEdit_UWP.Views.Settings
 
             coreTitleBar.LayoutMetricsChanged += CoreTitleBar_LayoutMetricsChanged;
             coreTitleBar.IsVisibleChanged += CoreTitleBar_IsVisibleChanged;
+
+            if (ElementSoundPlayer.State == ElementSoundPlayerState.On)
+            {
+                soundToggle.IsOn = true;
+            }
+            else
+            {
+                soundToggle.IsOn = false;
+            }
+
+            if (ElementSoundPlayer.SpatialAudioMode == ElementSpatialAudioMode.On)
+            {
+                spatialAudioBox.IsChecked = true;
+            }
+
+            if (Application.Current.FocusVisualKind == FocusVisualKind.HighVisibility)
+            {
+                HighVisibility.IsChecked = true;
+            }
+            else
+            {
+                RevealFocus.IsChecked = true;
+            }
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -87,14 +116,14 @@ namespace UltraTextEdit_UWP.Views.Settings
         private void ExecuteCopyVersionCommand()
         {
 
-                var data = new DataPackage
-                {
-                    RequestedOperation = DataPackageOperation.Copy
-                };
-                data.SetText(aboutblock.Title + " version " + aboutblock.Description);
+            var data = new DataPackage
+            {
+                RequestedOperation = DataPackageOperation.Copy
+            };
+            data.SetText(aboutblock.Title + " version " + aboutblock.Description);
 
-                Clipboard.SetContentWithOptions(data, new ClipboardContentOptions() { IsAllowedInHistory = true, IsRoamable = true });
-                Clipboard.Flush();
+            Clipboard.SetContentWithOptions(data, new ClipboardContentOptions() { IsAllowedInHistory = true, IsRoamable = true });
+            Clipboard.Flush();
         }
         #endregion
 
