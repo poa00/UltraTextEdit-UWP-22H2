@@ -23,11 +23,6 @@ namespace UltraTextEdit_UWP.Views.Settings
 
             InitializeComponent();
 
-            if (gameenabled == true)
-            {
-                view.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "ms-appx:///Assets/gamerbackground.png")), Stretch = Stretch.Fill };
-            }
-
             var ver = typeof(App).GetTypeInfo().Assembly.GetName().Version;
 
 
@@ -191,26 +186,6 @@ namespace UltraTextEdit_UWP.Views.Settings
             if (soundToggle.IsOn == true)
             {
                 ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off;
-            }
-        }
-
-        private void gamingToggle_Toggled(object sender, RoutedEventArgs e)
-        {
-            if (gameToggle.IsOn == true)
-            {
-                gameenabled = true;
-                if (gameenabled == true)
-                {
-                    view.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "ms-appx:///Assets/gamerbackground.png")), Stretch = Stretch.Fill };
-                }
-            }
-            else
-            {
-                gameenabled = false;
-                if (gameenabled == false)
-                {
-                    view.Background = new SolidColorBrush(Colors.Transparent);
-                }
             }
         }
     }

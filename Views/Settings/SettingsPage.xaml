@@ -108,14 +108,7 @@
                     </uc:SettingsBlockControl.SettingsActionableElement>
                 </uc:SettingsBlockControl>
 
-                <uc:SettingsBlockControl Title="Gaming theme 🎮 (Experimental)">
-                    <uc:SettingsBlockControl.Icon>
-                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE7FC;" />
-                    </uc:SettingsBlockControl.Icon>
-                    <uc:SettingsBlockControl.SettingsActionableElement>
-                        <ToggleSwitch x:Name="gameToggle" OffContent="Off" OnContent="On" Toggled="gamingToggle_Toggled"/>
-                    </uc:SettingsBlockControl.SettingsActionableElement>
-                </uc:SettingsBlockControl>
+                
                 <!--
                 <uc:SettingsBlockControl Title="Language">
                     <ComboBox x:Name="CmbLanguage" 
