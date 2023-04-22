@@ -12,10 +12,12 @@
     mc:Ignorable="d">
 
     <Grid>
-        <TextBlock x:Name="ChangelogText">
+        <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
             • Adds a brand new First Run dialog!<LineBreak />
             • Adds a What's New dialog<LineBreak />
-            • Removes Gaming theme (it looked so horrible and was underused)</TextBlock>
+            • Removes Gaming theme (it looked so horrible, unprofessional and was underused)<LineBreak/>
+            • Redesigns icon to make it look more professional (no uneven lines and no white areas)
+        </TextBlock>
     </Grid>
 </ContentDialog>
