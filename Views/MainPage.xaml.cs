@@ -911,5 +911,17 @@ namespace UltraTextEdit_UWP
             // Show the ContentDialog
             await dialog.ShowAsync();
         }
+
+        private async void fr_invoke(object sender, RoutedEventArgs e)
+        {
+            var dialog = new FirstRunDialog();
+            dialog.ShowAsync();
+        }
+
+        private async void WN_invoke(object sender, RoutedEventArgs e)
+        {
+            var dialog = new WhatsNewDialog();
+            dialog.ShowAsync();
+        }
     }
 }

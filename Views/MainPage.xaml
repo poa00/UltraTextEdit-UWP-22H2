@@ -600,6 +600,9 @@
                         </AppBarButton>
                         <AppBarButton Label="utever" Icon="Help" Click="uteverclick">
                         </AppBarButton>
+                        <AppBarSeparator/>
+                        <AppBarButton Label="First Run Dialog" Icon="Help" Click="fr_invoke"/>
+                        <AppBarButton Label="What's New Dialog" Icon="Help" Click="WN_invoke"/>
                     </controls:TabbedCommandBarItem>
                 </controls:TabbedCommandBar.MenuItems>
             </controls:TabbedCommandBar>
