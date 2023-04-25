@@ -105,17 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "New dialogs!",
+                Title = "New updated translations!",
                 Icon = "\uE775",
                 Tag = "LocAndAcc",
-                Description = $"This release adds two brand new dialogs, both of which can also be launched via Help menu! One is the First Run dialog, which runs the first time this app is run. The second is the What's New dialog, a dialog that shows what has changed between builds."
-            });
-            WhatsNew.Add(new()
-            {
-                Title = "Redesigned app icon",
-                Icon = "\uE914",
-                Tag = "LocAndAcc",
-                Description = $"This release also redesigns the app icon of UltraTextEdit UWP to make it look more professional, indicating the vision for the future of the app (to have more Word-like features and maybe become a Word competitor)"
+                Description = $"Adds Tuurkish translation (by @AlperAkca49)!\nImprovements to the Simplified Chinese translation (by @wxcu21)"
             });
 
             //WhatsNew.Add(new()
