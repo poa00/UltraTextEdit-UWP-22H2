@@ -103,9 +103,9 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
             Stream stream = client.OpenRead("https://garoag.com/jpb/wp-content/uploads/Version22H2.txt");
             Stream stream2 = client.OpenRead("https://garoag.com/jpb/wp-content/uploads/updatedescript22h2.txt");
             StreamReader reader = new StreamReader(stream);
-            StreamReader reader2 = new StreamReader(stream2);
+            //StreamReader reader2 = new StreamReader(stream2);
             var newVersion = new Version(await reader.ReadToEndAsync());
-            var newVersiondescription = await reader2.ReadToEndAsync();
+            //var newVersiondescription = await reader2.ReadToEndAsync();
             Package package = Package.Current;
             PackageVersion packageVersion = package.Id.Version;
             var currentVersion = new Version(string.Format("{0}.{1}.{2}.{3}", packageVersion.Major, packageVersion.Minor, packageVersion.Build, packageVersion.Revision));
@@ -117,7 +117,7 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
                 updatebutton2.Content = "Install updates";
                 updatebutton2.Visibility = Visibility.Visible;
                 updatebutton3.Visibility = Visibility.Visible;
-                updateinfo.Title = newVersiondescription;
+                //updateinfo.Title = newVersiondescription;
                 var messageDialog = new MessageDialog("Found an update.");
                 messageDialog.Commands.Add(new UICommand(
                     "Update",
@@ -145,7 +145,7 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
             {
                 PackageManager packagemanager = new PackageManager();
                 await packagemanager.AddPackageAsync(
-                    new Uri("https://occoam.com/jpb/wp-content/uploads/UTEUWP22621_latest.msixbundle"),
+                    new Uri("https://github.com/jpbandroid/UpdateZips/raw/main/UTE-23H1-latest.msixbundle"),
                     null,
                     DeploymentOptions.ForceApplicationShutdown
                 );

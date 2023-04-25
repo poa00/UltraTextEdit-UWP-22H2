@@ -84,7 +84,7 @@
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="5"
-                        Text="Beta Channel"/>
+                        Text="Beta Channel" Visibility="Collapsed"/>
                     </Grid>
                 </muxc:Expander>
 
@@ -131,7 +131,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE."/>
-                        <TextBlock Margin="0,20,0,0" TextWrapping="WrapWholeWords" x:Uid="LicenseTo"/>
+                        <TextBlock Margin="0,20,0,0" TextWrapping="WrapWholeWords" x:Uid="LicenseTo" Visibility="Collapsed"/>
                         <StackPanel Margin="0,5,0,0">
                             <HyperlinkButton Content="UltraTextEdit UWP GitHub repo" NavigateUri="https://github.com/jpbandroid/UltraTextEdit-UWP-22H2" Name="OwnerText"/>
                             <TextBlock 
