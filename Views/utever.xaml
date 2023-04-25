@@ -84,7 +84,7 @@
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="5"
-                        Text="Beta Channel" Visibility="Collapsed"/>
+                        Text="Beta Channel"/>
                     </Grid>
                 </muxc:Expander>
 
