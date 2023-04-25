@@ -108,7 +108,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "New updated translations!",
                 Icon = "\uE775",
                 Tag = "LocAndAcc",
-                Description = $"Adds Tuurkish translation (by @AlperAkca49)!\nImprovements to the Simplified Chinese translation (by @wxcu21)"
+                Description = $"Adds Tuurkish translation (by @AlperAkca79)!\nImprovements to the Simplified Chinese translation (by @wxcu21)"
             });
 
             //WhatsNew.Add(new()
