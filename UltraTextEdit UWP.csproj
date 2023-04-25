@@ -395,6 +395,7 @@
     <PRIResource Include="Strings\it-IT\Resources.resw" />
     <PRIResource Include="Strings\ro-RO\Resources.resw" />
     <None Include="UltraTextEdit UWP_TemporaryKey.pfx" />
+    <PRIResource Include="Strings\tr-TR\Resources.resw" />
     <None Include="WordpadUWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup />
