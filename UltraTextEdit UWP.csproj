@@ -19,7 +19,7 @@
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <PackageCertificateThumbprint>76F4C597169FFF8AFCFB3977DD8AFB4F1F453B50</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>177391F1D0FABF27BF84BB4A17C4C91D8499D629</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>False</GenerateTestArtifacts>
@@ -389,6 +389,7 @@
     <PRIResource Include="Strings\zh-CN\Resources.resw" />
     <PRIResource Include="Strings\it-IT\Resources.resw" />
     <PRIResource Include="Strings\ro-RO\Resources.resw" />
+    <None Include="UltraTextEdit UWP_TemporaryKey.pfx" />
     <None Include="WordpadUWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup />
