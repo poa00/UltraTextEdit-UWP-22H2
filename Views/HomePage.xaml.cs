@@ -115,7 +115,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Tabs",
                 Icon = "\uF7ED",
                 Tag = "LocAndAcc",
-                Description = $"This release fixes some bugs with the UI of MainPage in Tabbed mode not being Mica-colored, a known issue since build 25247.1000"
+                Description = $"This release fixes some bugs with the UI of MainPage in Tabbed mode not being Mica themed, a known issue since build 25247.1000"
             });
 
             //WhatsNew.Add(new()

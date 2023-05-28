@@ -14,10 +14,8 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Adds a brand new First Run dialog!<LineBreak />
-            • Adds a What's New dialog<LineBreak />
-            • Removes Gaming theme (it looked so horrible, unprofessional and was underused)<LineBreak/>
-            • Redesigns icon to make it look more professional (no uneven lines and no white areas)
+            • A Turkish translation (by @AlperAkca79) has been added, alongside an updated Simplified Chinese translation (by @wxcu21)<LineBreak />
+            • This release fixes some bugs with the UI of MainPage in Tabbed mode not being Mica themed, a known issue since build 25247.1000
         </TextBlock>
     </Grid>
 </ContentDialog>
