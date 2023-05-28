@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using UltraTextEdit_UWP;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
@@ -70,7 +69,7 @@ namespace UltraTextEdit_UWP
                 e.Handled = true;
                 return;
             }
-
+            
             _openDialog = true;
 
             if (Tabs.TabItems.Count == 1)
@@ -78,19 +77,16 @@ namespace UltraTextEdit_UWP
                 if (!(((Tabs.SelectedItem as TabViewItem).Content as Frame).Content as MainPage).saved)
                 {
                     e.Handled = true;
-                    (((Tabs.SelectedItem as TabViewItem).Content as Frame).Content as MainPage).ShowUnsavedDialog();
+                    _ = (((Tabs.SelectedItem as TabViewItem).Content as Frame).Content as MainPage).ShowUnsavedDialog();
                 }
-            }
-            else if (Tabs.TabItems.Count > 1)
+            } else if (Tabs.TabItems.Count > 1)
             {
                 int unsavedItemsCount = 0;
-
-                foreach (TabViewItem item in Tabs.TabItems)
+                
+                foreach (TabViewItem item in Tabs.TabItems.Cast<TabViewItem>())
                 {
                     if (!((item.Content as Frame).Content as MainPage).saved)
-                    {
                         unsavedItemsCount++;
-                    }
                 }
 
                 if (unsavedItemsCount > 0)
@@ -107,7 +103,7 @@ namespace UltraTextEdit_UWP
                     };
 
                     // Allow the dialog to be opened again
-                    confirmationDialog.CloseButtonClick += (s, e) => _openDialog = false;
+                    confirmationDialog.CloseButtonClick += (s, e) => _openDialog = false; 
 
                     ContentDialogResult result = await confirmationDialog.ShowAsync();
 
@@ -118,9 +114,7 @@ namespace UltraTextEdit_UWP
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
-        {
-            CustomDragRegion.Height = ShellTitlebarInset.Height = sender.Height;
-        }
+            => CustomDragRegion.Height = ShellTitlebarInset.Height = sender.Height;
 
         public void TabView_AddTabButtonClick(TabView sender, object args)
         {
@@ -134,7 +128,7 @@ namespace UltraTextEdit_UWP
             Frame frame = new();
 
             newTab.Content = frame;
-            newTab.IconSource = new Microsoft.UI.Xaml.Controls.SymbolIconSource()
+            newTab.IconSource = new Microsoft.UI.Xaml.Controls.SymbolIconSource() 
             {
                 Symbol = Symbol.Document
             };
