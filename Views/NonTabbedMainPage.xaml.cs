@@ -32,7 +32,7 @@ using System.Runtime.CompilerServices;
 
 namespace UltraTextEdit_UWP
 {
-    public sealed partial class MainPage : Page
+    public sealed partial class NonTabbedMainPage : Page
     {
         public bool saved = true;
         public bool _wasOpen = false;
@@ -40,7 +40,7 @@ namespace UltraTextEdit_UWP
         string fileNameWithPath = "";
         string originalDocText = "";
 
-        public MainPage()
+        public NonTabbedMainPage()
         {
             InitializeComponent();
 
@@ -66,6 +66,8 @@ namespace UltraTextEdit_UWP
 
             NavigationCacheMode = NavigationCacheMode.Required;
 
+            (CompactOverlayBtn.Content as FontIcon).Glyph = ApplicationView.GetForCurrentView().ViewMode == ApplicationViewMode.CompactOverlay ? "\uEE49" : "\uEE47";
+
             ShareSourceLoad();
 
             var settings = new SettingsPage();
@@ -73,7 +75,8 @@ namespace UltraTextEdit_UWP
             if (settings.gameenabled == true)
             {
                 textsplitview.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "ms-appx:///Assets/gamerbackground.png")), Stretch = Stretch.Fill };
-            } else
+            }
+            else
             {
                 textsplitview.Background = new SolidColorBrush(Colors.Transparent);
             }
@@ -155,8 +158,8 @@ namespace UltraTextEdit_UWP
                     CachedFileManager.DeferUpdates(file);
                     // write to file
                     using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.ReadWrite))
-                    
-                    if (file.Name.EndsWith(".txt"))
+
+                        if (file.Name.EndsWith(".txt"))
                         {
                             editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.None, randAccStream);
                         }
@@ -214,7 +217,7 @@ namespace UltraTextEdit_UWP
                         AppTitle.Text = file.Name + " - " + appTitleStr;
                         Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Remove("CurrentlyOpenFile");
                     }
-                } 
+                }
                 catch (Exception)
                 {
                     SaveFile(true);
@@ -267,19 +270,19 @@ namespace UltraTextEdit_UWP
             ApplicationView currentAV = ApplicationView.GetForCurrentView();
             CoreApplicationView newAV = CoreApplication.CreateNewView();
             await newAV.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
-                  {
-                        var newWindow = Window.Current;
-                        var newAppView = ApplicationView.GetForCurrentView();
-                        newAppView.Title = $"Untitled - {Strings.Resources.AppName}";
+            {
+                var newWindow = Window.Current;
+                var newAppView = ApplicationView.GetForCurrentView();
+                newAppView.Title = $"Untitled - {Strings.Resources.AppName}";
 
-                        var frame = new Frame();
-                        frame.Navigate(typeof(NonTabbedMainPage));
-                        newWindow.Content = frame;
-                        newWindow.Activate();
+                var frame = new Frame();
+                frame.Navigate(typeof(NonTabbedMainPage));
+                newWindow.Content = frame;
+                newWindow.Activate();
 
-                        await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newAppView.Id, 
-                            ViewSizePreference.UseMinimum, currentAV.Id, ViewSizePreference.UseMinimum);
-                  });
+                await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newAppView.Id,
+                    ViewSizePreference.UseMinimum, currentAV.Id, ViewSizePreference.UseMinimum);
+            });
         }
 
         private void StrikethoughButton_Click(object sender, RoutedEventArgs e)
