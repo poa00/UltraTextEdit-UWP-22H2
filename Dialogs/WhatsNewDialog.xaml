@@ -14,7 +14,7 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • A Turkish translation (by @AlperAkca79) has been added, alongside an updated Simplified Chinese translation (by @wxcu21)<LineBreak />
+            • A Turkish translation (by @AlperAkca79) has been added, alongside an updated Simplified Chinese translation (by @wcxu21)<LineBreak />
             • This release fixes some bugs with the UI of MainPage in Tabbed mode not being Mica themed, a known issue since build 25247.1000
         </TextBlock>
     </Grid>
