@@ -105,17 +105,17 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "New dialogs!",
+                Title = "Localization",
                 Icon = "\uE775",
                 Tag = "LocAndAcc",
-                Description = $"This release adds two brand new dialogs, both of which can also be launched via Help menu! One is the First Run dialog, which runs the first time this app is run. The second is the What's New dialog, a dialog that shows what has changed between builds."
+                Description = $"A Turkish translation (by @AlperAkca79) has been added, alongside an updated Simplified Chinese translation (by @wxcu21)"
             });
             WhatsNew.Add(new()
             {
-                Title = "Redesigned app icon",
-                Icon = "\uE914",
+                Title = "Tabs",
+                Icon = "\uF7ED",
                 Tag = "LocAndAcc",
-                Description = $"This release also redesigns the app icon of UltraTextEdit UWP to make it look more professional, indicating the vision for the future of the app (to have more Word-like features and maybe become a Word competitor)"
+                Description = $"This release fixes some bugs with the UI of MainPage in Tabbed mode not being Mica-colored, a known issue since build 25247.1000"
             });
 
             //WhatsNew.Add(new()
