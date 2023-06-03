@@ -14,9 +14,9 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Adds Tuurkish translation (by @AlperAkca79)!<LineBreak />
-            • Improvements to the Simplified Chinese translation (by @wxcu21)<LineBreak />
-            • Fix to ensure that this build can be installed on Windows 10 1809, 1903, 1909
+            • Fixes bugs with MainPage not being Mica themed when used in Tabbed mode<LineBreak />
+            • Updates Mircosoft.UI.Xaml to version 2.8.4<LineBreak />
+            • Updates CommunityToolkit.Mvvm to version 8.2.0
         </TextBlock>
     </Grid>
 </ContentDialog>
