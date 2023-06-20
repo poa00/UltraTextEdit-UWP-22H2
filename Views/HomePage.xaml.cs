@@ -105,10 +105,31 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "New updated translations!",
+                Title = "New dialogs!",
                 Icon = "\uE775",
                 Tag = "LocAndAcc",
-                Description = $"Adds Tuurkish translation (by @AlperAkca79)!\nImprovements to the Simplified Chinese translation (by @wxcu21)"
+                Description = $"This release adds two brand new dialogs, both of which can also be launched via Help menu! One is the First Run dialog, which runs the first time this app is run. The second is the What's New dialog, a dialog that shows what has changed between builds."
+            });
+            WhatsNew.Add(new()
+            {
+                Title = "Redesigned app icon",
+                Icon = "\uE914",
+                Tag = "LocAndAcc",
+                Description = $"This release also redesigns the app icon of UltraTextEdit UWP to make it look more professional, indicating the vision for the future of the app (to have more Word-like features and maybe become a Word competitor)"
+            });
+            WhatsNew.Add(new()
+            {
+                Title = "Time/Date",
+                Icon = "\uE775",
+                Tag = "LocAndAcc",
+                Description = $"This release adds date and time insertion!"
+            });
+            WhatsNew.Add(new()
+            {
+                Title = "Tabs",
+                Icon = "\uF7ED",
+                Tag = "LocAndAcc",
+                Description = $"This release finally adds Tabs, after several user feature requests and a lot of consideration about when they will be released!\nThey allow you to open multiple documents at once, like in the File Explorer.\nYou can also open the traditional untabbed UTE window by clicking on 'New Untabbed Window' in the app's File Menu. You can also launch a new Tabbed Window by clicking on 'New Tabbed Window' in the same menu."
             });
 
             //WhatsNew.Add(new()

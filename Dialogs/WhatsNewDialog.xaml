@@ -13,10 +13,9 @@
 
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
-            <LineBreak />
-            • Fixes bugs with MainPage not being Mica themed when used in Tabbed mode<LineBreak />
-            • Updates Mircosoft.UI.Xaml to version 2.8.4<LineBreak />
-            • Updates CommunityToolkit.Mvvm to version 8.2.0
+            • Updates Win2D.uwp to version 1.27.0-preview3<LineBreak />
+            • Updates Microsoft.NETCore.Platforms and System.Text.Json to version 7.0.3<LineBreak />
+            • Updates Microsoft.Web.WebView2 to version 1.0.1823.32
         </TextBlock>
     </Grid>
 </ContentDialog>
