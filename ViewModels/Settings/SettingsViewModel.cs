@@ -8,6 +8,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using System.Collections.ObjectModel;
 using UltraTextEdit_UWP.Helpers;
+using UltraTextEdit_UWP.Views.Settings;
 
 namespace UltraTextEdit_UWP.ViewModels
 {

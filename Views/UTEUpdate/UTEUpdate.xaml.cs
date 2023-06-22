@@ -100,8 +100,8 @@ namespace UltraTextEdit_UWP.Views.UTEUpdate
         {
             updatetext.Text = "Checking for updates";
             WebClient client = new WebClient();
-            Stream stream = client.OpenRead("https://github.com/jpbandroid/UpdateZips/raw/main/UTE-23H1-version.txt");
-            //Stream stream2 = client.OpenRead("https://occoam.com/jpb/wp-content/uploads/updatedescript22h2.txt");
+            Stream stream = client.OpenRead("https://garoag.com/jpb/wp-content/uploads/Version22H2.txt");
+            Stream stream2 = client.OpenRead("https://garoag.com/jpb/wp-content/uploads/updatedescript22h2.txt");
             StreamReader reader = new StreamReader(stream);
             //StreamReader reader2 = new StreamReader(stream2);
             var newVersion = new Version(await reader.ReadToEndAsync());
