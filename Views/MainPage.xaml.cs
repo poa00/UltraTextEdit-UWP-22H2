@@ -828,7 +828,7 @@ namespace UltraTextEdit_UWP
                 newAppView.Title = $"Untitled - {Strings.Resources.AppName}";
 
                 var frame = new Frame();
-                frame.Navigate(typeof(BasePage));
+                frame.Navigate(typeof(MainPage));
                 newWindow.Content = frame;
                 newWindow.Activate();
 
