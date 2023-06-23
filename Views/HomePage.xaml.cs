@@ -140,7 +140,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "New Settings UI",
                 Icon = "\uE713",
                 Tag = "SettingsUI",
-                Description = "On the redesigned Settings UI, you can set all UTE UWP settings as well as new settings from TowPad.\n\nNEW IN OCTOBER UPDATE:\nIcons for the Appearance section of the Settings menu added"
+                Description = "On the redesigned Settings UI, you can set all UTE UWP settings as well as new settings from TowPad.\n\nNEW IN OCTOBER UPDATE:\nIcons for the Appearance section of the Settings menu added\n\nNEW IN JUNE UPDATE:\nThis release fixes some functionality of the Settings toggles. The values of the Settings toggles will now persist between openings of the Settings page."
             });
 
             WhatsNew.Add(new()
@@ -172,7 +172,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Table",
                 Icon = "\uF261",
                 Tag = "Table",
-                Description = $"NEW IN FEBRUARY UPDATE: Now you can add tables to documents made in UTE UWP!\n(Only one per app run allowed for now though)"
+                Description = $"NEW IN FEBRUARY UPDATE: Now you can add tables to documents made in UTE UWP!\n(Only one per app run allowed for now though)\n\nNEW IN JUNE UPDATE:\nThis release adds a dialog which allows you to create tables of different sizes in your documents!"
             });
 
             WhatsNew.Add(new()
@@ -187,8 +187,16 @@ namespace UltraTextEdit_UWP.Views
             {
                 Title = "Symbols",
                 Icon = "\uED58",
-                Tag = "LocAndAcc",
+                Tag = "Symbols",
                 Description = $"NEW IN FEBRUARY UPDATE: Now you can add the multiplication and division symbols straight into your document from the app's new symbols menu!"
+            });
+
+            WhatsNew.Add(new()
+            {
+                Title = "Time/Date",
+                Icon = "\uE775",
+                Tag = "TimeDate",
+                Description = $"NEW IN JUNE UPDATE: This release adds date and time insertion!"
             });
 
             IsListEmpty = list.Count <= 0;
