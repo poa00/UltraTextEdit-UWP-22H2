@@ -13,9 +13,7 @@
 
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
-            • Updates Win2D.uwp to version 1.27.0-preview3<LineBreak />
-            • Updates Microsoft.NETCore.Platforms and System.Text.Json to version 7.0.3<LineBreak />
-            • Updates Microsoft.Web.WebView2 to version 1.0.1823.32
+            Initial stable release of UltraTextEdit UWP, version 23H2
         </TextBlock>
     </Grid>
 </ContentDialog>
