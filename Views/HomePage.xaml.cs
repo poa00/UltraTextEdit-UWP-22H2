@@ -105,17 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Localization",
-                Icon = "\uE775",
+                Title = "UI Updates",
+                Icon = "\uE2B1",
                 Tag = "LocAndAcc",
-                Description = $"A Turkish translation (by @AlperAkca79) has been added, alongside an updated Simplified Chinese translation (by @wcxu21)"
-            });
-            WhatsNew.Add(new()
-            {
-                Title = "Tabs",
-                Icon = "\uF7ED",
-                Tag = "LocAndAcc",
-                Description = $"This release fixes some bugs with the UI of MainPage in Tabbed mode not being Mica themed, a known issue since build 25247.1000"
+                Description = $"The color picker UI has been revamped, based on the one from TextPad"
             });
 
             //WhatsNew.Add(new()

@@ -14,8 +14,9 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • A Turkish translation (by @AlperAkca79) has been added, alongside an updated Simplified Chinese translation (by @wcxu21)<LineBreak />
-            • This release fixes some bugs with the UI of MainPage in Tabbed mode not being Mica themed, a known issue since build 25247.1000
+            • Updates dependencies<LineBreak />
+            • Updates WinUI to v2.8.4<LineBreak />
+            • This release revamps the color picker UI based on TextPad's new color picker
         </TextBlock>
     </Grid>
 </ContentDialog>
