@@ -763,6 +763,61 @@
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
                         </AppBarElementContainer>
+                        <AppBarElementContainer>
+                            <muxc:ToggleSplitButton x:Name="myListButton" Grid.Column="2" Grid.ColumnSpan="3" Padding="11,0,11,0">
+                                <muxc:ToggleSplitButton.Content>
+                                    <FontIcon Glyph="&#xE133;" />
+                                </muxc:ToggleSplitButton.Content>
+                                <muxc:ToggleSplitButton.Flyout>
+                                    <Flyout Placement="Bottom">
+                                        <Grid>
+                                            <Grid.Resources>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Padding" Value="4"/>
+                                                    <Setter Property="MinWidth" Value="0"/>
+                                                    <Setter Property="MinHeight" Value="0"/>
+                                                    <Setter Property="Margin" Value="6"/>
+                                                    <Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}"/>
+                                                    <Setter Property="Background" Value="White" />
+                                                </Style>
+                                            </Grid.Resources>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Button x:Name="NoneNumeral" Grid.Row="0" Grid.Column="0" Click="NoneNumeral_Click" Width="64" Height="64">
+                                                <Image Source="/Assets/listnumbersimages/none.png" Width="60" Height="60" />
+                                            </Button>
+                                            <Button x:Name="DottedNumeral" Grid.Row="0" Grid.Column="1" Click="DottedNumeral_Click" Width="64" Height="64">
+                                                <Image Source="/Assets/listnumbersimages/dot.bmp" Width="60" Height="60" />
+                                            </Button>
+                                            <Button x:Name="NumberNumeral" Grid.Row="0" Grid.Column="2" Click="NumberNumeral_Click" Height="64" Width="64">
+                                                <Image Source="/Assets/listnumbersimages/number.png" Width="60" Height="60" />
+                                            </Button>
+                                            <Button x:Name="LetterSmallNumeral" Grid.Row="1" Grid.Column="0" Click="LetterSmallNumeral_Click" Height="64" Width="64">
+                                                <Image Source="/Assets/listnumbersimages/abc.png" Width="60" Height="60" />
+                                            </Button>
+                                            <Button x:Name="LetterBigNumeral"  Grid.Row="1" Grid.Column="1" Click="LetterBigNumeral_Click" Height="64" Width="64">
+                                                <Image Source="/Assets/listnumbersimages/ABCB.png" Width="60" Height="60" />
+                                            </Button>
+                                            <Button x:Name="SmalliNumeral" Grid.Row="1" Grid.Column="2" Click="SmalliNumeral_Click" Height="64" Width="64">
+                                                <Image Source="/Assets/listnumbersimages/iii.png" Width="64" Height="64" />
+                                            </Button>
+                                            <Button x:Name="BigINumeral" Grid.Row="2" Grid.Column="0" Click="BigINumeral_Click" Height="64" Width="64">
+                                                <Image Source="/Assets/listnumbersimages/IIII.png" Width="64" Height="64" />
+                                            </Button>
+                                        </Grid>
+                                    </Flyout>
+                                </muxc:ToggleSplitButton.Flyout>
+                            </muxc:ToggleSplitButton>
+                        </AppBarElementContainer>
                         <AppBarSeparator />
                         <AppBarButton Style="{StaticResource TransparentButton}" ToolTipService.ToolTip="{x:Bind res:Resources.FindDocTooltip}" Click="FindButton2_Click">
                             <Button.Content>
