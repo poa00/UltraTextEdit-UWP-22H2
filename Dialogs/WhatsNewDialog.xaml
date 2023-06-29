@@ -14,9 +14,7 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Updates dependencies<LineBreak />
-            • Updates WinUI to v2.8.4<LineBreak />
-            • This release revamps the color picker UI based on TextPad's new color picker
+            • Add bulleting options back into UTE UWP<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
