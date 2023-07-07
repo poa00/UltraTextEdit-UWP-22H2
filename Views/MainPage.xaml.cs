@@ -78,48 +78,48 @@ namespace UltraTextEdit_UWP
                 textsplitview.Background = new SolidColorBrush(Colors.Transparent);
             }
 
-            var theme = Application.Current.RequestedTheme;
-            string noneimg;
-            string abcimg;
-            string abcbimg;
-            string dotimg;
-            string iiiimg;
-            string jiiimg;
-            string numberimg;
-            if (theme == ApplicationTheme.Light)
-            {
-                noneimg = "none.png";
-                abcimg = "abc.png";
-                abcbimg = "ABCB.png";
-                dotimg = "dot.bmp";
-                numberimg = "number.png";
-                iiiimg = "iii.png";
-                jiiimg = "IIII.png";
-                NoneNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{noneimg}"));
-                NumberNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{numberimg}"));
-                BigINumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{jiiimg}"));
-                SmalliNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{iiiimg}"));
-                DottedNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{dotimg}"));
-                LetterBigNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcbimg}"));
-                LetterSmallNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcimg}"));
-            }
-            else
-            {
-                noneimg = "noneDark.png";
-                abcimg = "abcDark.png";
-                abcbimg = "ABCBDark.png";
-                dotimg = "dotDark.bmp";
-                numberimg = "numberDark.png";
-                iiiimg = "iiiDark.png";
-                jiiimg = "IIIIDark.png";
-                NoneNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{noneimg}"));
-                NumberNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{numberimg}"));
-                BigINumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{jiiimg}"));
-                SmalliNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{iiiimg}"));
-                DottedNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{dotimg}"));
-                LetterBigNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcbimg}"));
-                LetterSmallNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcimg}"));
-            }
+            //var theme = Application.Current.RequestedTheme;
+            //string noneimg;
+            //string abcimg;
+            //string abcbimg;
+            //string dotimg;
+            //string iiiimg;
+            //string jiiimg;
+            //string numberimg;
+            //if (theme == ApplicationTheme.Light)
+            //{
+            //    noneimg = "none.png";
+            //    abcimg = "abc.png";
+            //    abcbimg = "ABCB.png";
+            //    dotimg = "dot.bmp";
+            //    numberimg = "number.png";
+            //    iiiimg = "iii.png";
+            //    jiiimg = "IIII.png";
+            //    NoneNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{noneimg}"));
+            //    NumberNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{numberimg}"));
+            //    BigINumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{jiiimg}"));
+            //    SmalliNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{iiiimg}"));
+            //    DottedNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{dotimg}"));
+            //    LetterBigNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcbimg}"));
+            //    LetterSmallNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcimg}"));
+            //}
+            //else
+            //{
+            //    noneimg = "noneDark.png";
+            //    abcimg = "abcDark.png";
+            //    abcbimg = "ABCBDark.png";
+            //    dotimg = "dotDark.bmp";
+            //    numberimg = "numberDark.png";
+            //    iiiimg = "iiiDark.png";
+            //    jiiimg = "IIIIDark.png";
+            //    NoneNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{noneimg}"));
+            //    NumberNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{numberimg}"));
+            //    BigINumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{jiiimg}"));
+            //    SmalliNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{iiiimg}"));
+            //    DottedNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{dotimg}"));
+            //    LetterBigNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcbimg}"));
+            //    LetterSmallNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcimg}"));
+            //}
 
         }
 
