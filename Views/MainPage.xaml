@@ -770,7 +770,7 @@
                                                     <Setter Property="MinHeight" Value="0"/>
                                                     <Setter Property="Margin" Value="6"/>
                                                     <Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}"/>
-                                                    <Setter Property="Background" Value="White" />
+                                                    <Setter Property="Background" Value="White"/>
                                                 </Style>
                                             </Grid.Resources>
                                             <Grid.RowDefinitions>
