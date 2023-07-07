@@ -29,6 +29,7 @@ using System.Text;
 using Windows.UI.Xaml.Media.Imaging;
 using UltraTextEdit_UWP.Dialogs;
 using System.Runtime.CompilerServices;
+using Microsoft.UI.Xaml.Controls;
 
 namespace UltraTextEdit_UWP
 {
@@ -390,8 +391,11 @@ namespace UltraTextEdit_UWP
         private async void OpenButton_Click(object sender, RoutedEventArgs e)
         {
             // Open a text file.
-            FileOpenPicker open = new();
-            open.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            FileOpenPicker open = new()
+            {
+                SuggestedStartLocation = PickerLocationId.DocumentsLibrary
+            };
+
             open.FileTypeFilter.Add(".rtf");
             open.FileTypeFilter.Add(".txt");
 
@@ -407,7 +411,9 @@ namespace UltraTextEdit_UWP
                     string text = reader.ReadString(buffer.Length);
                     // Load the file into the Document property of the RichEditBox.
                     editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
+                    editor.Document.GetText(TextGetOptions.UseObjectText, out originalDocText);
                     //editor.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, text);
+                    (BasePage.Current.Tabs.TabItems[BasePage.Current.Tabs.SelectedIndex] as TabViewItem).Header = file.Name;
                     AppTitle.Text = file.Name + " - " + appTitleStr;
                     fileNameWithPath = file.Path;
                 }
