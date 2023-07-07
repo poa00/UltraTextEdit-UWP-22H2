@@ -332,7 +332,7 @@
       <Version>2.0.14</Version>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm">
-      <Version>8.2.0</Version>
+      <Version>8.2.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces">
       <Version>7.0.0</Version>
@@ -388,7 +388,7 @@
       <Version>4.5.4</Version>
     </PackageReference>
     <PackageReference Include="Win2D.uwp">
-      <Version>1.27.0-preview2</Version>
+      <Version>1.27.0-preview3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
