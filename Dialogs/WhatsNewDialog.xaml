@@ -14,7 +14,8 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Add bulleting options back into UTE UWP<LineBreak />
+            • Add feature when open saved document will display as the file name, instead of Document {number}<LineBreak />
+            • Dependency updates<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>

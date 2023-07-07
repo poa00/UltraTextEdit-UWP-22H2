@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Bulleting options/List Styles",
-                Icon = "\uE133",
+                Title = "Tabs",
+                Icon = "\uF7ED",
                 Tag = "LocAndAcc",
-                Description = $"This release adds bulleting options back into UTE UWP!!"
+                Description = $"This release adds the function ot have the file name of an open file in a tab!!"
             });
 
             //WhatsNew.Add(new()
