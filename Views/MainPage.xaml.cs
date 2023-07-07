@@ -68,16 +68,6 @@ namespace UltraTextEdit_UWP
 
             ShareSourceLoad();
 
-            var settings = new SettingsPage();
-
-            if (settings.gameenabled == true)
-            {
-                textsplitview.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "ms-appx:///Assets/gamerbackground.png")), Stretch = Stretch.Fill };
-            } else
-            {
-                textsplitview.Background = new SolidColorBrush(Colors.Transparent);
-            }
-
             //var theme = Application.Current.RequestedTheme;
             //string noneimg;
             //string abcimg;
