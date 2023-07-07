@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Bulleting options/List Styles",
-                Icon = "\uE133",
+                Title = "Changelog now moved to What's New dialog",
+                Icon = "\uE789",
                 Tag = "LocAndAcc",
-                Description = $"This release adds bulleting options back into UTE UWP!!"
+                Description = $"Check there to see what's new in the app. This UI will be discontinued when UTE UWP Canary transitions to the Windows App SDK codebase."
             });
 
             //WhatsNew.Add(new()

@@ -14,7 +14,10 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Add bulleting options back into UTE UWP<LineBreak />
+            • First ever Canary build of UTE UWP!<LineBreak />
+            • The major version is now 11, not 10, and the build strategy has been rebooted to start from 7700. Please note that this will ONLY ever be present in Canary builds or builds based on the new, merged Windows App SDk codebase that is coming soon<LineBreak />
+            • Introduces a brand new Ribbon UI design, more heavily inspired by modern Word releases and users' feedback!<LineBreak />
+            • Fixes several issues that led to tabbed MainPage have more features (a feature disproportionality) than untabbed MainPage<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
