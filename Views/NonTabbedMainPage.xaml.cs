@@ -429,13 +429,18 @@ namespace UltraTextEdit_UWP
         {
             // Extract the color of the button that was clicked.
             Button clickedColor = (Button)sender;
-            var rectangle = (Windows.UI.Xaml.Shapes.Rectangle)clickedColor.Content;
+            var borderone = (Windows.UI.Xaml.Controls.Border)clickedColor.Content;
+            var bordertwo = (Windows.UI.Xaml.Controls.Border)borderone.Child;
+            var rectangle = (Windows.UI.Xaml.Shapes.Rectangle)bordertwo.Child;
             var color = (rectangle.Fill as SolidColorBrush).Color;
-
             editor.Document.Selection.CharacterFormat.ForegroundColor = color;
-
-            fontColorButton.Flyout.Hide();
+            //FontColorMarker.SetValue(ForegroundProperty, new SolidColorBrush(color));
             editor.Focus(FocusState.Keyboard);
+        }
+
+        private void fontcolorsplitbutton_Click(Microsoft.UI.Xaml.Controls.SplitButton sender, Microsoft.UI.Xaml.Controls.SplitButtonClickEventArgs args)
+        {
+            // If you see this, remind me to look into the splitbutton color applying logic
         }
 
         private void AddLinkButton_Click(object sender, RoutedEventArgs e)
@@ -923,6 +928,62 @@ namespace UltraTextEdit_UWP
         {
             var dialog = new WhatsNewDialog();
             dialog.ShowAsync();
+        }
+
+        private void NoneNumeral_Click(object sender, RoutedEventArgs e)
+        {
+            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.None;
+            myListButton.IsChecked = false;
+            myListButton.Flyout.Hide();
+            editor.Focus(FocusState.Keyboard);
+        }
+
+        private void DottedNumeral_Click(object sender, RoutedEventArgs e)
+        {
+            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.Bullet;
+            myListButton.IsChecked = true;
+            myListButton.Flyout.Hide();
+            editor.Focus(FocusState.Keyboard);
+        }
+
+        private void NumberNumeral_Click(object sender, RoutedEventArgs e)
+        {
+            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.Arabic;
+            myListButton.IsChecked = true;
+            myListButton.Flyout.Hide();
+            editor.Focus(FocusState.Keyboard);
+        }
+
+        private void LetterSmallNumeral_Click(object sender, RoutedEventArgs e)
+        {
+            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.LowercaseEnglishLetter;
+            myListButton.IsChecked = true;
+            myListButton.Flyout.Hide();
+            editor.Focus(FocusState.Keyboard);
+        }
+
+        private void LetterBigNumeral_Click(object sender, RoutedEventArgs e)
+        {
+            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.UppercaseEnglishLetter;
+            myListButton.IsChecked = true;
+            myListButton.Flyout.Hide();
+            editor.Focus(FocusState.Keyboard);
+        }
+
+        private void SmalliNumeral_Click(object sender, RoutedEventArgs e)
+        {
+            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.LowercaseRoman;
+            myListButton.IsChecked = true;
+            myListButton.Flyout.Hide();
+            editor.Focus(FocusState.Keyboard);
+        }
+
+        private void BigINumeral_Click(object sender, RoutedEventArgs e)
+        {
+            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.UppercaseRoman;
+            myListButton.IsChecked = true;
+            myListButton.Flyout.Hide();
+            editor.Focus(FocusState.Keyboard);
         }
     }
 }
