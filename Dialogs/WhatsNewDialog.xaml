@@ -14,8 +14,7 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Add feature when open saved document will display as the file name, instead of Document {number}<LineBreak />
-            • Dependency updates<LineBreak />
+            • Fix untabbed MainPage missing some features that are present in tabbed MainPage<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>

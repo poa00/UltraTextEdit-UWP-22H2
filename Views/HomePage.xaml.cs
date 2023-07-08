@@ -105,10 +105,10 @@ namespace UltraTextEdit_UWP.Views
 
             WhatsNew.Add(new()
             {
-                Title = "Tabs",
-                Icon = "\uF7ED",
+                Title = "Bugfixes",
+                Icon = "\uEBE8",
                 Tag = "LocAndAcc",
-                Description = $"This release adds the function ot have the file name of an open file in a tab!!"
+                Description = $"Fix untabbed MainPage missing some features that are present in tabbed MainPage"
             });
 
             //WhatsNew.Add(new()
