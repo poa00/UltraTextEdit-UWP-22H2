@@ -566,6 +566,54 @@
                                         ToolTipService.ToolTip="Square root symbol"
                                                 Content="√">
                                             </Button>
+                                            <Button
+                                        AutomationProperties.Name="BulletPoint"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Bullet point symbol"
+                                                Content="•">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="Number"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Number symbol"
+                                                Content="№">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="Euro"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Euro symbol"
+                                                Content="€">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="Pound"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Pound symbol"
+                                                Content="£">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="Yen"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Yen symbol"
+                                                Content="¥">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="Rupee"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Rupee symbol"
+                                                Content="₹">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="Tick"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Tick symbol"
+                                                Content="✓">
+                                            </Button>
+                                            <Button
+                                        AutomationProperties.Name="Cross"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Cross symbol"
+                                                Content="✕">
+                                            </Button>
 
                                         </VariableSizedWrapGrid>
                                     </RelativePanel>
