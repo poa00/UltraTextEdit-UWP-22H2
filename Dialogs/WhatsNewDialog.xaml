@@ -13,7 +13,8 @@
 
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
-            Initial stable release of UltraTextEdit UWP, version 23H2
+            • Fixes issues with untabbed MainPage<LineBreak/>
+            • Dependency updates
         </TextBlock>
     </Grid>
 </ContentDialog>
