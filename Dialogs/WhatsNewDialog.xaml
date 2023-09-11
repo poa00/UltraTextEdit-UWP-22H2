@@ -13,8 +13,7 @@
 
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
-            • Fixes issues with untabbed MainPage<LineBreak/>
-            • Dependency updates
+            • Dependency updates<LineBreak/>
         </TextBlock>
     </Grid>
 </ContentDialog>
