@@ -124,7 +124,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Localization & Accessbility",
                 Icon = "\uE774",
                 Tag = "LocAndAcc",
-                Description = $"You can contribute translations to {Strings.Resources.AppName}, and help make this app reach more countries! And elements in the app will be more accessible.\n\nNEW IN OCTOBER UPDATE:\nUltraTextEdit UWP has been translated into Czech, Slovak, Ukrainian, Hungarian, and Simplified Chinese\n\nNEW IN DECEMBER UPDATE:\nUsing UltraTextEdit UWP without a mouse just became easier! Use the new keyboard shortcuts/hotkeys to complete common actions in the app!"
+                Description = $"You can contribute translations to {Strings.Resources.AppName}, and help make this app reach more countries! And elements in the app will be more accessible.\n\nNEW IN OCTOBER 2022 UPDATE:\nUltraTextEdit UWP has been translated into Czech, Slovak, Ukrainian, Hungarian, and Simplified Chinese\n\nNEW IN DECEMBER 2022 UPDATE:\nUsing UltraTextEdit UWP without a mouse just became easier! Use the new keyboard shortcuts/hotkeys to complete common actions in the app!"
             });
 
             WhatsNew.Add(new()
@@ -140,7 +140,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "New Settings UI",
                 Icon = "\uE713",
                 Tag = "SettingsUI",
-                Description = "On the redesigned Settings UI, you can set all UTE UWP settings as well as new settings from TowPad.\n\nNEW IN OCTOBER UPDATE:\nIcons for the Appearance section of the Settings menu added\n\nNEW IN JUNE UPDATE:\nThis release fixes some functionality of the Settings toggles. The values of the Settings toggles will now persist between openings of the Settings page."
+                Description = "On the redesigned Settings UI, you can set all UTE UWP settings as well as new settings from TowPad.\n\nNEW IN OCTOBER 2022 UPDATE:\nIcons for the Appearance section of the Settings menu added\n\nNEW IN JUNE 2023 UPDATE:\nThis release fixes some functionality of the Settings toggles. The values of the Settings toggles will now persist between openings of the Settings page."
             });
 
             WhatsNew.Add(new()
@@ -156,7 +156,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Share",
                 Icon = "\uE72D",
                 Tag = "Share",
-                Description = $"NEW IN DECEMBER UPDATE:\nSharing text from {Strings.Resources.AppName} to compatible apps is now available!"
+                Description = $"NEW IN DECEMBER 2022 UPDATE:\nSharing text from {Strings.Resources.AppName} to compatible apps is now available!"
             });
 
             WhatsNew.Add(new()
@@ -164,7 +164,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "UI Updates",
                 Icon = "\uE2B1",
                 Tag = "UIU/UIR",
-                Description = $"NEW IN DECEMBER UPDATE:\nThe Find/Replace Panel of the app got a Mica background!"
+                Description = $"NEW IN DECEMBER 2022 UPDATE:\nThe Find/Replace Panel of the app got a Mica background!\n\nNEW IN OCTOBER 2023 UPDATE:\nThe color picker UI has been revamped, based on the one from TextPad"
             });
 
             WhatsNew.Add(new()
@@ -172,7 +172,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Table",
                 Icon = "\uF261",
                 Tag = "Table",
-                Description = $"NEW IN FEBRUARY UPDATE: Now you can add tables to documents made in UTE UWP!\n(Only one per app run allowed for now though)\n\nNEW IN JUNE UPDATE:\nThis release adds a dialog which allows you to create tables of different sizes in your documents!"
+                Description = $"NEW IN FEBRUARY 2023 UPDATE: Now you can add tables to documents made in UTE UWP!\n(Only one per app run allowed for now though)\n\nNEW IN JUNE 2023 UPDATE:\nThis release adds a dialog which allows you to create tables of different sizes in your documents!"
             });
 
             WhatsNew.Add(new()
@@ -180,7 +180,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Comments",
                 Icon = "\uE15F",
                 Tag = "Comments",
-                Description = $"NEW IN FEBRUARY UPDATE: Comments functionality is now available! \nJust tap or click the Comments buton to open the pane, then when you're finished, just go into the new Comments ribbon tab and click or tsp the button there to close the pane."
+                Description = $"NEW IN FEBRUARY 2023 UPDATE: Comments functionality is now available! \nJust tap or click the Comments buton to open the pane, then when you're finished, just go into the new Comments ribbon tab and click or tsp the button there to close the pane."
             });
 
             WhatsNew.Add(new()
@@ -188,7 +188,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Symbols",
                 Icon = "\uED58",
                 Tag = "Symbols",
-                Description = $"NEW IN FEBRUARY UPDATE: Now you can add the multiplication and division symbols straight into your document from the app's new symbols menu!"
+                Description = $"NEW IN FEBRUARY 2023 UPDATE: Now you can add the multiplication and division symbols straight into your document from the app's new symbols menu!"
             });
 
             WhatsNew.Add(new()
@@ -196,7 +196,15 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Time/Date",
                 Icon = "\uE775",
                 Tag = "TimeDate",
-                Description = $"NEW IN JUNE UPDATE: This release adds date and time insertion!"
+                Description = $"NEW IN JUNE 2023 UPDATE: This release adds date and time insertion!"
+            });
+
+            WhatsNew.Add(new()
+            {
+                Title = "Bulleting options/List Styles",
+                Icon = "\uE133",
+                Tag = "LocAndAcc",
+                Description = $"NEW IN OCTOBER 2023 UPDATE: This release adds bulleting options back into UTE UWP!!"
             });
 
             IsListEmpty = list.Count <= 0;
