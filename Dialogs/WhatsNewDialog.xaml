@@ -13,7 +13,10 @@
 
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
-            • Dependency updates<LineBreak/>
+            • Remove remnants of Gaming theme<LineBreak/>
+            • Port new font color options from TextPad<LineBreak/>
+            • Port new Bulleting function from TextPad<LineBreak/>
+            • The tabs that have a saved document open will now properly display its filename!<LineBreak/>
         </TextBlock>
     </Grid>
 </ContentDialog>
