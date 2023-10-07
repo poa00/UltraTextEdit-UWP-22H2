@@ -294,6 +294,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="ColorCode.Core">
+      <Version>2.0.15</Version>
+    </PackageReference>
+    <PackageReference Include="ColorCode.UWP">
+      <Version>2.0.15</Version>
+    </PackageReference>
     <PackageReference Include="CommunityToolkit.Common">
       <Version>8.2.1</Version>
     </PackageReference>
@@ -311,6 +317,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.8.5</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Web.WebView2">
+      <Version>1.0.2106-prerelease</Version>
     </PackageReference>
     <PackageReference Include="Win2D.uwp">
       <Version>1.27.0</Version>
