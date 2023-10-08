@@ -305,7 +305,7 @@
       <Version>8.2.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces">
-      <Version>7.0.0</Version>
+      <Version>8.0.0-rc.1.23419.4</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Net.Native.Compiler">
       <Version>2.2.12-rel-31116-00</Version>
@@ -313,7 +313,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.Platforms">
-      <Version>7.0.3</Version>
+      <Version>8.0.0-preview.7.23375.6</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.14</Version>
@@ -328,7 +328,7 @@
       <Version>2.8.5</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Web.WebView2">
-      <Version>1.0.2065-prerelease</Version>
+      <Version>1.0.2106-prerelease</Version>
     </PackageReference>
     <PackageReference Include="NETStandard.Library">
       <Version>2.0.3</Version>
@@ -340,13 +340,13 @@
       <Version>4.5.5</Version>
     </PackageReference>
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
-      <Version>6.0.0</Version>
+      <Version>7.0.0-preview.2.22152.2</Version>
     </PackageReference>
     <PackageReference Include="System.Text.Encodings.Web">
-      <Version>7.0.0</Version>
+      <Version>8.0.0-rc.1.23419.4</Version>
     </PackageReference>
     <PackageReference Include="System.Text.Json">
-      <Version>7.0.3</Version>
+      <Version>8.0.0-rc.1.23419.4</Version>
     </PackageReference>
     <PackageReference Include="System.Threading.Tasks.Extensions">
       <Version>4.5.4</Version>
