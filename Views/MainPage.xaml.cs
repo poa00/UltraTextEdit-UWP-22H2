@@ -1021,5 +1021,20 @@ namespace UltraTextEdit_UWP
             myListButton.Flyout.Hide();
             editor.Focus(FocusState.Keyboard);
         }
+
+        private void HighlightButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BackPicker_ColorChanged(Windows.UI.Xaml.Controls.ColorPicker sender, Windows.UI.Xaml.Controls.ColorChangedEventArgs args)
+        {
+
+        }
+
+        private void NullHighlightButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
