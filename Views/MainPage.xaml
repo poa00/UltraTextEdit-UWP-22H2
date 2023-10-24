@@ -405,7 +405,7 @@
                                     </Flyout>
                                 </muxc:DropDownButton.Flyout>
                             </muxc:DropDownButton>-->
-                            <muxc:SplitButton x:Name="fontcolorsplitbutton" Grid.Column="6" Content="&#xE8FD;" Grid.Row="1" FontFamily="WordPad Fluent Icons" VerticalContentAlignment="Stretch" FontSize="20" Click="fontcolorsplitbutton_Click">
+                            <muxc:SplitButton x:Name="fontcolorsplitbutton" Grid.Column="6" Content="&#xE8FD;" Grid.Row="1" FontFamily="{ThemeResource SymbolThemeFontFamily}" VerticalContentAlignment="Stretch" FontSize="20" Click="fontcolorsplitbutton_Click">
                         <muxc:SplitButton.Flyout>
                             <Flyout Placement="Bottom">
                                 <RelativePanel>
@@ -814,7 +814,7 @@
                             </muxc:ToggleSplitButton>
                         </AppBarElementContainer>
                         <AppBarElementContainer>
-                            <muxc:DropDownButton x:Name="Back" FontFamily="{ThemeResource SymbolThemeFontFamily}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="27" FontSize="12" Width="50" Padding="0,0,5,0" ToolTipService.ToolTip="Text highlight" BorderThickness="0,1,0,1">
+                            <muxc:DropDownButton x:Name="Back" Style="{StaticResource TransparentButton}" FontFamily="{ThemeResource SymbolThemeFontFamily}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="27" FontSize="12" Width="50" Padding="0,0,5,0" ToolTipService.ToolTip="Text highlight" BorderThickness="0,1,0,1">
                                 <muxc:DropDownButton.Flyout>
                                     <Flyout>
                                         <StackPanel>
