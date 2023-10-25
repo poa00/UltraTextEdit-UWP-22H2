@@ -152,6 +152,11 @@
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\WhatsNewDisplayService.cs" />
     <Compile Include="Strings\Resources.cs" />
+    <Compile Include="UserControls\MessageBox.xaml.cs">
+      <DependentUpon>MessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageBoxesGrid.cs" />
+    <Compile Include="UserControls\MessageBoxValidation.cs" />
     <Compile Include="UserControls\SettingsBlockControl.xaml.cs">
       <DependentUpon>SettingsBlockControl.xaml</DependentUpon>
     </Compile>
@@ -287,6 +292,10 @@
     <Page Include="Dialogs\WhatsNewDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ImageOptionsDialog.xaml">
       <SubType>Designer</SubType>
