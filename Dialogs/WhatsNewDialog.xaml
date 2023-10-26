@@ -14,7 +14,7 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Fix untabbed MainPage missing some features that are present in tabbed MainPage<LineBreak />
+            • Fixes to the icon of the font color SplitButton<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
