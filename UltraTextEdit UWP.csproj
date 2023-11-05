@@ -19,7 +19,7 @@
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <PackageCertificateThumbprint>A78C852FB829FC05329DF894AF8A7534805F315D</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>A24B02AFE09FE7C2ABB1458F3418A87802291C01</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>False</GenerateTestArtifacts>
@@ -294,6 +294,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="ColorCode.Core">
+      <Version>2.0.15</Version>
+    </PackageReference>
+    <PackageReference Include="ColorCode.UWP">
+      <Version>2.0.15</Version>
+    </PackageReference>
     <PackageReference Include="CommunityToolkit.Common">
       <Version>8.2.2</Version>
     </PackageReference>
@@ -311,6 +317,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.8.6</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Web.WebView2">
+      <Version>1.0.2106-prerelease</Version>
     </PackageReference>
     <PackageReference Include="Win2D.uwp">
       <Version>1.27.0</Version>
