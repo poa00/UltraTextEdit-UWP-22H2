@@ -14,7 +14,8 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Fix untabbed MainPage missing some features that are present in tabbed MainPage<LineBreak />
+            • Begin 24H2 development<LineBreak />
+			• Add text highlighting feature<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
