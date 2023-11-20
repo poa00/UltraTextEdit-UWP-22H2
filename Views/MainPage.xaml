@@ -814,8 +814,8 @@
                             </muxc:ToggleSplitButton>
                         </AppBarElementContainer>
                         <AppBarElementContainer>
-                            <muxc:DropDownButton x:Name="Back" Style="{StaticResource TransparentButton}" FontFamily="{ThemeResource SymbolThemeFontFamily}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="27" FontSize="12" Width="50" Padding="0,0,5,0" ToolTipService.ToolTip="Text highlight" BorderThickness="0,1,0,1">
-                                <muxc:DropDownButton.Flyout>
+                            <muxc:SplitButton x:Name="Back" FontFamily="{ThemeResource SymbolThemeFontFamily}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12" Padding="0,0,5,0" ToolTipService.ToolTip="Text highlight" BorderThickness="0,1,0,1">
+                                <muxc:SplitButton.Flyout>
                                     <Flyout>
                                         <StackPanel>
                                             <Grid>
@@ -869,14 +869,14 @@
                                             <ColorPicker x:Name="BackPicker" ColorChanged="BackPicker_ColorChanged" Color="#00000000" Margin="0,15,0,0"/>
                                         </StackPanel>
                                     </Flyout>
-                                </muxc:DropDownButton.Flyout>
+                                </muxc:SplitButton.Flyout>
                                 <Grid>
                                     <TextBlock x:Name="BackAccent" Text="&#xE891;" Foreground="White"  FontSize="14"/>
                                     <Border Background="#FFFFBB00" Margin="1,1,1,11"/>
                                     <Border Background="#FFFF9800" Margin="2,5,2,8" CornerRadius="0,0,1,1"/>
                                     <TextBlock Text="&#xE193;"  FontSize="14" Foreground="{Binding Foreground, ElementName=BorTextAccent}"/>
                                 </Grid>
-                            </muxc:DropDownButton>
+                            </muxc:SplitButton>
                         </AppBarElementContainer>
                         <AppBarSeparator />
                         <AppBarButton Style="{StaticResource TransparentButton}" ToolTipService.ToolTip="{x:Bind res:Resources.FindDocTooltip}" Click="FindButton2_Click">
