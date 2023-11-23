@@ -513,17 +513,10 @@ namespace UltraTextEdit_UWP
             editor.Document.Redo();
         }
 
-        private async Task DisplayAboutDialog()
+        private Task DisplayAboutDialog()
         {
-            ContentDialog aboutDialog = new()
-            {
-                Title = appTitleStr,
-                Content = $"Version {typeof(App).GetTypeInfo().Assembly.GetName().Version}\n\n© 2021-2023 jpb",
-                CloseButtonText = "OK",
-                DefaultButton = ContentDialogButton.Close
-            };
-
-            await aboutDialog.ShowAsync();
+            AboutBox.Open();
+            return Task.CompletedTask;
         }
 
         public async Task ShowUnsavedDialog()
@@ -1063,6 +1056,26 @@ namespace UltraTextEdit_UWP
                 BackAccent.Foreground = new SolidColorBrush(Colors.Transparent);
                 ST.CharacterFormat.BackgroundColor = Colors.Transparent;
             }
+        }
+
+        private void HyperlinkButton_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HyperlinkButton_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HyperlinkButton_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

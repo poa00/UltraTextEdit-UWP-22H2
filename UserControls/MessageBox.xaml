@@ -100,7 +100,7 @@
                     </StackPanel>
                 </Grid>
                 <Button x:Name="CloseButton" IsEnabled="{Binding IsCloseButtonEnabled, RelativeSource={Binding DataContext}}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="35" Height="35" Padding="0,0,0,0" CornerRadius="0,7,0,0" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Background="#00000000" ToolTipService.ToolTip="Close" Style="{StaticResource CloseButtonStyle}" Click="CloseButton_Click">
-                    <FontIcon FontFamily="{StaticResource CustomFont}" Glyph="&#xE8BB;" FontSize="11"/>
+                    <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE8BB;" FontSize="11"/>
                 </Button>
             </Grid>
         </Border>
