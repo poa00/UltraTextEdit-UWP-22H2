@@ -14,8 +14,9 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Begin 24H2 development<LineBreak />
-			• Add text highlighting feature<LineBreak />
+            • Highlighting UI fixes<LineBreak />
+			• About dialog replaced with About window<LineBreak />
+            • Small fixes to Windowing API<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
