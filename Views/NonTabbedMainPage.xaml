@@ -1160,8 +1160,8 @@
                 </Grid>
             </SplitView>
         </SplitView>
-        <Grid RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
-            <diags:MessageBoxesGrid>
+		<Grid RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+			<diags:MessageBoxesGrid>
                 <diags:MessageBox x:Name="AboutBox" IsSingleButton="True" FirstButtonText="OK" Title="About" BlockUserInput="False" RememberPosition="False" MessageBoxHeight="370" MessageBoxWidth="400" d:IsHidden="True">
                     <Grid Margin="10,0,10,0">
                         <Image HorizontalAlignment="Left" Height="90" Margin="5,5,0,0" VerticalAlignment="Top" Width="90" Source="/Assets/utevericon.png"/>
