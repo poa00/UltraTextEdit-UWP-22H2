@@ -14,9 +14,10 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Highlighting UI fixes<LineBreak />
-			• About dialog replaced with About window<LineBreak />
-            • Small fixes to Windowing API<LineBreak />
+            • Add word count feature<LineBreak />
+			• Allow child windows to be moved around the entire app window<LineBreak />
+            • Fix feature discrepancies in untabbed MainPage<LineBreak />
+            • Dependency updates<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
