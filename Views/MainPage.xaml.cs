@@ -768,9 +768,31 @@ namespace UltraTextEdit_UWP
 
         private void editor_SelectionChanged(object sender, RoutedEventArgs e)
         {
+            var ST = editor.Document.Selection;
             BoldButton.IsChecked = editor.Document.Selection.CharacterFormat.Bold == FormatEffect.On;
             ItalicButton.IsChecked = editor.Document.Selection.CharacterFormat.Italic == FormatEffect.On;
             UnderlineButton.IsChecked = editor.Document.Selection.CharacterFormat.Underline == UnderlineType.Single;
+            //Selected words
+            if (ST.Length > 0 || ST.Length < 0)
+            {
+                SelWordGrid.Visibility = Visibility.Visible;
+                editor.Document.Selection.GetText(TextGetOptions.None, out var seltext);
+                var selwordcount = seltext.Split(new char[] { ' ', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries).Length;
+                SelWordCount.Text = $"Selected words: {selwordcount}";
+            }
+            else
+            {
+                SelWordGrid.Visibility = Visibility.Collapsed;
+            }
+            editor.Document.GetText(TextGetOptions.None, out var text);
+            if (text.Length > 0)
+            {
+                var wordcount = text.Split(new char[] { ' ', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries).Length;
+                WordCount.Text = $"Word count: {wordcount}";
+            } else
+            {
+                WordCount.Text = $"Word count: 0";
+            }
         }
 
         //To see this code in action, add a call to ShareSourceLoad to your constructor or other
