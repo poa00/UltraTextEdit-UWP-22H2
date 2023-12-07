@@ -4,6 +4,7 @@ using System.Reflection;
 using UltraTextEdit_UWP.ViewModels;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
@@ -18,6 +19,8 @@ namespace UltraTextEdit_UWP.Views.Settings
     {
         public bool gameenabled;
 
+
+
         public SettingsPage()
         {
 
@@ -25,7 +28,7 @@ namespace UltraTextEdit_UWP.Views.Settings
 
             var ver = typeof(App).GetTypeInfo().Assembly.GetName().Version;
 
-
+            var LocalSettings = ApplicationData.Current.LocalSettings;
 
             var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
 
@@ -40,6 +43,24 @@ namespace UltraTextEdit_UWP.Views.Settings
 
             coreTitleBar.LayoutMetricsChanged += CoreTitleBar_LayoutMetricsChanged;
             coreTitleBar.IsVisibleChanged += CoreTitleBar_IsVisibleChanged;
+
+            if (LocalSettings.Values["SpellCheck"] != null)
+            {
+                if ((string)LocalSettings.Values["SpellCheck"] == "On")
+                {
+                    spellcheckBox.IsChecked = true;
+
+                }
+                if ((string)LocalSettings.Values["SpellCheck"] == "Off")
+                {
+                    spellcheckBox.IsChecked = false;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["SpellCheck"] = "Off";
+                spellcheckBox.IsChecked = false;
+            }
 
             if (ElementSoundPlayer.State == ElementSoundPlayerState.On)
             {
@@ -186,6 +207,24 @@ namespace UltraTextEdit_UWP.Views.Settings
             if (soundToggle.IsOn == true)
             {
                 ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off;
+            }
+        }
+
+        private void spellcheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["SpellCheck"] != null)
+            {
+                LocalSettings.Values["SpellCheck"] = "On";
+            }
+        }
+
+        private void spellcheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["SpellCheck"] != null)
+            {
+                LocalSettings.Values["SpellCheck"] = "Off";
             }
         }
     }

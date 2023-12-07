@@ -69,6 +69,22 @@ namespace UltraTextEdit_UWP
 
             ShareSourceLoad();
 
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["SpellCheck"] != null)
+            {
+                if (LocalSettings.Values["SpellCheck"].ToString() == "On")
+                {
+                    editor.IsSpellCheckEnabled = true;
+                }
+                else
+                {
+                    editor.IsSpellCheckEnabled = false;
+                }
+            } else
+            {
+                LocalSettings.Values["SpellCheck"] = "Off";
+            }
+
             //var theme = Application.Current.RequestedTheme;
             //string noneimg;
             //string abcimg;
