@@ -14,10 +14,7 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Add word count feature<LineBreak />
-			• Allow child windows to be moved around the entire app window<LineBreak />
-            • Fix feature discrepancies in untabbed MainPage<LineBreak />
-            • Dependency updates<LineBreak />
+            • Add spell check feature!<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
