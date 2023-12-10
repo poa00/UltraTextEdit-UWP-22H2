@@ -227,5 +227,13 @@ namespace UltraTextEdit_UWP.Views.Settings
                 LocalSettings.Values["SpellCheck"] = "Off";
             }
         }
+
+        private void VIDsButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Window.Current.Content is Frame rootFrame)
+            {
+                rootFrame.Navigate(typeof(VelocityIDsPage));
+            }
+        }
     }
 }

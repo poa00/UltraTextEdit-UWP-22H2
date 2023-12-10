@@ -166,6 +166,15 @@
             Icon="Sync">
                     <FontIcon HorizontalAlignment="Right" Glyph="&#xE76C;" Height="24" Width="24" FontSize="12"/>
                 </uc:SettingsBlockControl>
+                <uc:SettingsBlockControl x:Name="vidsblock"
+Title="Velocity IDs"
+IsClickable="True"
+Click="VIDsButton_Click">
+                    <uc:SettingsBlockControl.Icon>
+                        <FontIcon Glyph="&#xEC7A;" />
+                    </uc:SettingsBlockControl.Icon>
+                    <FontIcon HorizontalAlignment="Right" Glyph="&#xE76C;" Height="24" Width="24" FontSize="12"/>
+                </uc:SettingsBlockControl>
             </StackPanel>
         </ScrollViewer>
     </Grid>
