@@ -188,5 +188,13 @@ namespace UltraTextEdit_UWP.Views.Settings
                 ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off;
             }
         }
+
+        private void VIDsButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Window.Current.Content is Frame rootFrame)
+            {
+                rootFrame.Navigate(typeof(VelocityIDsPage));
+            }
+        }
     }
 }

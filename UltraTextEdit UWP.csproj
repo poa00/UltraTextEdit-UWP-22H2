@@ -182,6 +182,9 @@
     <Compile Include="Views\Settings\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Settings\VelocityIDsPage.xaml.cs">
+      <DependentUpon>VelocityIDsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UTEUpdate\UTEUpdate.xaml.cs">
       <DependentUpon>UTEUpdate.xaml</DependentUpon>
     </Compile>
@@ -285,6 +288,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NonTabbedMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\VelocityIDsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
