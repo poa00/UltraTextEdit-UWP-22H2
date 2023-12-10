@@ -4,6 +4,7 @@ using System.Reflection;
 using UltraTextEdit_UWP.ViewModels;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
@@ -62,6 +63,22 @@ namespace UltraTextEdit_UWP.Views.Settings
             else
             {
                 RevealFocus.IsChecked = true;
+            }
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["UTEUpdateVID"] != null)
+            {
+                if (LocalSettings.Values["UTEUpdateVID"].ToString() == "On")
+                {
+                    updateblock.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    updateblock.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["UTEUpdateVID"] = "Off";
             }
         }
 

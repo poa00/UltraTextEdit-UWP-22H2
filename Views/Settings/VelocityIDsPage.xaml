@@ -5,7 +5,7 @@
     xmlns:local="using:UltraTextEdit_UWP.Views.Settings"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:muxc="using:Microsoft.UI.Xaml.Controls" xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals" xmlns:res="using:UltraTextEdit_UWP.Strings"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls" xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals" xmlns:res="using:UltraTextEdit_UWP.Strings" xmlns:uc="using:UltraTextEdit_UWP.UserControls"
     mc:Ignorable="d"
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
 
@@ -65,6 +65,11 @@
         <ScrollViewer Grid.Row="1" x:Name="view">
             <StackPanel Orientation="Vertical" Padding="20" Spacing="5">
                 <TextBlock Text="Velocity IDs" Margin="0,0,0,10" FontSize="32" FontWeight="SemiBold" />
+                <uc:SettingsBlockControl Title="Hide UTE Update from Settings">
+                    <uc:SettingsBlockControl.SettingsActionableElement>
+                        <ToggleSwitch x:Name="uteupdatevidToggle" OffContent="Off" OnContent="On" Toggled="utepdatevidToggle_Toggled"/>
+                    </uc:SettingsBlockControl.SettingsActionableElement>
+                </uc:SettingsBlockControl>
             </StackPanel>
         </ScrollViewer>
     </Grid>

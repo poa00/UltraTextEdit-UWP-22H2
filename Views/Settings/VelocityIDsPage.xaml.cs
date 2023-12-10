@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
@@ -42,6 +43,25 @@ namespace UltraTextEdit_UWP.Views.Settings
 
             coreTitleBar.LayoutMetricsChanged += CoreTitleBar_LayoutMetricsChanged;
             coreTitleBar.IsVisibleChanged += CoreTitleBar_IsVisibleChanged;
+
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["UTEUpdateVID"] != null)
+            {
+                if ((string)LocalSettings.Values["UTEUpdateVID"] == "On")
+                {
+                    uteupdatevidToggle.IsOn = true;
+
+                }
+                if ((string)LocalSettings.Values["UTEUpdateVID"] == "Off")
+                {
+                    uteupdatevidToggle.IsOn = false;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["UTEUpdateVID"] = "Off";
+                uteupdatevidToggle.IsOn = false;
+            }
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -85,6 +105,25 @@ namespace UltraTextEdit_UWP.Views.Settings
             if (Window.Current.Content is Frame rootFrame && rootFrame.CanGoBack)
             {
                 rootFrame.GoBack();
+            }
+        }
+
+        private void utepdatevidToggle_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (uteupdatevidToggle.IsOn == true)
+            {
+                var LocalSettings = ApplicationData.Current.LocalSettings;
+                if (LocalSettings.Values["UTEUpdateVID"] != null)
+                {
+                    LocalSettings.Values["UTEUpdateVID"] = "On";
+                }
+            } else
+            {
+                var LocalSettings = ApplicationData.Current.LocalSettings;
+                if (LocalSettings.Values["UTEUpdateVID"] != null)
+                {
+                    LocalSettings.Values["UTEUpdateVID"] = "Off";
+                }
             }
         }
     }
