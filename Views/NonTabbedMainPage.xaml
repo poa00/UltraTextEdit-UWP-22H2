@@ -50,6 +50,22 @@
             x:Name="containerPanel"
             RelativePanel.AlignLeftWithPanel="True"
             RelativePanel.AlignRightWithPanel="True">
+            <StackPanel Margin="0,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True" Orientation="Horizontal" x:Name="findreplacepanel">
+                <AutoSuggestBox x:Name="find" PlaceholderText="Search" Width="200" QueryIcon="Find" TextChanged="find_TextChanged">
+                </AutoSuggestBox>
+                <StackPanel x:Name="ReplacePanel">
+                    <AutoSuggestBox x:Name="replace" PlaceholderText="Replace" Width="200" QuerySubmitted="replace_QuerySubmitted">
+                        <AutoSuggestBox.QueryIcon>
+                            <FontIcon Glyph="&#xEDE1;" FontSize="12"/>
+                        </AutoSuggestBox.QueryIcon>
+                    </AutoSuggestBox>
+                </StackPanel>
+                <AppBarButton Height="32" Width="32" Margin="0,-5,0,0" ToolTipService.ToolTip="Hide Replace box" Click="AppBarButton_Click" x:Name="replacecontrol">
+                    <AppBarButton.Icon>
+                        <FontIcon x:Name="buticon" Glyph="&#xED1A;" FontSize="12"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </StackPanel>
             <StackPanel x:Name="TitleBar" Orientation="Horizontal">
                 <Border
                 x:Name="AppTitleBar"

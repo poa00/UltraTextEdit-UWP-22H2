@@ -70,6 +70,11 @@
                         <ToggleSwitch x:Name="uteupdatevidToggle" OffContent="Off" OnContent="On" Toggled="utepdatevidToggle_Toggled"/>
                     </uc:SettingsBlockControl.SettingsActionableElement>
                 </uc:SettingsBlockControl>
+                <uc:SettingsBlockControl Title="New Find/Replace UI">
+                    <uc:SettingsBlockControl.SettingsActionableElement>
+                        <ToggleSwitch x:Name="findreplacevidToggle" OffContent="Off" OnContent="On" Toggled="findreplacevidToggle_Toggled"/>
+                    </uc:SettingsBlockControl.SettingsActionableElement>
+                </uc:SettingsBlockControl>
             </StackPanel>
         </ScrollViewer>
     </Grid>

@@ -62,6 +62,23 @@ namespace UltraTextEdit_UWP.Views.Settings
                 LocalSettings.Values["UTEUpdateVID"] = "Off";
                 uteupdatevidToggle.IsOn = false;
             }
+            if (LocalSettings.Values["NewFindReplaceVID"] != null)
+            {
+                if ((string)LocalSettings.Values["NewFindReplaceVID"] == "On")
+                {
+                    findreplacevidToggle.IsOn = true;
+
+                }
+                if ((string)LocalSettings.Values["NewFindReplaceVID"] == "Off")
+                {
+                    findreplacevidToggle.IsOn = false;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["NewFindReplaceVID"] = "Off";
+                findreplacevidToggle.IsOn = false;
+            }
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -123,6 +140,26 @@ namespace UltraTextEdit_UWP.Views.Settings
                 if (LocalSettings.Values["UTEUpdateVID"] != null)
                 {
                     LocalSettings.Values["UTEUpdateVID"] = "Off";
+                }
+            }
+        }
+
+        private void findreplacevidToggle_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (findreplacevidToggle.IsOn == true)
+            {
+                var LocalSettings = ApplicationData.Current.LocalSettings;
+                if (LocalSettings.Values["NewFindReplaceVID"] != null)
+                {
+                    LocalSettings.Values["NewFindReplaceVID"] = "On";
+                }
+            }
+            else
+            {
+                var LocalSettings = ApplicationData.Current.LocalSettings;
+                if (LocalSettings.Values["NewFindReplaceVID"] != null)
+                {
+                    LocalSettings.Values["NewFindReplaceVID"] = "Off";
                 }
             }
         }

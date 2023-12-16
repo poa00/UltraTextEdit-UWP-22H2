@@ -69,48 +69,37 @@ namespace UltraTextEdit_UWP
 
             ShareSourceLoad();
 
-            //var theme = Application.Current.RequestedTheme;
-            //string noneimg;
-            //string abcimg;
-            //string abcbimg;
-            //string dotimg;
-            //string iiiimg;
-            //string jiiimg;
-            //string numberimg;
-            //if (theme == ApplicationTheme.Light)
-            //{
-            //    noneimg = "none.png";
-            //    abcimg = "abc.png";
-            //    abcbimg = "ABCB.png";
-            //    dotimg = "dot.bmp";
-            //    numberimg = "number.png";
-            //    iiiimg = "iii.png";
-            //    jiiimg = "IIII.png";
-            //    NoneNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{noneimg}"));
-            //    NumberNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{numberimg}"));
-            //    BigINumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{jiiimg}"));
-            //    SmalliNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{iiiimg}"));
-            //    DottedNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{dotimg}"));
-            //    LetterBigNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcbimg}"));
-            //    LetterSmallNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcimg}"));
-            //}
-            //else
-            //{
-            //    noneimg = "noneDark.png";
-            //    abcimg = "abcDark.png";
-            //    abcbimg = "ABCBDark.png";
-            //    dotimg = "dotDark.bmp";
-            //    numberimg = "numberDark.png";
-            //    iiiimg = "iiiDark.png";
-            //    jiiimg = "IIIIDark.png";
-            //    NoneNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{noneimg}"));
-            //    NumberNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{numberimg}"));
-            //    BigINumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{jiiimg}"));
-            //    SmalliNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{iiiimg}"));
-            //    DottedNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{dotimg}"));
-            //    LetterBigNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcbimg}"));
-            //    LetterSmallNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcimg}"));
-            //}
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["SpellCheck"] != null)
+            {
+                if (LocalSettings.Values["SpellCheck"].ToString() == "On")
+                {
+                    editor.IsSpellCheckEnabled = true;
+                }
+                else
+                {
+                    editor.IsSpellCheckEnabled = false;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["SpellCheck"] = "Off";
+            }
+            if (LocalSettings.Values["NewFindReplaceVID"] != null)
+            {
+                if (LocalSettings.Values["NewFindReplaceVID"].ToString() == "On")
+                {
+                    findreplacepanel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    findreplacepanel.Visibility = Visibility.Collapsed;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["NewFindReplaceVID"] = "Off";
+            }
 
         }
 
@@ -1099,6 +1088,32 @@ namespace UltraTextEdit_UWP
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void find_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            FindBoxHighlightMatches();
+        }
+
+        private void replace_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            editor.Replace(false, replace.Text);
+        }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ReplacePanel.Visibility == Visibility.Visible)
+            {
+                ReplacePanel.Visibility = Visibility.Collapsed;
+                buticon.Glyph = "\uE7B3";
+                ToolTipService.SetToolTip(replacecontrol, "Show Replace box");
+            }
+            else
+            {
+                ReplacePanel.Visibility = Visibility.Visible;
+                buticon.Glyph = "\uED1A";
+                ToolTipService.SetToolTip(replacecontrol, "Hide Replace box");
+            }
         }
     }
 }
