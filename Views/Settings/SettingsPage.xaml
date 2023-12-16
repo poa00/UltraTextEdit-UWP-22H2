@@ -93,6 +93,14 @@
                         </ComboBox.ItemTemplate>
                     </ComboBox>
                 </uc:SettingsBlockControl>
+                <uc:SettingsBlockControl Title="Spell check">
+                    <uc:SettingsBlockControl.Icon>
+                        <FontIcon Glyph="&#xF87B;" />
+                    </uc:SettingsBlockControl.Icon>
+                    <uc:SettingsBlockControl.SettingsActionableElement>
+                        <CheckBox x:Name="spellcheckBox" Checked="spellcheckBox_Checked" Unchecked="spellcheckBox_Unchecked"/>
+                    </uc:SettingsBlockControl.SettingsActionableElement>
+                </uc:SettingsBlockControl>
                 <TextBlock Text="{x:Bind res:Resources.AppearenceHeaderName}" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
 
                 <uc:SettingsBlockControl Title="{x:Bind res:Resources.ThemeSettingName}">
@@ -141,7 +149,7 @@
 
                 <uc:SettingsBlockControl x:Name="aboutblock"
             Title="{x:Bind res:Resources.AppName}"
-            Description="10.0.25393.1000">
+            Description="10.0.25926.1000">
                     <uc:SettingsBlockControl.Icon>
                         <BitmapIcon UriSource="ms-appx:///Assets/utevericon.png" ShowAsMonochrome="False" Height="24" Width="24"/>
                     </uc:SettingsBlockControl.Icon>

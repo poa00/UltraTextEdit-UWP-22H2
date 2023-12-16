@@ -69,6 +69,22 @@ namespace UltraTextEdit_UWP
 
             ShareSourceLoad();
 
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["SpellCheck"] != null)
+            {
+                if (LocalSettings.Values["SpellCheck"].ToString() == "On")
+                {
+                    editor.IsSpellCheckEnabled = true;
+                }
+                else
+                {
+                    editor.IsSpellCheckEnabled = false;
+                }
+            } else
+            {
+                LocalSettings.Values["SpellCheck"] = "Off";
+            }
+
             //var theme = Application.Current.RequestedTheme;
             //string noneimg;
             //string abcimg;
@@ -513,17 +529,10 @@ namespace UltraTextEdit_UWP
             editor.Document.Redo();
         }
 
-        private async Task DisplayAboutDialog()
+        private Task DisplayAboutDialog()
         {
-            ContentDialog aboutDialog = new()
-            {
-                Title = appTitleStr,
-                Content = $"Version {typeof(App).GetTypeInfo().Assembly.GetName().Version}\n\n© 2021-2023 jpb",
-                CloseButtonText = "OK",
-                DefaultButton = ContentDialogButton.Close
-            };
-
-            await aboutDialog.ShowAsync();
+            AboutBox.Open();
+            return Task.CompletedTask;
         }
 
         public async Task ShowUnsavedDialog()
@@ -775,9 +784,31 @@ namespace UltraTextEdit_UWP
 
         private void editor_SelectionChanged(object sender, RoutedEventArgs e)
         {
+            var ST = editor.Document.Selection;
             BoldButton.IsChecked = editor.Document.Selection.CharacterFormat.Bold == FormatEffect.On;
             ItalicButton.IsChecked = editor.Document.Selection.CharacterFormat.Italic == FormatEffect.On;
             UnderlineButton.IsChecked = editor.Document.Selection.CharacterFormat.Underline == UnderlineType.Single;
+            //Selected words
+            if (ST.Length > 0 || ST.Length < 0)
+            {
+                SelWordGrid.Visibility = Visibility.Visible;
+                editor.Document.Selection.GetText(TextGetOptions.None, out var seltext);
+                var selwordcount = seltext.Split(new char[] { ' ', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries).Length;
+                SelWordCount.Text = $"Selected words: {selwordcount}";
+            }
+            else
+            {
+                SelWordGrid.Visibility = Visibility.Collapsed;
+            }
+            editor.Document.GetText(TextGetOptions.None, out var text);
+            if (text.Length > 0)
+            {
+                var wordcount = text.Split(new char[] { ' ', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries).Length;
+                WordCount.Text = $"Word count: {wordcount}";
+            } else
+            {
+                WordCount.Text = $"Word count: 0";
+            }
         }
 
         //To see this code in action, add a call to ShareSourceLoad to your constructor or other
@@ -1020,6 +1051,69 @@ namespace UltraTextEdit_UWP
             myListButton.IsChecked = true;
             myListButton.Flyout.Hide();
             editor.Focus(FocusState.Keyboard);
+        }
+
+        private void BackPicker_ColorChanged(object Sender, Windows.UI.Xaml.Controls.ColorChangedEventArgs EvArgs)
+        {
+            //Configure font highlight
+            if (!(editor == null))
+            {
+                var ST = editor.Document.Selection;
+                if (!(ST == null))
+                {
+                    _ = ST.CharacterFormat;
+                    var Br = new SolidColorBrush(BackPicker.Color);
+                    var CF = BackPicker.Color;
+                    if (BackAccent != null) BackAccent.Foreground = Br;
+                    ST.CharacterFormat.BackgroundColor = CF;
+                }
+            }
+        }
+
+        private void HighlightButton_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Configure font color
+            var BTN = Sender as Button;
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                _ = ST.CharacterFormat.ForegroundColor;
+                var Br = BTN.Foreground;
+                BackAccent.Foreground = Br;
+                ST.CharacterFormat.BackgroundColor = (BTN.Foreground as SolidColorBrush).Color;
+            }
+        }
+
+        private void NullHighlightButton_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Configure font color
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                _ = ST.CharacterFormat.ForegroundColor;
+                BackAccent.Foreground = new SolidColorBrush(Colors.Transparent);
+                ST.CharacterFormat.BackgroundColor = Colors.Transparent;
+            }
+        }
+
+        private void HyperlinkButton_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HyperlinkButton_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HyperlinkButton_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

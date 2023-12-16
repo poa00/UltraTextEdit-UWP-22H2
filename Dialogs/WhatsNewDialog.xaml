@@ -14,7 +14,7 @@
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Fix untabbed MainPage missing some features that are present in tabbed MainPage<LineBreak />
+            • Add spell check feature!<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
