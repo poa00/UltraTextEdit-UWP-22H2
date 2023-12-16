@@ -127,6 +127,7 @@ namespace UltraTextEdit_UWP
             //    LetterBigNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcbimg}"));
             //    LetterSmallNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcimg}"));
             //}
+            
 
         }
 
@@ -374,6 +375,16 @@ namespace UltraTextEdit_UWP
             {
                 ITextRange searchRange = editor.Document.GetRange(0, 0);
                 while (searchRange.FindText(textToFind, TextConstants.MaxUnitCount, FindOptions.None) > 0)
+                {
+                    searchRange.CharacterFormat.BackgroundColor = highlightBackgroundColor;
+                    searchRange.CharacterFormat.ForegroundColor = highlightForegroundColor;
+                }
+            }
+            string textToFind2 = find.Text;
+            if (textToFind2 != null)
+            {
+                ITextRange searchRange = editor.Document.GetRange(0, 0);
+                while (searchRange.FindText(textToFind2, TextConstants.MaxUnitCount, FindOptions.None) > 0)
                 {
                     searchRange.CharacterFormat.BackgroundColor = highlightBackgroundColor;
                     searchRange.CharacterFormat.ForegroundColor = highlightForegroundColor;
@@ -1114,6 +1125,32 @@ namespace UltraTextEdit_UWP
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void find_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            FindBoxHighlightMatches();
+        }
+
+        private void replace_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            editor.Replace(false, replace.Text);
+        }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ReplacePanel.Visibility == Visibility.Visible)
+            {
+                ReplacePanel.Visibility = Visibility.Collapsed;
+                buticon.Glyph = "\uE7B3";
+                ToolTipService.SetToolTip(replacecontrol, "Show Replace box");
+            }
+            else
+            {
+                ReplacePanel.Visibility = Visibility.Visible;
+                buticon.Glyph = "\uED1A";
+                ToolTipService.SetToolTip(replacecontrol, "Hide Replace box");
+            }
         }
     }
 }
