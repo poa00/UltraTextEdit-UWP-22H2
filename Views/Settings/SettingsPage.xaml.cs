@@ -84,7 +84,6 @@ namespace UltraTextEdit_UWP.Views.Settings
             {
                 RevealFocus.IsChecked = true;
             }
-            var LocalSettings = ApplicationData.Current.LocalSettings;
             if (LocalSettings.Values["UTEUpdateVID"] != null)
             {
                 if (LocalSettings.Values["UTEUpdateVID"].ToString() == "On")
