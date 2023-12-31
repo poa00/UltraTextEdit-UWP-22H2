@@ -16,7 +16,10 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Fixes to the icon of the font color SplitButton<LineBreak />
+            • Initial release of UTE UWP, version 24H1<LineBreak />
+            • Introduce some small visual updates to dialogs<LineBreak />
+            • Dependency updates<LineBreak />
+            • Update app dates to 2024, HAPPY NEW YEAR!!<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
