@@ -401,7 +401,7 @@
                                     </Flyout>
                                 </muxc:DropDownButton.Flyout>
                             </muxc:DropDownButton>-->
-                            <muxc:SplitButton x:Name="fontcolorsplitbutton" Grid.Column="6" Content="&#xE8FD;" Grid.Row="1" FontFamily="WordPad Fluent Icons" VerticalContentAlignment="Stretch" FontSize="20" Click="fontcolorsplitbutton_Click">
+                            <muxc:SplitButton x:Name="fontcolorsplitbutton" Grid.Column="6" Content="&#xE186;" Grid.Row="1" FontFamily="{ThemeResource SymbolThemeFontFamily}" VerticalContentAlignment="Stretch" FontSize="16" Click="fontcolorsplitbutton_Click">
                         <muxc:SplitButton.Flyout>
                             <Flyout Placement="Bottom">
                                 <RelativePanel>
