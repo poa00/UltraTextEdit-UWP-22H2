@@ -13,8 +13,8 @@
 
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
-            • Add a Velocity IDs system to enable/disable certain app features and tweaks<LineBreak/>
-            • Update dependencies<LineBreak/>
+            • Fix icon on font color SplitButton<LineBreak/>
+            • Update app dates to 2024<LineBreak/>
         </TextBlock>
     </Grid>
 </ContentDialog>
