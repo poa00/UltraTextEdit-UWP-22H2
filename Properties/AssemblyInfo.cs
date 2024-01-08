@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("jpb")]
 [assembly: AssemblyProduct("UltraTextEdit UWP")]
-[assembly: AssemblyCopyright("Copyright © 2023 jpb")]
+[assembly: AssemblyCopyright("Copyright © 2024 jpb")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
