@@ -1122,5 +1122,14 @@ namespace UltraTextEdit_UWP
                 ToolTipService.SetToolTip(replacecontrol, "Hide Replace box");
             }
         }
+
+        private void Autobutton_Click(object sender, RoutedEventArgs e)
+        {
+            // Extract the color of the button that was clicked.
+            var color = Application.Current.Resources["TextFillColorPrimary"];
+            editor.Document.Selection.CharacterFormat.ForegroundColor = (Windows.UI.Color)color;
+            //FontColorMarker.SetValue(ForegroundProperty, new SolidColorBrush(color));
+            editor.Focus(FocusState.Keyboard);
+        }
     }
 }
