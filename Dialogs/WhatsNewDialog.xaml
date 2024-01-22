@@ -16,7 +16,9 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Add spell check feature!<LineBreak />
+            • Update dates to 2024!<LineBreak />
+            • Dialogs are slightly revamped with rounded corners and bold text<LineBreak />
+            • The "Automatic" button on the color picker now works<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
