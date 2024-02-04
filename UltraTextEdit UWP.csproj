@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.22621.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -203,14 +203,14 @@
     <Content Include="Assets\LargeTile.scale-150.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
-    <Content Include="Assets\listnumbersimages\abc.png" />
-    <Content Include="Assets\listnumbersimages\ABCB.png" />
-    <Content Include="Assets\listnumbersimages\ABCBDark.png" />
-    <Content Include="Assets\listnumbersimages\abcDark.png" />
-    <Content Include="Assets\listnumbersimages\dot.bmp" />
-    <Content Include="Assets\listnumbersimages\dotDark.bmp" />
-    <Content Include="Assets\listnumbersimages\iii.bmp" />
-    <Content Include="Assets\listnumbersimages\iii.png" />
+    <Content Include="Assets\listnumbersimages\iiiDark.bmp" />
+    <Content Include="Assets\listnumbersimages\iiiDark.png" />
+    <Content Include="Assets\listnumbersimages\IIII.png" />
+    <Content Include="Assets\listnumbersimages\IIIIDark.png" />
+    <Content Include="Assets\listnumbersimages\none.png" />
+    <Content Include="Assets\listnumbersimages\noneDark.png" />
+    <Content Include="Assets\listnumbersimages\number.png" />
+    <Content Include="Assets\listnumbersimages\numberDark.png" />
     <Content Include="Assets\listnumbersimages\iiiDark.bmp" />
     <Content Include="Assets\listnumbersimages\iiiDark.png" />
     <Content Include="Assets\listnumbersimages\IIII.png" />
