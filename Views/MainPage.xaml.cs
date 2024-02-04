@@ -29,6 +29,9 @@ using System.Text;
 using Windows.UI.Xaml.Media.Imaging;
 using UltraTextEdit_UWP.Dialogs;
 using System.Runtime.CompilerServices;
+using Microsoft.UI.Xaml.Controls;
+using System.Diagnostics;
+using System.IO;
 
 namespace UltraTextEdit_UWP
 {
@@ -123,7 +126,7 @@ namespace UltraTextEdit_UWP
             SaveFile(false);
         }
 
-        private async void SaveFile(bool isCopy)
+        public async void SaveFile(bool isCopy)
         {
             string fileName = AppTitle.Text.Replace(" - " + appTitleStr, "");
             if (isCopy || fileName == "Untitled")
@@ -132,11 +135,14 @@ namespace UltraTextEdit_UWP
                 savePicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
 
                 // Dropdown of file types the user can save the file as
-                savePicker.FileTypeChoices.Add("Rich Text", new List<string>() { ".rtf" });
-                savePicker.FileTypeChoices.Add("Plain Text", new List<string>() { ".txt" });
+                savePicker.FileTypeChoices.Add("Rich Text Format  (.rtf)", new List<string>() { ".rtf" });
+                savePicker.FileTypeChoices.Add("Plain Text  (.txt)", new List<string>() { ".txt" });
+                //  savePicker.FileTypeChoices.Add("OpenDocument Text   .odt", new List<string>() { ".odt" });
+                savePicker.FileTypeChoices.Add("Office Open XML Document   (.docx)", new List<string>() { ".docx" });
 
                 // Default file name if the user does not type one in or select a file to replace
                 savePicker.SuggestedFileName = "New Document";
+
 
                 StorageFile file = await savePicker.PickSaveFileAsync();
                 if (file != null)
@@ -145,23 +151,55 @@ namespace UltraTextEdit_UWP
                     // finish making changes and call CompleteUpdatesAsync.
                     CachedFileManager.DeferUpdates(file);
                     // write to file
-                    using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.ReadWrite))
-                    
-                    if (file.Name.EndsWith(".txt"))
+                    using (Windows.Storage.Streams.IRandomAccessStream randAccStream =
+                        await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite))
+                        switch (file.FileType)
                         {
-                            editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.None, randAccStream);
+                            case ".rtf":
+                                // RTF file, format for it
+                                {
+                                    editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
+                                    randAccStream.Dispose();
+                                }
+                                break;
+                            case ".txt":
+                                // TXT File, save as plain text
+                                {
+                                    using (IOutputStream outputStream = randAccStream.GetOutputStreamAt(0))
+                                    {
+                                        using (DataWriter dataWriter = new DataWriter(outputStream))
+                                        {
+                                            // Get the text content from the RichEditBox
+                                            editor.Document.GetText(Windows.UI.Text.TextGetOptions.None, out string text);
+
+                                            // Write the text to the file with UTF-8 encoding
+                                            dataWriter.WriteString(text);
+                                            dataWriter.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
+
+                                            // Save the changes
+                                            await dataWriter.StoreAsync();
+                                            await outputStream.FlushAsync();
+                                        }
+                                    }
+                                }
+                                break;
+                            case ".docx":
+                                // TXT File, disable RTF formatting so that this is plain text
+                                {
+
+                                    randAccStream.Dispose();
+                                }
+                                break;
                         }
-                        else
-                        {
-                            editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
-                        }
+
 
                     // Let Windows know that we're finished changing the file so the
                     // other app can update the remote version of the file.
                     FileUpdateStatus status = await CachedFileManager.CompleteUpdatesAsync(file);
                     if (status != FileUpdateStatus.Complete)
                     {
-                        Windows.UI.Popups.MessageDialog errorBox = new("File " + file.Name + " couldn't be saved.");
+                        Windows.UI.Popups.MessageDialog errorBox =
+                            new Windows.UI.Popups.MessageDialog("File " + file.Name + " couldn't be saved.");
                         await errorBox.ShowAsync();
                     }
                     saved = true;
@@ -186,10 +224,12 @@ namespace UltraTextEdit_UWP
                             if (file.Name.EndsWith(".txt"))
                             {
                                 editor.Document.SaveToStream(TextGetOptions.None, randAccStream);
+                                randAccStream.Dispose();
                             }
                             else
                             {
                                 editor.Document.SaveToStream(TextGetOptions.FormatRtf, randAccStream);
+                                randAccStream.Dispose();
                             }
 
 
@@ -198,14 +238,15 @@ namespace UltraTextEdit_UWP
                         FileUpdateStatus status = await CachedFileManager.CompleteUpdatesAsync(file);
                         if (status != FileUpdateStatus.Complete)
                         {
-                            Windows.UI.Popups.MessageDialog errorBox = new("File " + file.Name + " couldn't be saved.");
+                            Windows.UI.Popups.MessageDialog errorBox =
+                                new Windows.UI.Popups.MessageDialog("File " + file.Name + " couldn't be saved.");
                             await errorBox.ShowAsync();
                         }
                         saved = true;
                         AppTitle.Text = file.Name + " - " + appTitleStr;
                         Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Remove("CurrentlyOpenFile");
                     }
-                } 
+                }
                 catch (Exception)
                 {
                     SaveFile(true);
@@ -348,7 +389,7 @@ namespace UltraTextEdit_UWP
         private async void OpenButton_Click(object sender, RoutedEventArgs e)
         {
             // Open a text file.
-            FileOpenPicker open = new();
+            FileOpenPicker open = new FileOpenPicker();
             open.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
             open.FileTypeFilter.Add(".rtf");
             open.FileTypeFilter.Add(".txt");
@@ -357,15 +398,43 @@ namespace UltraTextEdit_UWP
 
             if (file != null)
             {
-                using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.ReadWrite))
+                string fileExtension = file.FileType.ToLower(); // Get the file extension in lowercase
+
+                if (fileExtension == ".docx")
                 {
-                    IBuffer buffer = await FileIO.ReadBufferAsync(file);
-                    var reader = DataReader.FromBuffer(buffer);
-                    reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
-                    string text = reader.ReadString(buffer.Length);
-                    // Load the file into the Document property of the RichEditBox.
-                    editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
-                    //editor.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, text);
+                    Debug.WriteLine("Not Implemented yet :/");
+                }
+                else if (fileExtension == ".rtf" || fileExtension == ".odt")
+                {
+                    // Handle other file types (e.g., .rtf, .txt, .odt) loading here
+                    using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.ReadWrite))
+                    {
+                        IBuffer buffer = await FileIO.ReadBufferAsync(file);
+                        var reader = DataReader.FromBuffer(buffer);
+                        reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
+                        string text = reader.ReadString(buffer.Length);
+                        // Load the file into the Document property of the RichEditBox.
+                        editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
+                    }
+                }
+                else if (fileExtension == ".txt")
+                {
+                    // Handle other file types (e.g., .rtf, .txt, .odt) loading here
+                    using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.ReadWrite))
+                    {
+                        using (Stream stream = randAccStream.AsStreamForRead())
+                        {
+                            // Use StreamReader with the appropriate encoding (e.g., UTF-8)
+                            using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                            {
+                                string text = await reader.ReadToEndAsync();
+
+                                // Load the file into the Document property of the RichEditBox.
+                                editor.Document.SetText(TextSetOptions.None, text);
+                            }
+                        }
+                    }
+                        (BasePage.Current.Tabs.TabItems[BasePage.Current.Tabs.SelectedIndex] as TabViewItem).Header = file.Name;
                     AppTitle.Text = file.Name + " - " + appTitleStr;
                     fileNameWithPath = file.Path;
                 }
