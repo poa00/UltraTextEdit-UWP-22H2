@@ -15,8 +15,8 @@ Style="{StaticResource PivotTitleContentControlStyle}">
 
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
-            <LineBreak />
-            • Introduce Velocity IDs!<LineBreak />
+            • Add proper support for the .txt file format<LineBreak/>
+            • Add theme-aware list tiles<LineBreak/>
         </TextBlock>
     </Grid>
 </ContentDialog>
