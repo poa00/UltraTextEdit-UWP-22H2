@@ -13,8 +13,8 @@
 
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
-            • Fix icon on font color SplitButton<LineBreak/>
-            • Update app dates to 2024<LineBreak/>
+            • Add proper support for the .txt file format<LineBreak/>
+            • Add theme-aware list tiles<LineBreak/>
         </TextBlock>
     </Grid>
 </ContentDialog>
