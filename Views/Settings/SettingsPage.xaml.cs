@@ -156,7 +156,7 @@ namespace UltraTextEdit_UWP.Views.Settings
             {
                 RequestedOperation = DataPackageOperation.Copy
             };
-            data.SetText(aboutblock.Title + " version " + aboutblock.Description);
+            data.SetText(aboutblock.Header + " version " + aboutblock.Description);
 
             Clipboard.SetContentWithOptions(data, new ClipboardContentOptions() { IsAllowedInHistory = true, IsRoamable = true });
             Clipboard.Flush();
@@ -177,7 +177,7 @@ namespace UltraTextEdit_UWP.Views.Settings
             {
                 RequestedOperation = DataPackageOperation.Copy
             };
-            data.SetText(aboutblock.Title + " version " + aboutblock.Description);
+            data.SetText(aboutblock.Header + " version " + aboutblock.Description);
 
             Clipboard.SetContentWithOptions(data, new ClipboardContentOptions() { IsAllowedInHistory = true, IsRoamable = true });
             Clipboard.Flush();

@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    xmlns:muxc="using:Microsoft.UI.Xaml.Controls" xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals" xmlns:Lang="using:UltraTextEdit_UWP.Helpers"  xmlns:res="using:UltraTextEdit_UWP.Strings" xmlns:uc="using:UltraTextEdit_UWP.UserControls" xmlns:local1="using:UltraTextEdit_UWP" xmlns:viewmodels="using:UltraTextEdit_UWP.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:SettingsViewModel}"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls" xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals" xmlns:Lang="using:UltraTextEdit_UWP.Helpers"  xmlns:res="using:UltraTextEdit_UWP.Strings" xmlns:uc="using:UltraTextEdit_UWP.UserControls" xmlns:local1="using:UltraTextEdit_UWP" xmlns:viewmodels="using:UltraTextEdit_UWP.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:SettingsViewModel}" xmlns:settings="using:CommunityToolkit.WinUI.Controls"
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
 
     <Grid>
@@ -98,7 +98,7 @@
                         <FontIcon Glyph="&#xF87B;" />
                     </uc:SettingsBlockControl.Icon>
                     <uc:SettingsBlockControl.SettingsActionableElement>
-                        <CheckBox x:Name="spellcheckBox" Checked="spellcheckBox_Checked" Unchecked="spellcheckBox_Unchecked"/>
+                        <CheckBox x:Name="spellcheckBox" Checked="spellcheckBox_Checked" Unchecked="spellcheckBox_Unchecked" Margin="0,0,-100,0"/>
                     </uc:SettingsBlockControl.SettingsActionableElement>
                 </uc:SettingsBlockControl>
                 <TextBlock Text="{x:Bind res:Resources.AppearenceHeaderName}" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
@@ -136,29 +136,34 @@
                         <FontIcon Glyph="&#xE7F5;" />
                     </uc:SettingsBlockControl.Icon>
                     <uc:SettingsBlockControl.SettingsActionableElement>
-                        <CheckBox x:Name="spatialAudioBox" IsEnabled="False" Checked="spatialAudioBox_Checked" Unchecked="spatialAudioBox_Unchecked"/>
+                        <CheckBox x:Name="spatialAudioBox" IsEnabled="False" Checked="spatialAudioBox_Checked" Unchecked="spatialAudioBox_Unchecked" Margin="0,0,-100,0"/>
                     </uc:SettingsBlockControl.SettingsActionableElement>
                 </uc:SettingsBlockControl>
-                <muxc:Expander Header="Focus Visuals settings">
-                    <StackPanel>
-                        <RadioButton x:Name="HighVisibility" Content="High Visibility" Checked="HighVisibility_Checked"/>
-                        <RadioButton x:Name="RevealFocus" Content="Reveal Focus"  Checked="RevealFocus_Checked"/>
-                    </StackPanel>
-                </muxc:Expander>
+                <settings:SettingsExpander Header="Focus Visuals settings">
+                    <settings:SettingsExpander.Items>
+                        <settings:SettingsCard HorizontalContentAlignment="Left"
+                                               ContentAlignment="Left">
+                            <StackPanel>
+                                <RadioButton x:Name="HighVisibility" Content="High Visibility" Checked="HighVisibility_Checked"/>
+                                <RadioButton x:Name="RevealFocus" Content="Reveal Focus"  Checked="RevealFocus_Checked"/>
+                            </StackPanel>
+                        </settings:SettingsCard>
+                    </settings:SettingsExpander.Items>
+                </settings:SettingsExpander>
                 <TextBlock Text="{x:Bind res:Resources.AboutText}" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
 
-                <uc:SettingsBlockControl x:Name="aboutblock"
-            Title="{x:Bind res:Resources.AppName}"
+                <settings:SettingsCard x:Name="aboutblock"
+            Header="UltraTextEdit UWP"
             Description="10.0.25941.1000">
-                    <uc:SettingsBlockControl.Icon>
+                    <settings:SettingsCard.HeaderIcon>
                         <BitmapIcon UriSource="ms-appx:///Assets/utevericon.png" ShowAsMonochrome="False" Height="24" Width="24"/>
-                    </uc:SettingsBlockControl.Icon>
+                    </settings:SettingsCard.HeaderIcon>
                     <Button
-                ToolTipService.ToolTip="{x:Bind res:Resources.CopyText}"
+                ToolTipService.ToolTip="Copy"
                 Click="CopyVerInfo">
                         <FontIcon Glyph="&#xE8C8;"/>
                     </Button>
-                </uc:SettingsBlockControl>
+                </settings:SettingsCard>
                 <uc:SettingsBlockControl x:Name="updateblock"
             Title="UTE Update"
             IsClickable="True"
