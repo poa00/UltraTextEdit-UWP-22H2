@@ -29,6 +29,7 @@ using System.Text;
 using Windows.UI.Xaml.Media.Imaging;
 using UltraTextEdit_UWP.Dialogs;
 using System.Runtime.CompilerServices;
+using MicaForUWP.Media;
 using Microsoft.UI.Xaml.Controls;
 
 namespace UltraTextEdit_UWP
@@ -44,6 +45,20 @@ namespace UltraTextEdit_UWP
         public NonTabbedMainPage()
         {
             InitializeComponent();
+
+            if (BuildInfo.BeforeWin11)
+            {
+                Application.Current.Resources["AppTitleBarBrush"] = new BackdropMicaBrush()
+                {
+                    LuminosityOpacity = 0.8F,
+                    TintOpacity = 0F,
+                    BackgroundSource = BackgroundSource.WallpaperBackdrop,
+                    Opacity = 1,
+                    TintColor = Color.FromArgb(255, 230, 230, 230),
+                    FallbackColor = Color.FromArgb(255, 230, 230, 230)
+                };
+                this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+            }
 
             ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
 
