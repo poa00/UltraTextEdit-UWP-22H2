@@ -331,6 +331,9 @@
     <PackageReference Include="Microsoft.NETCore.Platforms">
       <Version>8.0.0-preview.7.23375.6</Version>
     </PackageReference>
+    <PackageReference Include="MicaForUWP">
+      <Version>0.1.10</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.14</Version>
     </PackageReference>
