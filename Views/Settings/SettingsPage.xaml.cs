@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using MicaForUWP.Media;
 using System;
 using System.Reflection;
+using UltraTextEdit_UWP.Helpers;
 using UltraTextEdit_UWP.ViewModels;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
@@ -25,6 +27,20 @@ namespace UltraTextEdit_UWP.Views.Settings
         {
 
             InitializeComponent();
+
+            if (BuildInfo.BeforeWin11)
+            {
+                Application.Current.Resources["AppTitleBarBrush"] = new BackdropMicaBrush()
+                {
+                    LuminosityOpacity = 0.8F,
+                    TintOpacity = 0F,
+                    BackgroundSource = BackgroundSource.WallpaperBackdrop,
+                    Opacity = 1,
+                    TintColor = Color.FromArgb(255, 230, 230, 230),
+                    FallbackColor = Color.FromArgb(255, 230, 230, 230)
+                };
+                this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+            }
 
             var ver = typeof(App).GetTypeInfo().Assembly.GetName().Version;
 
