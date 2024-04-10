@@ -49,7 +49,18 @@ Aero Lite Dark
   - Better app icon/file icons
   
   - ... and more!
-  
+
+### Contributors
+Code contributors:
+<a href="https://github.com/jpbandroid/UltraTextEdit-UWP-22H2/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=jpbandroid/UltraTextEdit-UWP-22H2" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
+
+Localization/translation contributors (will be updated with every merged Crowdin sync):
+- jpbandroid (English, Polish)
+- Ronner/Ronner231 (Russian)
 
 ### Install the certificate (required only for first installs or changes of certificate, this only happens yearly on June 24)
 1. Download and double-click certificate file (file extension .cer)
