@@ -1,4 +1,4 @@
-# UltraTextEdit UWP
+# UltraTextEdit UWP [![Crowdin](https://badges.crowdin.net/ultratextedit-uwp/localized.svg)](https://crowdin.com/project/ultratextedit-uwp)
 
 NOTE: The UltraTextEdit UWP 22H2 codebase is a fork of TowPad by itsWindows11. Link: https://github.com/itsWindows11/TowPad
 <br>NOTE: UTE UWP will now get more updates (after 24H2; the other repo will also have its own 24H2) here: https://github.com/jpbandroid/UTE-UWP-Plus
