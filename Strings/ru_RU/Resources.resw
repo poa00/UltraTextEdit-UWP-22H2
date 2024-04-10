@@ -118,124 +118,124 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutText" xml:space="preserve">
-    <value>About</value>
+    <value>Информация</value>
   </data>
   <data name="AddHyperlinkTooltip" xml:space="preserve">
-    <value>Add hyperlink</value>
+    <value>Добавить гиперссылку</value>
   </data>
   <data name="AddImageTooltip" xml:space="preserve">
-    <value>Add image</value>
+    <value>Добавить изображение</value>
   </data>
   <data name="AddSymbolTooltip" xml:space="preserve">
-    <value>Add symbol</value>
+    <value>Добавить символ</value>
   </data>
   <data name="AddTableTooltip" xml:space="preserve">
-    <value>Add table</value>
+    <value>Добавить таблицу</value>
   </data>
   <data name="AlignCenter" xml:space="preserve">
-    <value>Align to Center</value>
+    <value>Выровнять по центру</value>
   </data>
   <data name="AlignLeft" xml:space="preserve">
-    <value>Align to Left</value>
+    <value>Выровнять слева</value>
   </data>
   <data name="AlignRight" xml:space="preserve">
-    <value>Align to Right</value>
+    <value>Выровнять справа</value>
   </data>
   <data name="AppearenceHeaderName" xml:space="preserve">
-    <value>Appearance</value>
+    <value>Внешний вид</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>UltraTextEdit UWP</value>
   </data>
   <data name="Bold" xml:space="preserve">
-    <value>Bold</value>
+    <value>Жирный</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Close</value>
+    <value>Закрыть</value>
   </data>
   <data name="CommentsText" xml:space="preserve">
-    <value>Comments</value>
+    <value>Комментарии</value>
   </data>
   <data name="CopyText" xml:space="preserve">
-    <value>Copy</value>
+    <value>Копировать</value>
   </data>
   <data name="CutText" xml:space="preserve">
-    <value>Cut</value>
+    <value>Вырезать</value>
   </data>
   <data name="DarkTheme" xml:space="preserve">
-    <value>Dark</value>
+    <value>Темная</value>
   </data>
   <data name="DefaultFontSettingName" xml:space="preserve">
-    <value>Default font family</value>
+    <value>Семейство шрифтов по умолчанию</value>
   </data>
   <data name="DocumentPaddingSettingName" xml:space="preserve">
-    <value>Document view padding</value>
+    <value>Отступ для просмотра документа</value>
   </data>
   <data name="EditorHeaderName" xml:space="preserve">
-    <value>Editor</value>
+    <value>Редактор</value>
   </data>
   <data name="EditText" xml:space="preserve">
-    <value>Edit</value>
+    <value>Редактировать</value>
   </data>
   <data name="ExitText" xml:space="preserve">
-    <value>Exit</value>
+    <value>Выход</value>
   </data>
   <data name="FileText" xml:space="preserve">
-    <value>File</value>
+    <value>Файл</value>
   </data>
   <data name="Find" xml:space="preserve">
-    <value>Find</value>
+    <value>Найти</value>
   </data>
   <data name="FindDocTooltip" xml:space="preserve">
-    <value>Find in document</value>
+    <value>Найти в документе</value>
   </data>
   <data name="FindTextHint" xml:space="preserve">
-    <value>Text to look for</value>
+    <value>Текст для поиска</value>
   </data>
   <data name="FontColorTooltip" xml:space="preserve">
-    <value>Font color</value>
+    <value>Цвет шрифта</value>
   </data>
   <data name="HelpText" xml:space="preserve">
-    <value>Help</value>
+    <value>Помощь</value>
   </data>
   <data name="HomeMenuTitle" xml:space="preserve">
-    <value>Home</value>
+    <value>Главная</value>
   </data>
   <data name="HomeTitle" xml:space="preserve">
-    <value>Home</value>
+    <value>Главная</value>
   </data>
   <data name="Italic" xml:space="preserve">
-    <value>Italic</value>
+    <value>Курсив</value>
   </data>
   <data name="LightTheme" xml:space="preserve">
-    <value>Light</value>
+    <value>Светлая</value>
   </data>
   <data name="NewDocText" xml:space="preserve">
-    <value>New document</value>
+    <value>Новый документ</value>
   </data>
   <data name="NewText" xml:space="preserve">
-    <value>New text</value>
+    <value>Новый текст</value>
   </data>
   <data name="OpenText" xml:space="preserve">
-    <value>Open</value>
+    <value>Открыть</value>
   </data>
   <data name="PasteText" xml:space="preserve">
-    <value>Paste</value>
+    <value>Вставить</value>
   </data>
   <data name="PrintText" xml:space="preserve">
-    <value>Print</value>
+    <value>Печатать</value>
   </data>
   <data name="RecentlyAccessedTitle" xml:space="preserve">
-    <value>Recently accessed files</value>
+    <value>Недавно просмотренные файлы</value>
   </data>
   <data name="RedoTooltip" xml:space="preserve">
-    <value>Redo</value>
+    <value>Повторить</value>
   </data>
   <data name="RemoveHighlights" xml:space="preserve">
-    <value>Remove highlights</value>
+    <value>Удалить выделения</value>
   </data>
   <data name="Replace" xml:space="preserve">
-    <value>Replace</value>
+    <value>Заменить</value>
   </data>
   <data name="ReplaceAll" xml:space="preserve">
     <value>Replace all occurrences</value>
