@@ -16,9 +16,9 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Update dates to 2024!<LineBreak />
-            • Dialogs are slightly revamped with rounded corners and bold text<LineBreak />
-            • The "Automatic" button on the color picker now works<LineBreak />
+            • Add theme-aware list tiles<LineBreak />
+            • Add CommunityToolkit Settings<LineBreak />
+            • Add proper support for the .txt file format<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
