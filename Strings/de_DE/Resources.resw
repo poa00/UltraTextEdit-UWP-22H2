@@ -118,162 +118,162 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutText" xml:space="preserve">
-    <value>About</value>
+    <value>Über die App</value>
   </data>
   <data name="AddHyperlinkTooltip" xml:space="preserve">
-    <value>Add hyperlink</value>
+    <value>Hyperlinks hinzufügen</value>
   </data>
   <data name="AddImageTooltip" xml:space="preserve">
-    <value>Add image</value>
+    <value>Bild hinzufügen</value>
   </data>
   <data name="AddSymbolTooltip" xml:space="preserve">
-    <value>Add symbol</value>
+    <value>Symbol hinzufügen</value>
   </data>
   <data name="AddTableTooltip" xml:space="preserve">
-    <value>Add table</value>
+    <value>Tabelle hinzufügen</value>
   </data>
   <data name="AlignCenter" xml:space="preserve">
-    <value>Align to Center</value>
+    <value>Mittig ausrichten</value>
   </data>
   <data name="AlignLeft" xml:space="preserve">
-    <value>Align to Left</value>
+    <value>Links ausrichten</value>
   </data>
   <data name="AlignRight" xml:space="preserve">
-    <value>Align to Right</value>
+    <value>Rechts ausrichten</value>
   </data>
   <data name="AppearenceHeaderName" xml:space="preserve">
-    <value>Appearance</value>
+    <value>Aussehen</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>UltraTextEdit UWP</value>
   </data>
   <data name="Bold" xml:space="preserve">
-    <value>Bold</value>
+    <value>Fett</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Close</value>
+    <value>Schließen</value>
   </data>
   <data name="CommentsText" xml:space="preserve">
-    <value>Comments</value>
+    <value>Kommentare</value>
   </data>
   <data name="CopyText" xml:space="preserve">
-    <value>Copy</value>
+    <value>Kopieren</value>
   </data>
   <data name="CutText" xml:space="preserve">
-    <value>Cut</value>
+    <value>Ausschneiden</value>
   </data>
   <data name="DarkTheme" xml:space="preserve">
-    <value>Dark</value>
+    <value>Dunkel</value>
   </data>
   <data name="DefaultFontSettingName" xml:space="preserve">
-    <value>Default font family</value>
+    <value>Standardschriftfamilie</value>
   </data>
   <data name="DocumentPaddingSettingName" xml:space="preserve">
-    <value>Document view padding</value>
+    <value>Dokumentenansicht Polster</value>
   </data>
   <data name="EditorHeaderName" xml:space="preserve">
     <value>Editor</value>
   </data>
   <data name="EditText" xml:space="preserve">
-    <value>Edit</value>
+    <value>Bearbeiten</value>
   </data>
   <data name="ExitText" xml:space="preserve">
-    <value>Exit</value>
+    <value>Ausfahrt</value>
   </data>
   <data name="FileText" xml:space="preserve">
-    <value>File</value>
+    <value>Datei</value>
   </data>
   <data name="Find" xml:space="preserve">
-    <value>Find</value>
+    <value>Finden</value>
   </data>
   <data name="FindDocTooltip" xml:space="preserve">
-    <value>Find in document</value>
+    <value>Im Dokument finden</value>
   </data>
   <data name="FindTextHint" xml:space="preserve">
-    <value>Text to look for</value>
+    <value>Text zum Suchen</value>
   </data>
   <data name="FontColorTooltip" xml:space="preserve">
-    <value>Font color</value>
+    <value>Schriftfarbe</value>
   </data>
   <data name="HelpText" xml:space="preserve">
-    <value>Help</value>
+    <value>Hilfe</value>
   </data>
   <data name="HomeMenuTitle" xml:space="preserve">
-    <value>Home</value>
+    <value>Startseite</value>
   </data>
   <data name="HomeTitle" xml:space="preserve">
-    <value>Home</value>
+    <value>Startseite</value>
   </data>
   <data name="Italic" xml:space="preserve">
-    <value>Italic</value>
+    <value>Kursiv</value>
   </data>
   <data name="LightTheme" xml:space="preserve">
-    <value>Light</value>
+    <value>Licht</value>
   </data>
   <data name="NewDocText" xml:space="preserve">
-    <value>New document</value>
+    <value>Neues Dokument</value>
   </data>
   <data name="NewText" xml:space="preserve">
-    <value>New text</value>
+    <value>Neuer Text</value>
   </data>
   <data name="OpenText" xml:space="preserve">
-    <value>Open</value>
+    <value>Öffnen</value>
   </data>
   <data name="PasteText" xml:space="preserve">
-    <value>Paste</value>
+    <value>Einfügen</value>
   </data>
   <data name="PrintText" xml:space="preserve">
-    <value>Print</value>
+    <value>Drucken</value>
   </data>
   <data name="RecentlyAccessedTitle" xml:space="preserve">
-    <value>Recently accessed files</value>
+    <value>Zuletzt aufgerufene Dateien</value>
   </data>
   <data name="RedoTooltip" xml:space="preserve">
-    <value>Redo</value>
+    <value>Wiederholen</value>
   </data>
   <data name="RemoveHighlights" xml:space="preserve">
-    <value>Remove highlights</value>
+    <value>Farboptionen entfernen</value>
   </data>
   <data name="Replace" xml:space="preserve">
-    <value>Replace</value>
+    <value>Ersetzen</value>
   </data>
   <data name="ReplaceAll" xml:space="preserve">
-    <value>Replace all occurrences</value>
+    <value>Alle Vorkommen ersetzen</value>
   </data>
   <data name="ReplaceSelected" xml:space="preserve">
-    <value>Replace selected text</value>
+    <value>Ausgewählten Text ersetzen</value>
   </data>
   <data name="SaveAsCopyText" xml:space="preserve">
-    <value>Save as Copy</value>
+    <value>Speichern als</value>
   </data>
   <data name="SaveText" xml:space="preserve">
-    <value>Save</value>
+    <value>Speichern</value>
   </data>
   <data name="SettingsText" xml:space="preserve">
-    <value>Settings</value>
+    <value>Einstellungen</value>
   </data>
   <data name="ShareText" xml:space="preserve">
-    <value>Share</value>
+    <value>Teilen</value>
   </data>
   <data name="Strikethrough" xml:space="preserve">
-    <value>Strikethrough</value>
+    <value>Durchgestrichen</value>
   </data>
   <data name="SystemDefaultTheme" xml:space="preserve">
-    <value>System default</value>
+    <value>Systemstandard</value>
   </data>
   <data name="ThemeSettingName" xml:space="preserve">
-    <value>Theme</value>
+    <value>Thema</value>
   </data>
   <data name="Underline" xml:space="preserve">
-    <value>Underline</value>
+    <value>Unterstrichen</value>
   </data>
   <data name="UndoTooltip" xml:space="preserve">
-    <value>Undo</value>
+    <value>Rückgängig</value>
   </data>
   <data name="WhatsNewTitle" xml:space="preserve">
-    <value>What's New</value>
+    <value>Was ist neu</value>
   </data>
   <data name="WrapTextSettingName" xml:space="preserve">
-    <value>Text wrapping</value>
+    <value>Umbrechung des Texts</value>
   </data>
 </root>
