@@ -61,6 +61,7 @@ Made with [contrib.rocks](https://contrib.rocks).
 Localization/translation contributors (will be updated with every merged Crowdin sync):
 - jpbandroid (English, Polish, French, German)
 - Ronner/Ronner231 (Russian)
+- LuisYeah1234 (Italian)
 
 ### Install the certificate (required only for first installs or changes of certificate, this only happens yearly on June 24)
 1. Download and double-click certificate file (file extension .cer)
