@@ -274,6 +274,6 @@
     <value>Was ist neu</value>
   </data>
   <data name="WrapTextSettingName" xml:space="preserve">
-    <value>Umbrechung des Texts</value>
+    <value>Text-Verpackung</value>
   </data>
 </root>
