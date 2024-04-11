@@ -59,7 +59,7 @@ Code contributors:
 Made with [contrib.rocks](https://contrib.rocks).
 
 Localization/translation contributors (will be updated with every merged Crowdin sync):
-- jpbandroid (English, Polish)
+- jpbandroid (English, Polish, French, German)
 - Ronner/Ronner231 (Russian)
 
 ### Install the certificate (required only for first installs or changes of certificate, this only happens yearly on June 24)
