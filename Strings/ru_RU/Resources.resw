@@ -238,42 +238,42 @@
     <value>Заменить</value>
   </data>
   <data name="ReplaceAll" xml:space="preserve">
-    <value>Replace all occurrences</value>
+    <value>Заменить все вхождения</value>
   </data>
   <data name="ReplaceSelected" xml:space="preserve">
-    <value>Replace selected text</value>
+    <value>Заменить выделенный текст</value>
   </data>
   <data name="SaveAsCopyText" xml:space="preserve">
-    <value>Save as Copy</value>
+    <value>Сохранить как копию</value>
   </data>
   <data name="SaveText" xml:space="preserve">
-    <value>Save</value>
+    <value>Сохранить</value>
   </data>
   <data name="SettingsText" xml:space="preserve">
-    <value>Settings</value>
+    <value>Настройки</value>
   </data>
   <data name="ShareText" xml:space="preserve">
-    <value>Share</value>
+    <value>Поделиться</value>
   </data>
   <data name="Strikethrough" xml:space="preserve">
-    <value>Strikethrough</value>
+    <value>Зачеркивание</value>
   </data>
   <data name="SystemDefaultTheme" xml:space="preserve">
-    <value>System default</value>
+    <value>Системная</value>
   </data>
   <data name="ThemeSettingName" xml:space="preserve">
-    <value>Theme</value>
+    <value>Тема</value>
   </data>
   <data name="Underline" xml:space="preserve">
-    <value>Underline</value>
+    <value>Подчеркивание</value>
   </data>
   <data name="UndoTooltip" xml:space="preserve">
-    <value>Undo</value>
+    <value>Отмена</value>
   </data>
   <data name="WhatsNewTitle" xml:space="preserve">
-    <value>What's New</value>
+    <value>Что нового</value>
   </data>
   <data name="WrapTextSettingName" xml:space="preserve">
-    <value>Text wrapping</value>
+    <value>Обёртывание текста</value>
   </data>
 </root>
