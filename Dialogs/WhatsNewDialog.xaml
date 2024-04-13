@@ -16,9 +16,8 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Add theme-aware list tiles<LineBreak />
-            • Add CommunityToolkit Settings<LineBreak />
-            • Add proper support for the .txt file format<LineBreak />
+            • Add Mica support for Windows 10 users<LineBreak />
+            • Add the ability to switch languages in-app (however this is currently slightly broken)<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
