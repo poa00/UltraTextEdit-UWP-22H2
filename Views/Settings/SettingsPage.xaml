@@ -117,15 +117,21 @@
                 </uc:SettingsBlockControl>
 
                 
-                <!--
+                
                 <uc:SettingsBlockControl Title="Language">
-                    <ComboBox x:Name="CmbLanguage" 
-          ItemsSource="{Binding Languages}" 
-          DisplayMemberPath="DisplayName" 
-          SelectedValuePath="LanguageCode" 
-          SelectedItem="{Binding SelectedLanguage, Mode=TwoWay}" />
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox x:Name="CmbLanguage" 
+ItemsSource="{x:Bind Languages}"
+/>
+                        <Button Click="Button_Click">
+                            <IconSourceElement>
+                                <SymbolIconSource Symbol="Sync">
+                                </SymbolIconSource>
+                            </IconSourceElement>
+                        </Button>
+                    </StackPanel>
                 </uc:SettingsBlockControl>
-                -->
+                
                 <uc:SettingsBlockControl Title="Sound" Icon="Volume">
                     <uc:SettingsBlockControl.SettingsActionableElement>
                         <ToggleSwitch x:Name="soundToggle" OffContent="Sound Off" OnContent="Sound On" Toggled="soundToggle_Toggled"/>

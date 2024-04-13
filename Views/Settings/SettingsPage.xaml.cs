@@ -1,7 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using MicaForUWP.Media;
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using UltraTextEdit_UWP.Helpers;
 using UltraTextEdit_UWP.ViewModels;
 using Windows.ApplicationModel.Core;
@@ -40,6 +43,16 @@ namespace UltraTextEdit_UWP.Views.Settings
                     FallbackColor = Color.FromArgb(255, 230, 230, 230)
                 };
                 this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+            }
+
+            if (CultureInfo.CurrentCulture.Name == "en-US")
+            {
+                CmbLanguage.SelectedItem = "English";
+            } else if (CultureInfo.CurrentCulture.Name == "en-GB") {
+                CmbLanguage.SelectedItem = "English";
+            } else if (CultureInfo.CurrentCulture.Name == "pl-PL")
+            {
+                CmbLanguage.SelectedItem = "Polski";
             }
 
             var ver = typeof(App).GetTypeInfo().Assembly.GetName().Version;
@@ -116,6 +129,8 @@ namespace UltraTextEdit_UWP.Views.Settings
                 LocalSettings.Values["UTEUpdateVID"] = "Off";
             }
         }
+
+        public List<string> Languages{ get; } = new List<string> { "English", "Polski" };
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
         {
@@ -264,6 +279,26 @@ namespace UltraTextEdit_UWP.Views.Settings
             if (Window.Current.Content is Frame rootFrame)
             {
                 rootFrame.Navigate(typeof(VelocityIDsPage));
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if ((string)CmbLanguage.SelectedItem == "English")
+            {
+                CultureInfo.CurrentCulture = new CultureInfo("en-US");
+                CultureInfo.CurrentUICulture = new CultureInfo("en-US");
+                Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
+                Windows.ApplicationModel.Resources.Core.ResourceContext.GetForViewIndependentUse().Reset();
+                Frame.Navigate(this.GetType());
+            }
+            else if ((string)CmbLanguage.SelectedItem == "Polski")
+            {
+                CultureInfo.CurrentCulture = new CultureInfo("pl-PL");
+                CultureInfo.CurrentUICulture = new CultureInfo("pl-PL");
+                Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
+                Windows.ApplicationModel.Resources.Core.ResourceContext.GetForViewIndependentUse().Reset();
+                Frame.Navigate(this.GetType());
             }
         }
     }
