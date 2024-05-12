@@ -16,8 +16,8 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Add Mica support for Windows 10 users<LineBreak />
-            • Add the ability to switch languages in-app (however this is currently slightly broken)<LineBreak />
+            • Adds a Dark Mode variant of UTE Mica Glass<LineBreak />
+            • Dependency updates<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
