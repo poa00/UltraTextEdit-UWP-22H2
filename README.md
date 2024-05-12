@@ -3,6 +3,9 @@
 NOTE: The UltraTextEdit UWP 22H2 codebase is a fork of TowPad by itsWindows11. Link: https://github.com/itsWindows11/TowPad
 <br>NOTE: UTE UWP will now get more updates (after 24H2; the other repo will also have its own 24H2) here: https://github.com/jpbandroid/UTE-UWP-Plus
 <br><b>Help with translations on Crowdin would be greatly appreciated! https://crowdin.com/project/ultratextedit-uwp</b>
+<br>
+Join the official Discord server to get exclusive sneek peeks and development updates!
+https://discord.gg/cjxyyr6r2G
 
 ### Windows 11
 ![image](https://user-images.githubusercontent.com/100033309/210171690-1b38c220-0cf6-4e84-86a5-8eec80460667.png)
