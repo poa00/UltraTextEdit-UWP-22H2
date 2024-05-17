@@ -1031,6 +1031,12 @@
                                 </Flyout>
                             </AppBarButton.Flyout>
                         </AppBarButton>
+                        <AppBarButton
+Click="ComputeHash_Click"
+Style="{StaticResource TransparentButton}"
+ToolTipService.ToolTip="Compute Hash">
+                            <FontIcon FontSize="17" Glyph="&#xE943;" />
+                        </AppBarButton>
                     </controls:TabbedCommandBarItem>
                     <controls:TabbedCommandBarItem Header="{x:Bind res:Resources.EditText}" Background="Transparent">
                         <AppBarButton Click="UndoButton_Click" Label="{x:Bind res:Resources.UndoTooltip}" Icon="Undo" />

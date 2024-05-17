@@ -43,6 +43,7 @@ namespace UltraTextEdit_UWP
         string appTitleStr = Strings.Resources.AppName;
         string fileNameWithPath = "";
         string originalDocText = "";
+        public string docText;
 
         public MainPage()
         {
@@ -1229,6 +1230,17 @@ namespace UltraTextEdit_UWP
             editor.Document.Selection.CharacterFormat.ForegroundColor = (Windows.UI.Color)color;
             //FontColorMarker.SetValue(ForegroundProperty, new SolidColorBrush(color));
             editor.Focus(FocusState.Keyboard);
+        }
+
+        private void ComputeHash_Click(object sender, RoutedEventArgs e)
+        {
+            editor.TextDocument.GetText(TextGetOptions.NoHidden, out docText);
+            ContentDialog dialog = new ContentDialog();
+            dialog.Title = "Compute hashes";
+            dialog.Content = new ComputeHash();
+            dialog.CloseButtonText = "Close";
+            dialog.DefaultButton = ContentDialogButton.Close;
+            dialog.ShowAsync();
         }
     }
 }
