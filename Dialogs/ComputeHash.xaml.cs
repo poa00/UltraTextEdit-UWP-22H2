@@ -30,7 +30,7 @@ namespace UltraTextEdit_UWP.Dialogs
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainPage mainPage = (Window.Current.Content as Frame).Content as MainPage;
+            MainPage mainPage = (BasePage.Current.Content as Frame).Content as MainPage;
             string docText = mainPage.docText;
             docText = EncryptorsDecryptors.Base64Encode(docText);
             base64_result.Text = docText;
@@ -38,7 +38,7 @@ namespace UltraTextEdit_UWP.Dialogs
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MainPage mainPage = (Window.Current.Content as Frame).Content as MainPage;
+            MainPage mainPage = (BasePage.Current.Content as Frame).Content as MainPage;
             string docText = mainPage.docText;
             docText = EncryptorsDecryptors.Base64Decode(docText);
             base64_result.Text = docText;
