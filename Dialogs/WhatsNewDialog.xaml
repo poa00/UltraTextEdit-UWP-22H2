@@ -16,8 +16,9 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <Grid>
         <TextBlock x:Name="ChangelogText" TextWrapping="WrapWholeWords">
             <LineBreak />
-            • Update copyright dates in About dialogs<LineBreak />
-            • Dependency updates<LineBreak />
+            • Add Text Templates<LineBreak />
+            • Add an extra symbols dialog to the Symbols Menu<LineBreak />
+            • Add Justify text alignment<LineBreak />
         </TextBlock>
     </Grid>
 </ContentDialog>
